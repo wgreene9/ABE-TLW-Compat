@@ -1,0 +1,209 @@
+aspect_zeus = {
+	cost = 100
+	potential = {
+		NOT = { has_country_flag = NKZAB_Macedon_has_stronger_hellenic }
+	}
+	modifier = {
+		shock_damage = 0.05
+		global_unrest = -2
+	}
+}
+
+aspect_poseidon = {
+	cost = 100
+	potential = {
+		NOT = { has_country_flag = NKZAB_Macedon_has_stronger_hellenic }
+	}
+	modifier = {
+		galley_power = 0.1
+		naval_morale = 0.1
+	}
+}
+
+aspect_demeter = {
+	cost = 100
+	potential = {
+		NOT = { has_country_flag = NKZAB_Macedon_has_stronger_hellenic }
+	}
+	modifier = {	
+		development_cost = -0.05
+		production_efficiency = 0.1
+	}
+}
+
+aspect_ares = {
+	cost = 100
+	potential = {
+		NOT = { has_country_flag = NKZAB_Macedon_has_stronger_hellenic }
+	}
+	modifier = {
+		land_morale = 0.05
+		shock_damage_received = -0.05
+	}
+}
+
+aspect_hera = {
+	cost = 100
+	potential = {
+		NOT = { has_country_flag = NKZAB_Macedon_has_stronger_hellenic }
+	}
+	modifier = {
+		diplomatic_reputation = 1
+		improve_relation_modifier = 0.1
+	}
+}
+
+aspect_apollo = {
+	cost = 100
+	potential = {
+		NOT = { has_country_flag = NKZAB_Macedon_has_stronger_hellenic }
+	}
+	modifier = {
+		global_institution_spread = 0.2
+		reform_progress_growth = 0.1
+	}
+}
+
+aspect_athena = {
+	cost = 100
+	potential = {
+		NOT = { has_country_flag = NKZAB_Macedon_has_stronger_hellenic }
+	}
+	modifier = {
+		discipline = 0.025
+		war_exhaustion = -0.03
+	}
+}
+
+aspect_hades = {
+	cost = 100
+	potential = {
+		NOT = { has_country_flag = NKZAB_Macedon_has_stronger_hellenic }
+	}
+	modifier = {
+		prestige_decay = -0.01
+		max_absolutism = 5
+	}
+}
+
+aspect_artemis = {
+	cost = 100
+	potential = {
+		NOT = { has_country_flag = NKZAB_Macedon_has_stronger_hellenic }
+	}
+	modifier = {
+		global_trade_goods_size_modifier = 0.05
+		global_prosperity_growth = 0.25
+	}
+}
+
+aspect_zeus_MCD = {
+	cost = 100
+	potential = {
+		has_country_flag = NKZAB_Macedon_has_stronger_hellenic
+	}
+	modifier = {
+		shock_damage = 0.10
+		global_unrest = -2
+	}
+}
+
+aspect_poseidon_MCD = {
+	cost = 100
+	potential = {
+		has_country_flag = NKZAB_Macedon_has_stronger_hellenic
+	}
+	modifier = {
+		galley_power = 0.15
+		naval_morale = 0.15
+	}
+}
+
+aspect_demeter_MCD = {
+	cost = 100
+	potential = {
+		has_country_flag = NKZAB_Macedon_has_stronger_hellenic
+	}
+	modifier = {	
+		development_cost_modifier = -0.05
+		production_efficiency = 0.1
+	}
+}
+
+aspect_ares_MCD = {
+	cost = 100
+	potential = {
+		has_country_flag = NKZAB_Macedon_has_stronger_hellenic
+	}
+	modifier = {
+		land_morale = 0.10
+		shock_damage_received = -0.10
+	}
+}
+
+aspect_hera_MCD = {
+	cost = 100
+	potential = {
+		has_country_flag = NKZAB_Macedon_has_stronger_hellenic
+	}
+	modifier = {
+		diplomatic_reputation = 2
+		improve_relation_modifier = 0.25
+	}
+}
+
+aspect_apollo_MCD = {
+	cost = 100
+	potential = {
+		has_country_flag = NKZAB_Macedon_has_stronger_hellenic
+	}
+	modifier = {
+		global_institution_spread = 0.5
+		reform_progress_growth = 0.25
+	}
+}
+
+aspect_athena_MCD = {
+	cost = 100
+	potential = {
+		has_country_flag = NKZAB_Macedon_has_stronger_hellenic
+	}
+	modifier = {
+		discipline = 0.05
+		war_exhaustion = -0.05
+	}
+}
+
+aspect_hades_MCD = {
+	cost = 100
+	potential = {
+		has_country_flag = NKZAB_Macedon_has_stronger_hellenic
+	}
+	modifier = {
+		prestige_decay = -0.01
+		max_absolutism_effect = 0.15
+	}
+}
+
+aspect_artemis_MCD = {
+	cost = 100
+	potential = {
+		has_country_flag = NKZAB_Macedon_has_stronger_hellenic
+	}
+	modifier = {
+		global_trade_goods_size_modifier = 0.1
+		global_prosperity_growth = 0.5
+	}
+}
+
+aspect_kratos = {
+	cost = 100
+	potential = {
+		has_country_flag = hyl_unlock_kratos_aspect
+	}
+	modifier = {
+		infantry_power = 0.15
+		cavalry_power = 0.1
+		artillery_power = 0.1
+	}
+}
