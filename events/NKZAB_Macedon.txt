@@ -1,0 +1,6378 @@
+namespace = NKZAB_Macedon
+normal_or_historical_nations = yes
+
+#1~6 一阶段事件，聚焦于曼努埃尔个人的奋斗
+
+#323 热情消散
+#356 热情重生
+
+#9001~9019 各色特殊事件，大部分为隐藏
+#8001~8010 调试事件
+
+country_event = { #急眼了
+	id = NKZAB_Macedon.114514
+	title = NKZAB_Macedon.114514.t
+	desc = NKZAB_Macedon.114514.d
+	picture = "NKZ_eventPicture"
+
+	is_triggered_only = yes
+
+	option = {
+		name = NKZAB_Macedon.114514.a
+		trigger = {
+			has_all_major_dlc = yes
+		}
+		custom_tooltip = NKZAB_Macedon_iam_normalman_tt
+	}
+	option = {
+		name = NKZAB_Macedon.114514.b
+		trigger = {
+			has_all_major_dlc = yes
+		}
+		custom_tooltip = NKZAB_Macedon_iam_idiot_tt
+		hidden_effect = {
+			BUL = { inherit = MCD }
+		}
+	}
+	option = {
+		name = NKZAB_Macedon.114514.e
+		trigger = {
+			has_all_major_dlc = no
+		}
+		custom_tooltip = NKZAB_Macedon_iam_nodlcman_tt
+	}
+	option = {
+		name = NKZAB_Macedon.114514.c
+		highlight = yes
+		switch_tag = YUA
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = NKZAB_Macedon_genshin_no1_tt
+				always = yes
+			}
+		}
+	}
+}
+
+country_event = { #调试事件1：任务树
+	id = NKZAB_Macedon.8001
+	title = NKZAB_Macedon.8001.t
+	desc = NKZAB_Macedon.8001.d
+	
+	is_triggered_only = yes
+
+	immediate = {
+		clr_country_flag = NKZAB_Macedon_mission_stage1
+		clr_country_flag = NKZAB_Macedon_mission_stage2
+		clr_country_flag = NKZAB_Macedon_mission_stage3
+		clr_country_flag = NKZAB_Macedon_mission_stage4
+		clr_country_flag = NKZAB_Macedon_mission_stage5
+	}
+
+	option = {
+		name = NKZAB_Macedon.8001.a
+		set_country_flag = NKZAB_Macedon_mission_stage1
+	}
+
+	option = {
+		name = NKZAB_Macedon.8001.b
+		set_country_flag = NKZAB_Macedon_mission_stage1
+		set_country_flag = NKZAB_Macedon_mission_stage2
+	}
+
+	option = {
+		name = NKZAB_Macedon.8001.c
+		set_country_flag = NKZAB_Macedon_mission_stage1
+		set_country_flag = NKZAB_Macedon_mission_stage2
+		set_country_flag = NKZAB_Macedon_mission_stage3
+	}
+
+	option = {
+		name = NKZAB_Macedon.8001.e
+		set_country_flag = NKZAB_Macedon_mission_stage1
+		set_country_flag = NKZAB_Macedon_mission_stage2
+		set_country_flag = NKZAB_Macedon_mission_stage3
+		set_country_flag = NKZAB_Macedon_mission_stage4
+	}
+
+	option = {
+		name = NKZAB_Macedon.8001.f
+		set_country_flag = NKZAB_Macedon_mission_stage1
+		set_country_flag = NKZAB_Macedon_mission_stage2
+		set_country_flag = NKZAB_Macedon_mission_stage3
+		set_country_flag = NKZAB_Macedon_mission_stage4
+		set_country_flag = NKZAB_Macedon_mission_stage5
+	}
+
+	after = {
+		swap_non_generic_missions = yes
+	}
+}
+
+country_event = { #调试事件2：宗教任务
+	id = NKZAB_Macedon.8002
+	title = NKZAB_Macedon.8002.t
+	desc = NKZAB_Macedon.8002.d
+	
+	is_triggered_only = yes
+
+	option = {
+		name = NKZAB_Macedon.8002.a
+		change_religion = orthodox
+	}
+
+	option = {
+		name = NKZAB_Macedon.8002.b
+		change_religion = hellenic
+	}
+
+	option = {
+		name = NKZAB_Macedon.8002.c
+		change_religion = reformed_hellenic
+	}
+
+	option = {
+		name = NKZAB_Macedon.8002.e
+		custom_tooltip = NKZAB_Macedon_unlock_stronger_hellenic_tt
+		set_country_flag = NKZAB_Macedon_stronger_hellenic
+	}
+
+	option = {
+		name = NKZAB_Macedon.8002.f
+		trigger = {
+			NOT = { has_country_flag = NKZAB_Macedon_hellenic_tree }
+		}
+		set_country_flag = NKZAB_Macedon_hellenic_tree
+	}
+
+	option = {
+		name = NKZAB_Macedon.8002.g
+		trigger = {
+			has_country_flag = NKZAB_Macedon_hellenic_tree
+		}
+		clr_country_flag = NKZAB_Macedon_hellenic_tree
+	}
+
+	after = {
+		swap_non_generic_missions = yes
+	}
+}
+
+country_event = { #调试事件3：宏伟之城
+	id = NKZAB_Macedon.8003
+	title = NKZAB_Macedon.8003.t
+	desc = NKZAB_Macedon.8003.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = NKZAB_Macedon.8003.a
+		151 = {
+			add_base_tax = 15
+			add_base_production = 15
+			add_base_manpower = 15
+			add_building = temple
+			add_building = workshop
+			add_building = courthouse
+			add_building = marketplace
+			add_building = state_house
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.8003.b
+		118 = {
+			add_base_tax = 15
+			add_base_production = 15
+			add_base_manpower = 15
+			add_building = temple
+			add_building = workshop
+			add_building = courthouse
+			add_building = marketplace
+			add_building = state_house
+		}
+	}
+	
+	option = {
+		name = NKZAB_Macedon.8003.c
+		358 = {
+			add_base_tax = 15
+			add_base_production = 15
+			add_base_manpower = 15
+			add_building = temple
+			add_building = workshop
+			add_building = courthouse
+			add_building = marketplace
+			add_building = state_house
+		}
+	}
+	
+	option = {
+		name = NKZAB_Macedon.8003.e
+		454 = {
+			add_base_tax = 15
+			add_base_production = 15
+			add_base_manpower = 15
+			add_building = temple
+			add_building = workshop
+			add_building = courthouse
+			add_building = marketplace
+			add_building = state_house
+		}
+	}
+}
+
+country_event = { #调试事件4：地区征服
+	id = NKZAB_Macedon.8004
+	title = NKZAB_Macedon.8004.t
+	desc = NKZAB_Macedon.8004.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = NKZAB_Macedon.8004.a
+		italy_region = {
+			add_core = ROOT
+			cede_province = ROOT
+			change_religion = ROOT
+		}
+	}
+	
+	option = {
+		name = NKZAB_Macedon.8004.b
+		balkan_region = {
+			add_core = ROOT
+			cede_province = ROOT
+			change_religion = ROOT
+		}
+	}
+	
+	option = {
+		name = NKZAB_Macedon.8004.c
+		iberia_region = {
+			add_core = ROOT
+			cede_province = ROOT
+			change_religion = ROOT
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.8004.e
+		anatolia_region = {
+			add_core = ROOT
+			cede_province = ROOT
+			change_religion = ROOT
+		}
+	}
+	
+	option = {
+		name = NKZAB_Macedon.8004.f
+		mashriq_region = {
+			add_core = ROOT
+			cede_province = ROOT
+			change_religion = ROOT
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.8004.g
+		egypt_region = {
+			add_core = ROOT
+			cede_province = ROOT
+			change_religion = ROOT
+		}
+	}
+	
+	option = {
+		name = NKZAB_Macedon.8004.h
+		maghreb_region = {
+			add_core = ROOT
+			cede_province = ROOT
+			change_religion = ROOT
+		}
+	}
+	
+	option = {
+		name = NKZAB_Macedon.8004.i
+		persia_region = {
+			add_core = ROOT
+			cede_province = ROOT
+			change_religion = ROOT
+		}
+	}
+	
+	option = {
+		name = NKZAB_Macedon.8004.j
+		khorasan_region = {
+			add_core = ROOT
+			cede_province = ROOT
+			change_religion = ROOT
+		}
+	}
+	
+	option = {
+		name = NKZAB_Macedon.8004.k
+		burma_region = {
+			add_core = ROOT
+			cede_province = ROOT
+			change_religion = ROOT
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.8004.l
+		india_superregion = {
+			add_core = ROOT
+			cede_province = ROOT
+			change_religion = ROOT
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.8004.m
+		china_superregion = {
+			add_core = ROOT
+			cede_province = ROOT
+			change_religion = ROOT
+		}
+	}
+}
+
+country_event = { #基建维修事件，添加buff
+	id = NKZAB_Macedon.9001
+	title = NKZAB_Macedon.9001.t
+	desc = NKZAB_Macedon.9001.d
+
+	hidden = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_country_flag = NKZAB_Macedon_opened_repair
+	}
+
+	option = {
+		name = NKZAB_Macedon.9001.a
+		every_owned_province = {
+			limit = {
+				devastation = 0.1
+				controlled_by = ROOT
+				NOT = { has_siege = yes }
+				NOT = { is_blockaded = yes }
+			}
+			add_province_modifier = {
+				name = NKZAB_Macedon_infrastucture_fixing
+				duration = -1
+			}
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					NOT = { devastation = 0.1 }
+					NOT = { controlled_by = ROOT }
+					has_siege = yes
+					is_blockaded = yes
+				}
+			}
+			remove_province_modifier = NKZAB_Macedon_infrastucture_fixing
+		}
+	}
+}
+
+country_event = { #解冻热情
+	id = NKZAB_Macedon.9002
+	title = NKZAB_Macedon.9002.t
+	desc = NKZAB_Macedon.9002.d
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		unfreeze_government_power = {
+			mechanic_type = NKZAB_MCD_conquest_fevor_mechanic
+			power_type = NKZAB_MCD_conquest_fevor
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.9002.a
+	}
+}
+
+country_event = { #分配君主属性点
+	id = NKZAB_Macedon.9004
+	title = NKZAB_Macedon.9004.t
+	desc = NKZAB_Macedon.9004.d
+	picture = AB_COURT_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = NKZAB_Macedon.9004.a
+		if = {
+			limit = { NOT = { adm = 6 } }
+			change_adm = 1
+		}
+		else = {
+			add_adm_power = 100
+		}
+		custom_tooltip = NKZAB_Macedon_substract_attribute_points_tt
+	}
+
+	option = {
+		name = NKZAB_Macedon.9004.b
+		if = {
+			limit = { NOT = { dip = 6 } }
+			change_dip = 1
+		}
+		else = {
+			add_dip_power = 100
+		}
+		custom_tooltip = NKZAB_Macedon_substract_attribute_points_tt
+	}
+
+	option = {
+		name = NKZAB_Macedon.9004.c
+		if = {
+			limit = { NOT = { mil = 6 } }
+			change_mil = 1
+		}
+		else = {
+			add_mil_power = 100
+		}
+		custom_tooltip = NKZAB_Macedon_substract_attribute_points_tt
+	}
+	
+	option = {
+		name = NKZAB_Macedon.9004.e
+		hidden_effect = {
+			change_variable = {
+				which = NkzabRulerAttributePoints
+				value = 1
+			}
+		}
+	}
+	after = {
+		clr_country_flag = NKZAB_Macedon_now_attributing_points
+		change_variable = {
+			which = NkzabRulerAttributePoints
+			value = -1
+		}
+	}
+}
+
+country_event = { #更新希腊同化机制
+	id = NKZAB_Macedon.9005
+	title = NKZAB_Macedon.9005.t
+	desc = NKZAB_Macedon.9005.d
+	picture = "AB_PARM_eventPicture"
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		months = 3
+	}
+
+	trigger = {
+		OR = {
+			tag = MCD
+			tag = ALX
+		}
+		mission_completed = NKZAB_MCD_sacred_battlefield
+		has_country_flag = NKZAB_Macedon_mission_stage3
+		NOT = { has_country_flag = NKZAB_Macedon_start_cultural_conversion }
+	}
+
+	option = {
+		name = NKZAB_Macedon.9005.a
+		custom_tooltip = NKZAB_Macedon_will_update_effiency_tt
+		set_country_flag = NKZAB_Macedon_start_cultural_conversion
+		set_country_flag = NKZAB_Macedon_cultural_conversion_nowon
+		set_country_flag = NYAB_Macedon_cp_lv1
+		hidden_effect = {
+			if = {
+				limit = { has_country_flag = NKZAB_Macedon_allow_tg_convert }
+				NKZAB_Macedon_update_conversion_effiency = yes
+			}
+			if = {
+				limit = { has_country_flag = NKZAB_Macedon_allow_illyrian_convert }
+				NKZAB_Macedon_update_conversion_effiency = yes
+			}
+			if = {
+				limit = { has_country_flag = NKZAB_Macedon_hellenize_ita_flag }
+				NKZAB_Macedon_update_conversion_effiency = yes
+			}
+			if = {
+				limit = { has_country_flag = NKZAB_Macedon_hellenize_cyr_flag }
+				NKZAB_Macedon_update_conversion_effiency = yes
+			}
+			if = {
+				limit = { has_country_flag = NKZAB_Macedon_hellenize_bsp_flag }
+				NKZAB_Macedon_update_conversion_effiency = yes
+			}
+			if = {
+				limit = { has_country_flag = NKZAB_Macedon_hellenize_mas_flag }
+				NKZAB_Macedon_update_conversion_effiency = yes
+			}
+			if = {
+				limit = { has_country_flag = NKZAB_Macedon_hellenize_slc_flag }
+				NKZAB_Macedon_update_conversion_effiency = yes
+			}
+			if = {
+				limit = { has_country_flag = NKZAB_Macedon_hellenize_his_flag }
+				NKZAB_Macedon_update_conversion_effiency = yes
+			}
+			if = {
+				limit = { has_country_flag = NKZAB_Macedon_hellenize_bac_flag }
+				NKZAB_Macedon_update_conversion_effiency = yes
+			}
+			if = {
+				limit = { has_country_flag = NKZAB_Macedon_hellenize_syr_flag }
+				NKZAB_Macedon_update_conversion_effiency = yes
+			}
+			if = {
+				limit = { has_country_flag = NKZAB_Macedon_hellenize_mes_flag }
+				NKZAB_Macedon_update_conversion_effiency = yes
+			}
+			if = {
+				limit = { has_country_flag = NKZAB_Macedon_hellenize_afr_flag }
+				NKZAB_Macedon_update_conversion_effiency = yes
+			}
+			country_event = { id = NKZAB_Macedon.9007 }
+		}
+		custom_tooltip = NKZAB_Macedon_must_manual_convert_tt
+	}
+}
+
+country_event = { #刷新统治者评价事件
+	id = NKZAB_Macedon.9006
+	title = NKZAB_Macedon.9006.t
+	desc = NKZAB_Macedon.9006.d
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		NKZAB_Macedon_update_charisma_value_effect = yes
+		NKZAB_Macedon_update_charisma_modifier_effect = yes
+	}
+
+	option = {
+		name = NKZAB_Macedon.9006.a
+	}
+}
+
+# country_event = { #文化检定
+# 	id = NKZAB_Macedon.9007
+# 	title = NKZAB_Macedon.9007.t
+# 	desc = NKZAB_Macedon.9007.d
+# 	hidden = yes
+
+# 	is_triggered_only = yes
+	
+# 	option = {
+# 		name = NKZAB_Macedon.9007.a
+# 		every_owned_province = {
+# 			if = {
+# 				limit = { culture = turkish }
+# 				set_province_flag = NKZAB_Macedon_turkish_province_flag
+# 			}
+# 			else_if = {
+# 				limit = { culture_group = south_slavic }
+# 				set_province_flag = NKZAB_Macedon_south_slavic_province_flag
+# 			}
+# 			else_if = {
+# 				limit = { culture_group = latin }
+# 				if = {
+# 					limit = { culture = sicilian }
+# 					set_province_flag = NKZAB_Macedon_sicilian_province_flag
+# 				}
+# 				else = {
+# 					set_province_flag = NKZAB_Macedon_italian_province_flag
+# 				}
+# 			}
+# 			else_if = {
+# 				limit = { culture = al_misr_arabic }
+# 				set_province_flag = NKZAB_Macedon_egypt_province_flag
+# 			}
+# 			else_if = {
+# 				limit = {
+# 					OR = {
+# 						culture = persian
+# 						culture = luri
+# 						culture = azerbaijani
+# 						culture = baluchi
+# 						culture = mazandarani
+# 						culture = kurdish
+# 						culture = assyrian
+# 					}
+# 				}
+# 				set_province_flag = NKZAB_Macedon_persia_province_flag
+# 			}
+# 			else_if = {
+# 				limit = {
+# 					OR = {
+# 						culture = Chorasmian
+# 						culture = Sogdian
+# 						culture = khorasani
+# 						culture = afghani
+# 					}
+# 				}
+# 				set_province_flag = NKZAB_Macedon_khorasan_province_flag
+# 			}
+# 		}
+# 	}
+# }
+
+# country_event = { #征服狂热计算
+# 	id = NKZAB_Macedon.9008
+# 	title = NKZAB_Macedon.9008.t
+# 	desc = NKZAB_Macedon.9008.d
+# 	hidden = yes
+
+# 	is_triggered_only = yes
+
+# 	trigger = {
+# 		has_country_modifier = NKZAB_Macedon_conquest_neverend
+# 	}
+
+# 	immediate = {
+# 		if = {
+# 			limit = {
+# 				NOT = { 
+# 					check_variable = {
+# 						which = NkzabMacedonConquestFervorYears
+# 						value = 1 
+# 					} 
+# 				}
+# 				NOT = { 
+# 					check_variable = {
+# 						which = NkzabMacedonConquestFervorMonths
+# 						value = 2 
+# 					} 
+# 				}
+# 			}
+# 			set_country_flag = NKZAB_Macedon_conquest_end
+# 			remove_country_modifier = NKZAB_Macedon_conquest_neverend
+# 		}
+# 		else = {
+# 			NKZAB_Macedon_change_conquest_down1month_fevor_effect = yes
+# 			if= {
+# 				limit = { war_exhaustion = 5 }
+# 				NKZAB_Macedon_change_conquest_down1month_fevor_effect = yes
+# 			}
+# 		}
+# 	}
+
+# 	option = {
+# 		name = NKZAB_Macedon.9008.a
+# 	}
+# }
+
+province_event = { #征服省份提供征服热情
+	id = NKZAB_Macedon.9008
+	title = NKZAB_Macedon.9008.t
+	desc = NKZAB_Macedon.9008.d
+	hidden = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		owner = { 
+			has_country_flag = NKZAB_Macedon_begin_conquest
+		}
+		NKZAB_Macedon_allow_hellenize_trigger = yes
+	}
+
+	immediate = {
+		owner = {
+			# export_to_variable = {
+			# 	variable_name = NkzabConquestDevelopmentFevor
+			# 	value = development
+			# 	who = ROOT
+			# }
+			# while = {
+			# 	limit = {
+			# 		check_variable = {
+			# 			which = NkzabConquestDevelopmentFevor
+			# 			value = 1
+			# 		}
+			# 	}
+			add_government_power = {
+				mechanic_type = NKZAB_MCD_conquest_fevor_mechanic
+				power_type = NKZAB_MCD_conquest_fevor
+				value = 0.05
+			}
+			# 	change_variable = {
+			# 		which = NkzabConquestDevelopmentFevor
+			# 		value = -1
+			# 	}
+			# }
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.9008.a
+	}
+}
+
+province_event = { #希腊化机制
+	id = NKZAB_Macedon.9009
+	title = NKZAB_Macedon.9009.t
+	desc = NKZAB_Macedon.9009.d
+	hidden = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		NKZAB_Macedon_allow_hellenize_trigger = yes
+		NOT = { nationalism = 1 }
+		has_owner_religion = yes
+	}
+
+	option = {
+		name = NKZAB_Macedon.9009.a
+		NKZAB_Macedon_hellenize_province_effect = yes
+	}
+}
+
+country_event = { #意大利要塞修正激活检测
+	id = NKZAB_Macedon.9010
+	title = NKZAB_Macedon.9010.t
+	desc = NKZAB_Macedon.9010.d
+	hidden = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				calabria_area = {
+					has_active_triggered_province_modifier = NKZAB_Macedon_italy_fort
+				}
+			}
+			italy_region = {
+				limit = {
+					OR = {
+						owned_by = ROOT
+						controlled_by = ROOT
+					}
+				}
+				add_province_modifier = {
+					name = NKZAB_Macedon_italy_fort_land
+					duration = -1
+				}
+			}
+		}
+		else = {
+			italy_region = {
+				remove_province_modifier = NKZAB_Macedon_italy_fort_land
+			}
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.9010
+	}
+}
+
+province_event = { #征服省份提供领袖评分
+	id = NKZAB_Macedon.9011
+	title = NKZAB_Macedon.9011.t
+	desc = NKZAB_Macedon.9011.d
+	hidden = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		owner = { 
+			OR = {
+				AND = {
+					has_country_flag = NKZAB_Macedon_unlock_leader_charisma
+					has_government_attribute = enables_ruler_charisma_system
+				}
+				has_ruler_flag = NKZAB_Macedon_Manuel_Ruler
+			}
+		}
+	}
+
+	immediate = {
+		owner = {
+			# export_to_variable = {
+			# 	variable_name = NkzabConquestDevelopment
+			# 	value = development
+			# 	who = ROOT
+			# }
+			# divide_variable = {            
+			# 	which = NkzabConquestDevelopment
+			# 	value = 20
+			# }
+			change_variable = {
+				which = NkzabCharismaConquest
+				value = 0.5
+			}
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.9011.a
+	}
+}
+
+country_event = { #印度狂热计算
+	id = NKZAB_Macedon.9012
+	title = NKZAB_Macedon.9012.t
+	desc = NKZAB_Macedon.9012.d
+	hidden = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_country_flag = NKZAB_Macedon_launch_hindu_fervor
+		
+	}
+
+	immediate = {
+		NKZAB_Macedon_check_hindu_fervor_effect = yes
+	}
+
+	option = {
+		name = NKZAB_Macedon.9012.a
+	}
+}
+
+country_event = { #宏伟城市升级事件×1
+	id = NKZAB_Macedon.9013
+	title = NKZAB_Macedon.9013.t
+	desc = NKZAB_Macedon.9013.d
+	picture = "CITY_VIEW_eventPicture"
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			# set_country_flag = NKZAB_Macedon_now_updating_city
+			# 151 = { save_event_target_as = NKZAB_Macedon_new_empire_city_151 }
+			# 148 = { save_event_target_as = NKZAB_Macedon_new_empire_city_148 }
+			# 118 = { save_event_target_as = NKZAB_Macedon_new_empire_city_118 }
+			# 358 = { save_event_target_as = NKZAB_Macedon_new_empire_city_358 }
+			# 454 = { save_event_target_as = NKZAB_Macedon_new_empire_city_454 }
+		}
+	}
+
+	option = { #君堡
+		name = NKZAB_Macedon.9013.a
+		trigger = {
+			151 = { NKZAB_Macedon_is_developed_empire_city = yes }
+		}
+		hidden_effect = {
+			151 = {
+				save_global_event_target_as = NKZAB_Macedon_new_empire_city
+			}
+		}
+		custom_tooltip = NKZAB_Macedon_cost_of_city_tt
+		add_manpower = -20
+		add_treasury = -2000
+		add_adm_power = -150
+		add_dip_power = -150
+		add_mil_power = -150
+		country_event = {
+			id = NKZAB_Macedon.9014
+			days = 180
+			random = 180
+		}
+	}
+
+	option = { #君堡
+		name = NKZAB_Macedon.9013.a2
+		trigger = {
+			151 = { 
+				has_province_modifier = NKZAB_Macedon_empire_city
+				NOT = { NKZAB_Macedon_is_developed_empire_city = yes } 
+			}
+		}
+		NKZAB_Macedon_show_empire_city_effect = {
+			province = 151
+		}
+	}
+	
+	option = { #塞萨洛尼基
+		name = NKZAB_Macedon.9013.b
+		trigger = {
+			148 = { NKZAB_Macedon_is_developed_empire_city = yes }
+		}
+		hidden_effect = {
+			148 = {
+				save_global_event_target_as = NKZAB_Macedon_new_empire_city
+			}
+		}
+		custom_tooltip = NKZAB_Macedon_cost_of_city_tt
+		add_manpower = -20
+		add_treasury = -2000
+		add_adm_power = -150
+		add_dip_power = -150
+		add_mil_power = -150
+		country_event = {
+			id = NKZAB_Macedon.9014
+			days = 180
+			random = 180
+		}
+	}
+	
+	option = { #塞萨洛尼基
+		name = NKZAB_Macedon.9013.b2
+		trigger = {
+			148 = { 
+				has_province_modifier = NKZAB_Macedon_empire_city
+				NOT = { NKZAB_Macedon_is_developed_empire_city = yes } 
+			}
+		}
+		NKZAB_Macedon_show_empire_city_effect = {
+			province = 148
+		}
+	}
+	
+	option = { #罗马
+		name = NKZAB_Macedon.9013.c
+		trigger = {
+			118 = { NKZAB_Macedon_is_developed_empire_city = yes }
+		}
+		hidden_effect = {
+			118 = {
+				save_global_event_target_as = NKZAB_Macedon_new_empire_city
+			}
+		}
+		custom_tooltip = NKZAB_Macedon_cost_of_city_tt
+		add_manpower = -20
+		add_treasury = -2000
+		add_adm_power = -150
+		add_dip_power = -150
+		add_mil_power = -150
+		country_event = {
+			id = NKZAB_Macedon.9014
+			days = 180
+			random = 180
+		}
+	}
+	
+	option = { #罗马
+		name = NKZAB_Macedon.9013.c2
+		trigger = {
+			118 = { 
+				has_province_modifier = NKZAB_Macedon_empire_city
+				NOT = { NKZAB_Macedon_is_developed_empire_city = yes } 
+			}
+		}
+		NKZAB_Macedon_show_empire_city_effect = {
+			province = 118
+		}
+	}
+
+	option = { #亚历山大
+		name = NKZAB_Macedon.9013.e
+		trigger = {
+			358 = { NKZAB_Macedon_is_developed_empire_city = yes }
+		}
+		hidden_effect = {
+			358 = {
+				save_global_event_target_as = NKZAB_Macedon_new_empire_city
+			}
+		}
+		custom_tooltip = NKZAB_Macedon_cost_of_city_tt
+		add_manpower = -20
+		add_treasury = -2000
+		add_adm_power = -150
+		add_dip_power = -150
+		add_mil_power = -150
+		country_event = {
+			id = NKZAB_Macedon.9014
+			days = 180
+			random = 180
+		}
+	}
+
+	option = { #亚历山大
+		name = NKZAB_Macedon.9013.e2
+		trigger = {
+			358 = { 
+				has_province_modifier = NKZAB_Macedon_empire_city
+				NOT = { NKZAB_Macedon_is_developed_empire_city = yes } 
+			}
+		}
+		NKZAB_Macedon_show_empire_city_effect = {
+			province = 358
+		}
+	}
+	
+	option = { #撒马尔罕
+		name = NKZAB_Macedon.9013.f
+		trigger = {
+			454 = { NKZAB_Macedon_is_developed_empire_city = yes }
+		}
+		hidden_effect = {
+			454 = {
+				save_global_event_target_as = NKZAB_Macedon_new_empire_city
+			}
+		}
+		custom_tooltip = NKZAB_Macedon_cost_of_city_tt
+		add_manpower = -20
+		add_treasury = -2000
+		add_adm_power = -150
+		add_dip_power = -150
+		add_mil_power = -150
+		country_event = {
+			id = NKZAB_Macedon.9014
+			days = 180
+			random = 180
+		}
+	}
+	
+	option = { #撒马尔罕
+		name = NKZAB_Macedon.9013.f2
+		trigger = {
+			454 = { 
+				has_province_modifier = NKZAB_Macedon_empire_city
+				NOT = { NKZAB_Macedon_is_developed_empire_city = yes } 
+			}
+		}
+		NKZAB_Macedon_show_empire_city_effect = {
+			province = 454
+		}
+	}
+	
+	option = { #返回
+		name = NKZAB_Macedon.9013.g
+	}
+}
+
+
+country_event = { #宏伟城市升级事件×1
+	id = NKZAB_Macedon.9014
+	title = NKZAB_Macedon.9014.t
+	desc = NKZAB_Macedon.9014.d
+	picture = "CITY_VIEW_eventPicture"
+	# goto = NKZAB_Macedon_new_empire_city
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = NKZAB_Macedon_now_updating_city
+		}
+	}
+
+	option = { #宏伟之城：政治
+		name = NKZAB_Macedon.9014.a
+		trigger = {
+			NOT = {
+				any_owned_province = {
+					has_province_modifier = NKZAB_Macedon_empire_city_political
+				}
+			}
+		}
+		event_target:NKZAB_Macedon_new_empire_city = {
+			set_province_flag = NKZAB_Macedon_empire_city_political_future
+			add_province_modifier = {
+				name = NKZAB_Macedon_busy_building
+				duration = -1
+				desc = NKZAB_Macedon_untill_built_tt
+			}
+		}
+		custom_tooltip = NKZAB_Macedon_build_great_city_tt
+		tooltip = {
+			add_prestige_or_monarch_power = { amount = 25 }
+			event_target:NKZAB_Macedon_new_empire_city = {
+				add_permanent_province_modifier = {
+					name = NKZAB_Macedon_empire_city_political
+					duration = -1
+				}
+			}
+		}
+	}
+
+	option = { #宏伟之城：商业
+		name = NKZAB_Macedon.9014.b
+		trigger = {
+			NOT = {
+				any_owned_province = {
+					has_province_modifier = NKZAB_Macedon_empire_city_trade
+				}
+			}
+		}
+		event_target:NKZAB_Macedon_new_empire_city = {
+			set_province_flag = NKZAB_Macedon_empire_city_trade_future
+			add_province_modifier = {
+				name = NKZAB_Macedon_busy_building
+				duration = -1
+				desc = NKZAB_Macedon_untill_built_tt
+			}
+		}
+		custom_tooltip = NKZAB_Macedon_build_great_city_tt
+		tooltip = {
+			add_prestige_or_monarch_power = { amount = 25 }
+			event_target:NKZAB_Macedon_new_empire_city = {
+				add_permanent_province_modifier = {
+					name = NKZAB_Macedon_empire_city_trade
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	option = { #宏伟之城：军事
+		name = NKZAB_Macedon.9014.c
+		
+		trigger = {
+			NOT = {
+				any_owned_province = {
+					has_province_modifier = NKZAB_Macedon_empire_city_military
+				}
+			}
+		}
+		event_target:NKZAB_Macedon_new_empire_city = {
+			set_province_flag = NKZAB_Macedon_empire_city_military_future
+			add_province_modifier = {
+				name = NKZAB_Macedon_busy_building
+				duration = -1
+				desc = NKZAB_Macedon_untill_built_tt
+			}
+		}
+		custom_tooltip = NKZAB_Macedon_build_great_city_tt
+		tooltip = {
+			add_prestige_or_monarch_power = { amount = 25 }
+			event_target:NKZAB_Macedon_new_empire_city = {
+				add_permanent_province_modifier = {
+					name = NKZAB_Macedon_empire_city_military
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	option = { #宏伟之城：工艺
+		name = NKZAB_Macedon.9014.e
+		trigger = {
+			NOT = {
+				any_owned_province = {
+					has_province_modifier = NKZAB_Macedon_empire_city_production
+				}
+			}
+		}
+		event_target:NKZAB_Macedon_new_empire_city = {
+			set_province_flag = NKZAB_Macedon_empire_city_production_future
+			add_province_modifier = {
+				name = NKZAB_Macedon_busy_building
+				duration = -1
+				desc = NKZAB_Macedon_untill_built_tt
+			}
+		}
+		custom_tooltip = NKZAB_Macedon_build_great_city_tt
+		tooltip = {
+			add_prestige_or_monarch_power = { amount = 25 }
+			event_target:NKZAB_Macedon_new_empire_city = {
+				add_permanent_province_modifier = {
+					name = NKZAB_Macedon_empire_city_production
+					duration = -1
+				}
+			}
+		}
+	}
+
+	after = {
+		set_country_flag = NKZAB_Macedon_now_updating_city
+		event_target:NKZAB_Macedon_new_empire_city = {
+			province_event = {
+				id = NKZAB_Macedon.9017
+			}
+		}
+	}
+}
+
+
+
+country_event = { #输掉战争
+	id = NKZAB_Macedon.9015
+	title = NKZAB_Macedon.9015.t
+	desc = NKZAB_Macedon.9015.d
+	picture = ""
+
+	is_triggered_only = yes
+
+	trigger = {
+		#has_country_modifier = NKZAB_Macedon_conquest_neverend
+		has_government_power = {
+			mechanic_type = NKZAB_MCD_conquest_fevor_mechanic
+			power_type = NKZAB_MCD_conquest_fevor
+			value = 0.01
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.9015.a
+		add_prestige = -25
+		add_government_power = {
+			mechanic_type = NKZAB_MCD_conquest_fevor_mechanic
+			power_type = NKZAB_MCD_conquest_fevor
+			value = -10
+		}
+		# custom_tooltip = NKZAB_Macedon_decrease_5_fevor_tt
+		# hidden_effect = { 
+		# 	if = {
+		# 		limit = {
+		# 			check_variable = {
+		# 				which = NkzabMacedonConquestFervorYears
+		# 				value = 5
+		# 			}
+		# 		}
+		# 		change_variable = {
+		# 			which = NkzabMacedonConquestFervorYears
+		# 			value = -5
+		# 		}
+		# 	}
+		# 	else = {
+		# 		set_variable = {
+		# 			which = NkzabMacedonConquestFervorYears
+		# 			value = 0
+		# 		}
+		# 		set_variable = {
+		# 			which = NkzabMacedonConquestFervorMonths
+		# 			value = 0
+		# 		}
+		# 	}
+		# }
+	}
+}
+
+country_event = { #战胜列强
+	id = NKZAB_Macedon.9016
+	title = NKZAB_Macedon.9016.t
+	desc = NKZAB_Macedon.9016.d
+
+	is_triggered_only = yes
+
+	trigger = {
+		#has_country_modifier = NKZAB_Macedon_conquest_neverend
+		has_government_power = {
+			mechanic_type = NKZAB_MCD_conquest_fevor_mechanic
+			power_type = NKZAB_MCD_conquest_fevor
+			value = 0.01
+		}
+		NOT = { tag = ALX }
+	}
+
+	option = {
+		name = NKZAB_Macedon.9016.a
+		add_prestige_or_monarch_power = {
+			amount = 10
+		}
+		#NKZAB_Macedon_add_conquest_fevor_effect = { extention = 3 }
+		add_government_power = {
+			mechanic_type = NKZAB_MCD_conquest_fevor_mechanic
+			power_type = NKZAB_MCD_conquest_fevor
+			value = 10
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.9016.b
+		custom_tooltip = NZKAB_Macedon_wont_show_greatpower_tt
+		set_country_flag = NKZAB_Macedon_show_greatpower_off
+		add_prestige_or_monarch_power = {
+			amount = 10
+		}
+		#NKZAB_Macedon_add_conquest_fevor_effect = { extention = 3 }
+		add_government_power = {
+			mechanic_type = NKZAB_MCD_conquest_fevor_mechanic
+			power_type = NKZAB_MCD_conquest_fevor
+			value = 10
+		}
+	}
+}
+
+province_event = { #宏伟之城中继事件
+	id = NKZAB_Macedon.9017
+	title = NKZAB_Macedon.9017.t
+	desc = NKZAB_Macedon.9017.d
+
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			has_province_flag = NKZAB_Macedon_empire_city_political_future
+			has_province_flag = NKZAB_Macedon_empire_city_trade_future
+			has_province_flag = NKZAB_Macedon_empire_city_military_future
+			has_province_flag = NKZAB_Macedon_empire_city_production_future 
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.9017.a
+		province_event = {
+			id = NKZAB_Macedon.9025
+			days = 1095
+			random = 2555
+		}
+	}
+}
+
+country_event = { #希腊牧首区，无视热情buff添加
+	id = NKZAB_Macedon.9018
+	title = NKZAB_Macedon.9018.t
+	desc = NKZAB_Macedon.9018.d
+	picture = ST_PETERS_CHURCH_eventPicture
+	
+	hidden = yes
+	
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			has_country_modifier = NKZAB_Macedon_greek_pentarchy_mod
+			146 = {
+				has_active_triggered_province_modifier = NKZAB_Macedon_hellenic_athen_modifier
+			}
+		}
+	}
+	
+	option = {
+		name = NKZAB_Macedon.9018.a
+		every_owned_province = {
+			limit = {
+				has_province_modifier = religious_zeal_at_conv
+				NOT = { has_owner_religion = yes }
+			}
+			add_province_modifier = {
+				name = NKZAB_Macedon_count_zeal
+				duration = -1
+				hidden = yes
+			}
+		}
+		every_owned_province = {
+			limit = {
+				has_province_modifier = NKZAB_Macedon_count_zeal
+				OR = {
+					has_owner_religion = yes 
+					NOT = { has_province_modifier = religious_zeal_at_conv }
+				}
+			}
+			remove_province_modifier = NKZAB_Macedon_count_zeal
+		}
+	}
+}
+
+country_event = { #首都被围下，减25热情
+	id = NKZAB_Macedon.9019
+	title = NKZAB_Macedon.9019.t
+	desc = NKZAB_Macedon.9019.d
+	
+	is_triggered_only = yes
+
+	trigger = {
+		#has_country_modifier = NKZAB_Macedon_conquest_neverend
+		has_government_power = {
+			mechanic_type = NKZAB_MCD_conquest_fevor_mechanic
+			power_type = NKZAB_MCD_conquest_fevor
+			value = 0.01
+		}
+		FROM = {
+			is_capital_of = ROOT
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.9019.a
+		add_stability = -1
+		add_government_power = {
+			mechanic_type = NKZAB_MCD_conquest_fevor_mechanic
+			power_type = NKZAB_MCD_conquest_fevor
+			value = -25
+		}
+		# custom_tooltip = NKZAB_Macedon_decrease_5_fevor_tt
+		# hidden_effect = { 
+		# 	if = {
+		# 		limit = {
+		# 			check_variable = {
+		# 				which = NkzabMacedonConquestFervorYears
+		# 				value = 5
+		# 			}
+		# 		}
+		# 		change_variable = {
+		# 			which = NkzabMacedonConquestFervorYears
+		# 			value = -5
+		# 		}
+		# 	}
+		# 	else = {
+		# 		set_variable = {
+		# 			which = NkzabMacedonConquestFervorYears
+		# 			value = 0
+		# 		}
+		# 		set_variable = {
+		# 			which = NkzabMacedonConquestFervorMonths
+		# 			value = 0
+		# 		}
+		# 	}
+		# }
+	}
+}
+
+country_event = { #刷新印度开炮修正
+	id = NKZAB_Macedon.9020
+	title = NKZAB_Macedon.9020.t
+	desc = NKZAB_Macedon.9020.d
+	picture = ""
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_country_modifier = NKZAB_MCD_more_shipgun
+		FROM = {
+			capital_scope = { superregion = india_superregion }
+			num_of_total_ports = 1
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.9020.a
+		remove_country_modifier = NKZAB_MCD_more_shipgun
+		add_country_modifier = {
+			name = NKZAB_MCD_more_shipgun
+			duration = 7300
+		}
+	}
+}
+
+country_event = { #同化拉丁
+	id = NKZAB_Macedon.9021
+	title = NKZAB_Macedon.9021.t
+	desc = NKZAB_Macedon.9021.d
+	picture = "TRADE_GOODS_PLANTATION_GOODS_IN_WAREHOUSE_eventPicture"
+
+	fire_only_once = yes
+
+	trigger = {
+		mission_completed = NKZAB_MCD_to_be_hegemon
+		OR = {
+			has_reform = NKZAB_alexander_celestial_empire_monarchy
+			has_reform = NKZAB_alexander_empire_monarchy
+		}
+		NOT = {
+			any_province = {
+				NOT = { continent = north_america }
+				NOT = { continent = south_america }
+				culture_group = latin
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	option = {
+		name = NKZAB_Macedon.9021.a
+		add_country_modifier = {
+			name = NKZAB_Macedon_true_renaissance
+			duration = -1
+		}
+	}
+}
+
+country_event = { #同化南斯拉夫
+	id = NKZAB_Macedon.9022
+	title = NKZAB_Macedon.9022.t
+	desc = NKZAB_Macedon.9022.d
+	picture = "TRADE_GOODS_PLANTATION_GOODS_IN_WAREHOUSE_eventPicture"
+
+	fire_only_once = yes
+
+	trigger = {
+		mission_completed = NKZAB_MCD_to_be_hegemon
+		OR = {
+			has_reform = NKZAB_alexander_celestial_empire_monarchy
+			has_reform = NKZAB_alexander_empire_monarchy
+		}
+		NOT = {
+			any_province = {
+				NOT = { continent = north_america }
+				NOT = { continent = south_america }
+				culture_group = south_slavic
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	option = {
+		name = NKZAB_Macedon.9022.a
+		add_country_modifier = {
+			name = NKZAB_Macedon_slavic_war
+			duration = -1
+		}
+	}
+}
+
+country_event = { #同化伊比利亚
+	id = NKZAB_Macedon.9023
+	title = NKZAB_Macedon.9023.t
+	desc = NKZAB_Macedon.9023.d
+	picture = "TRADE_GOODS_PLANTATION_GOODS_IN_WAREHOUSE_eventPicture"
+
+	fire_only_once = yes
+
+	trigger = {
+		mission_completed = NKZAB_MCD_to_be_hegemon
+		OR = {
+			has_reform = NKZAB_alexander_celestial_empire_monarchy
+			has_reform = NKZAB_alexander_empire_monarchy
+		}
+		NOT = {
+			any_province = {
+				NOT = { continent = north_america }
+				NOT = { continent = south_america }
+				culture_group = iberian
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	option = {
+		name = NKZAB_Macedon.9023.a
+		add_country_modifier = {
+			name = NKZAB_Macedon_outsider_world
+			duration = -1
+		}
+	}
+}
+
+country_event = { #同化马格里布
+	id = NKZAB_Macedon.9024
+	title = NKZAB_Macedon.9024.t
+	desc = NKZAB_Macedon.9024.d
+	picture = "TRADE_GOODS_PLANTATION_GOODS_IN_WAREHOUSE_eventPicture"
+
+	fire_only_once = yes
+
+	trigger = {
+		mission_completed = NKZAB_MCD_to_be_hegemon
+		OR = {
+			has_reform = NKZAB_alexander_celestial_empire_monarchy
+			has_reform = NKZAB_alexander_empire_monarchy
+		}
+		NOT = {
+			any_province = {
+				NOT = { continent = north_america }
+				NOT = { continent = south_america }
+				culture_group = maghrebi
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	option = {
+		name = NKZAB_Macedon.9024.a
+		add_country_modifier = {
+			name = NKZAB_Macedon_insea_protector
+			duration = -1
+		}
+	}
+}
+
+province_event = { #宏伟城市升级事件×1
+	id = NKZAB_Macedon.9025
+	title = NKZAB_Macedon.9025.t
+	desc = NKZAB_Macedon.9025.d
+	picture = "CITY_VIEW_eventPicture"
+
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			has_province_flag = NKZAB_Macedon_empire_city_political_future
+			has_province_flag = NKZAB_Macedon_empire_city_trade_future
+			has_province_flag = NKZAB_Macedon_empire_city_military_future
+			has_province_flag = NKZAB_Macedon_empire_city_production_future 
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.9025.a
+		owner = {
+			add_prestige_or_monarch_power = { amount = 25 }
+			clr_country_flag = NKZAB_Macedon_now_updating_city
+		}
+		NKZAB_Macedon_update_empire_city_effect = yes
+	}
+}
+
+country_event = { #独立之火
+	id = NKZAB_Macedon.0
+	title = NKZAB_Macedon.0.t
+	desc = NKZAB_Macedon.0.d
+	picture = ABAD6_eventPicture
+	
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	trigger = {
+		ai = no 
+		tag = BUL
+		owns = 148
+		NOT = { has_global_flag = NKZAB_Macedon_rise_of_mac_flag }
+		NOT = { exists = MCD }
+		NOT = { exists = MAC }
+	}
+	
+	immediate = {
+		set_global_flag = NKZAB_Macedon_rise_of_mac_flag
+		
+	}
+	
+	option = {
+		name = NKZAB_Macedon.0.a 
+
+		hidden_effect = {
+			MAC = {
+				add_core = 4961
+				add_core = 4702
+				add_core = 148
+			}
+		}
+		macedonia_area = {
+			limit = {
+				is_core = MAC
+			}
+			add_province_modifier = {
+				name = NKZAB_Macedon_strong_repression
+				duration = 7300
+			}
+		}
+		148 = {
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 2
+				friend = MAC
+			}
+		}
+		ai_chance = {
+			factor = 8
+		}
+	}
+	
+	option = {
+		name = NKZAB_Macedon.0.b 
+		hidden_effect = {
+			MAC = {
+				add_core = 4961
+				add_core = 4702
+				add_core = 148
+			}
+		}
+		add_dip_power = -125
+		release = MAC
+		create_subject = {
+			subject_type = vassal
+			subject = MAC
+		}
+		4961 = { add_territorial_core = BUL }
+		4702 = { add_territorial_core = BUL }
+		148 = { add_territorial_core = BUL }
+		hidden_effect = {
+			MAC = {
+				148 = {
+					build_to_forcelimit = {
+						infantry = 0.7
+						cavalry = 0.3
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+	
+	option = {
+		name = NKZAB_Macedon.0.c
+		
+		highlight = yes
+		hidden_effect = {
+			MCD = {
+				add_core = 4961
+				add_core = 4702
+				add_core = 148
+			}
+		}
+		release = MCD
+		hidden_effect = {
+			MCD = {
+				change_government = republic
+				add_government_reform = NKZAB_macedonia_war_committee
+				add_republican_tradition = 100
+				NYAB_MAD_alex_ruler = yes
+				add_ruler_personality = strict_personality
+				add_ruler_personality = inspiring_leader_personality
+				define_ruler_to_general = {
+					fire = 4
+					shock = 5
+					manuever = 4
+					siege = 2
+				}
+				add_treasury = 100
+				add_manpower = 5
+				add_adm_power = 105
+				add_dip_power = 105
+				add_mil_power = 126
+				country_event = {
+					id = NKZAB_Macedon.1
+					days = 5
+				}
+			}
+		}
+		switch_tag = MCD
+		MCD = {
+			148 = {
+				build_to_forcelimit = {
+					infantry = 0.7
+					cavalry = 0.3
+				}
+			}
+			hidden_effect = {
+				macedonia_area = {
+					add_core = MCD
+				}
+			}
+			country_event = { 
+				id = NKZAB_Macedon.114514
+				days = 1
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}	
+	}
+}
+
+country_event = { #巴西尔之死
+	id = NKZAB_Macedon.1
+	title = NKZAB_Macedon.1.t
+	desc = NKZAB_Macedon.1.d
+	picture = CONQUEST_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_ruler_flag = NKZAB_Macedon_Manuel_Ruler }
+		NOT = {
+			has_global_flag = NYAB_ALX_disater_flag
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = NKZAB_Macedon.69
+				days = 16425
+				random = 3650
+			}
+			hidden_effect = { 
+				148 = { add_province_triggered_modifier = NKZAB_Macedon_monthly_pulse }
+			}
+			save_global_event_target_as = nkzab_macedon_target
+			complete_mission = NKZAB_MCD_begin
+			NKZAB_MCD_Manuel_ruler = yes
+			NKZAB_MCD_Gerasimos_general = yes
+			NKZAB_MCD_Dionysios_advisor = yes
+			add_ruler_modifier = {
+				name = NKZAB_Macedon_manuel_doubted_ruler
+				duration = -1
+			}
+			declare_war_with_cb = {
+				who = BUL
+				casus_belli = cb_core
+				war_goal_province = 4780
+			}
+			add_manpower = 3
+			148 = { 
+				infantry = ROOT
+			}
+			hidden_effect = {
+				set_ruler_flag = NKZAB_Macedon_Manuel_Ruler
+				set_country_flag = NKZAB_Macedon_mission_stage1
+				set_variable = {
+					which = NkzabManuelWinCounter
+					value = 0
+				}
+				set_variable = {
+					which = NkzabRulerAttributePoints
+					value = 0
+				}
+				set_variable = {
+					which = NkzabCharismaConquest
+					value = 0
+				}
+				swap_non_generic_missions = yes
+			}
+		}
+	}
+	
+	option = {
+		name = NKZAB_Macedon.1.a
+		tooltip = {
+			kill_ruler = yes
+			NKZAB_MCD_Manuel_ruler = yes
+			NKZAB_MCD_Gerasimos_general = yes
+			NKZAB_MCD_Dionysios_advisor = yes
+			add_ruler_modifier = {
+				name = NKZAB_Macedon_manuel_doubted_ruler
+				duration = -1
+			}
+			declare_war_with_cb = {
+				who = BUL
+				casus_belli = cb_core
+				war_goal_province = 4780
+			}
+			add_manpower = 3
+			148 = { 
+				infantry = ROOT
+			}
+		}
+		custom_tooltip = NKZAB_Macedon_manuel_prove_himself_tt
+		hidden_effect = {
+			#complete_mission = NKZAB_MCD_begin
+			country_event = {
+				id = NKZAB_Macedon.102
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #开局小外挂
+	id = NKZAB_Macedon.102
+	title = NKZAB_Macedon.102.t
+	desc = NKZAB_Macedon.102.d
+	picture = NUSANTARA_THRONE_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = NKZAB_Macedon.102.a
+		if = {
+			limit = { 1853 = { fort_level = 1 } }
+			1853 = {
+				change_controller = ROOT
+			}
+		}
+		add_country_modifier = {
+			name = NKZAB_Macedon_bul_map
+			duration = 1825
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.102.b
+		add_treasury = 100
+	}
+
+	option = {
+		name = NKZAB_Macedon.102.c
+		add_country_modifier = {
+			name = NKZAB_Macedon_basil_note
+			duration = 1825
+		}
+	}
+}
+
+country_event = { #曼努埃尔，在海岸边
+	id = NKZAB_Macedon.101
+	title = NKZAB_Macedon.101.t
+	desc = NKZAB_Macedon.101.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = NKZAB_Macedon.101.a
+		change_adm = 1
+		add_ruler_modifier = {
+			name = NKZAB_Macedon_adm_focus
+			duration = -1
+		}
+	}
+	
+	option = {
+		name = NKZAB_Macedon.101.b
+		change_dip = 1
+		add_ruler_modifier = {
+			name = NKZAB_Macedon_dip_focus
+			duration = -1
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.101.c
+		change_mil = 1
+		add_ruler_modifier = {
+			name = NKZAB_Macedon_mil_focus
+			duration = -1
+		}
+	}
+}
+
+country_event = { #保加利亚谈判
+	id = NKZAB_Macedon.2
+	title = NKZAB_Macedon.2.t
+	desc = NKZAB_Macedon.2.d
+	picture = AB_BATTLE_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {
+		name = NKZAB_Macedon.2.a
+		change_adm = 1
+		add_adm_power = -50
+		bulgaria_area = {
+			add_territorial_core = ROOT
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.2.b
+		change_dip = 1
+		add_treasury = -100
+		add_adm_power = -100
+		add_dip_power = -100
+		add_accepted_culture = bulgarian
+		bulgaria_area = {
+			add_core = ROOT
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.2.c
+		change_mil = 1
+		add_mil_power = -100
+		add_treasury = 200
+		bulgaria_area = {
+			cede_province = ROOT
+			add_territorial_core = ROOT
+			add_devastation = 50
+			add_nationalism = 15
+			add_province_modifier = {
+				name = NKZAB_Macedon_non_cooperation
+				duration = 10950
+			}
+		}
+	}
+}
+
+country_event = { #御驾亲征
+	id = NKZAB_Macedon.114
+	title = NKZAB_Macedon.114.t
+	desc = NKZAB_Macedon.114.d
+	picture = AB_CHARGE_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {
+		name = NKZAB_Macedon.114.a
+		add_ruler_personality = inspiring_leader_personality
+		if = {
+			limit = { mil = 5 }
+			define_ruler_to_general = {
+				fire = 3
+				shock = 6
+				manuever = 5
+				siege = 4
+			}
+		}
+		else_if = {
+			limit = { mil = 4 }
+			define_ruler_to_general = {
+				fire = 2
+				shock = 5
+				manuever = 5
+				siege = 3
+			}
+		}
+		else = {
+			define_ruler_to_general = {
+				fire = 2
+				shock = 4
+				manuever = 4
+				siege = 2
+			}
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.114.b
+		add_ruler_personality = strict_personality
+		add_country_modifier = {
+			name = NKZAB_Macedon_attack_byz
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #马其顿文艺复兴
+	id = NKZAB_Macedon.115
+	title = NKZAB_Macedon.115.t
+	desc = NKZAB_Macedon.115.d
+	picture = AB_COURT_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = MCD
+		is_year = 1449
+		NOT = {
+			is_institution_enabled = renaissance
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 6
+	}
+	
+	option = {
+		name = NKZAB_Macedon.115.a
+		add_patriarch_authority = -0.1
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = -20
+		}
+		add_years_of_income = -1
+		custom_tooltip = NKZAB_Macedon_accept_renaissance
+		hidden_effect = {
+			every_country = {
+				clr_country_flag = ab_can_spawn_renaissance
+			}
+			ROOT = {
+				set_country_flag = ab_can_spawn_renaissance
+			}
+		}
+	}
+	
+	option = {
+		name = NKZAB_Macedon.115.b
+		custom_tooltip = NKZAB_Macedon_buy_renaissance
+		148 = {
+			add_institution_embracement = {
+				which = renaissance
+				value = 50
+			}
+		}
+		add_years_of_income = -0.25
+		add_adm_power = -25
+		add_dip_power = -25
+	}
+	
+	option = {
+		name = NKZAB_Macedon.115.c
+		custom_tooltip = NKZAB_Macedon_touch_fish
+		add_patriarch_authority = 0.1
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = 20
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.115.e
+		highlight = yes
+		trigger = {
+			owns = 151
+		}
+		custom_tooltip = NKZAB_Macedon_accept_renaissance
+		hidden_effect = {
+			every_country = {
+				clr_country_flag = ab_can_spawn_renaissance
+			}
+			ROOT = {
+				set_country_flag = ab_can_spawn_renaissance
+			}
+		}
+	}
+}
+
+country_event = { #寄世界于君堡
+	id = NKZAB_Macedon.3
+	title = NKZAB_Macedon.3.t
+	desc = NKZAB_Macedon.3.d
+	picture = AB_JUSTINIAN_eventPicture
+	
+	is_triggered_only = yes
+		
+	option = {
+		name = NKZAB_Macedon.3.a
+		add_stability = 1
+		add_available_ruler_points = { value = 1 }
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = ROOT
+					defender_leader = BYZ
+					war_score = 90
+					war_goal_province = 151
+				}
+				151 = { controlled_by = ROOT }
+			}
+			tooltip = { inherit = BYZ }
+			hidden_effect = {
+				if = {
+					limit = { EPI = { is_subject_of = BYZ } }
+					EPI = {
+						every_owned_province = {
+							add_permanent_claim = event_target:nkzab_macedon_target
+							cede_province = event_target:nkzab_macedon_target
+						}
+					}
+				}
+				BYZ = {
+					every_owned_province = {
+						add_permanent_claim = event_target:nkzab_macedon_target
+						cede_province = event_target:nkzab_macedon_target
+					}
+				}
+			}
+		}
+		remove_country_modifier = NKZAB_Macedon_manuel_good_ruler
+		add_ruler_modifier = {
+			name = NKZAB_Macedon_manuel_great_ruler
+			duration = -1
+		}
+		151 = {
+			add_core = event_target:nkzab_macedon_target
+		}
+		hidden_effect = { set_country_flag = NKZAB_Macedon_mission_stage2 }
+		swap_non_generic_missions = yes
+		country_event = {
+			id = NKZAB_Macedon.31
+			days = 30
+		}
+		custom_tooltip = NKZAB_Macedon_unlock_tendency_choose_tt
+	}
+}
+
+country_event = { #新的首都
+	id = NKZAB_Macedon.31
+	title = NKZAB_Macedon.31.t
+	desc = NKZAB_Macedon.31.d
+	picture = AB_JUSTINIAN_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {
+		name = NKZAB_Macedon.31.a
+		NKZAB_Macedon_add_roma_trend = yes
+		151 = {
+			add_base_tax = 2
+			add_base_production = 2
+			add_base_manpower = 2
+			add_province_modifier = {
+				name = NKZAB_Macedon_empire_city
+				duration = -1
+			}
+		}
+		151 = {
+			move_capital_effect = yes
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.31.b
+		NKZAB_Macedon_add_alexandar_trend = yes
+		148 = {
+			add_base_tax = 2
+			add_base_production = 2
+			add_base_manpower = 2
+			add_province_modifier = {
+				name = NKZAB_Macedon_empire_city
+				duration = -1
+			}
+		}
+	}
+}
+
+country_event = { #拜占庭式官僚
+	id = NKZAB_Macedon.4
+	title = NKZAB_Macedon.4.t
+	desc = NKZAB_Macedon.4.d
+	picture = AB_BYZANTIUM_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {
+		name = NKZAB_Macedon.4.a
+		NKZAB_Macedon_add_roma_trend = yes
+		add_country_modifier = {
+			name = NKZAB_Macedon_byzantine_bureaucracy
+			duration = 7300
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.4.b
+		NKZAB_Macedon_add_alexandar_trend = yes
+		add_country_modifier = {
+			name = NKZAB_Macedon_greek_tradition
+			duration = 7300
+		}
+	}
+}
+
+country_event = { #加布拉斯的意志
+	id = NKZAB_Macedon.5
+	title = NKZAB_Macedon.5.t
+	desc = NKZAB_Macedon.5.d
+	picture = GENERALS_DISCUSSING_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {
+		name = NKZAB_Macedon.5.a
+		NKZAB_Macedon_add_alexandar_trend = yes
+		create_alliance = NCI
+		add_historical_friend = NCI
+		NCI = { add_historical_friend = ROOT }
+	}
+
+	option = {
+		name = NKZAB_Macedon.5.b
+		NKZAB_Macedon_add_alexandar_trend = yes
+		custom_tooltip = NKZAB_Macedon_nci_union_tt
+		hidden_effect = {
+			NCI = {
+				country_event = {
+					id = NKZAB_Macedon.504
+					days = 6
+					random = 6
+				}
+			}
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.5.c
+		NKZAB_Macedon_add_roma_trend = yes
+		custom_tooltip = NKZAB_Macedon_on_defeat_nci_tt
+		tooltip = {
+			custom_tooltip = BYZ_REMOVE_NIC
+			add_adm_power = 100
+			add_mil_power = 100
+			add_country_modifier = {
+				name = "NKZAB_Macedon_cut_down_nci"
+				duration = 10950
+			}
+		}
+		set_country_flag = NKZAB_Macedon_will_attack_nci
+	}
+}
+
+country_event = { #联统尼西亚，成功
+	id = NKZAB_Macedon.502
+	title = NKZAB_Macedon.502.t
+	desc = NKZAB_Macedon.502.d
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = NKZAB_Macedon.502.a
+		create_union = NCI
+		add_country_modifier = {
+			name = NKZAB_Macedon_one_of_many
+			duration = 18250
+		}
+		NCI = {
+			every_owned_province = {
+				limit = { NOT = { area = hudavendigar_area } }
+				cede_province = ROOT
+			}
+		}
+	}
+}
+
+country_event = { #联统尼西亚，失败
+	id = NKZAB_Macedon.503
+	title = NKZAB_Macedon.503.t
+	desc = NKZAB_Macedon.503.d
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = NKZAB_Macedon.503.a
+		declare_war_with_cb = {
+			who = NCI
+			casus_belli = cb_restore_personal_union
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.503.b
+		add_prestige = -10
+	}
+}
+
+country_event = { #联统尼西亚，ai判定
+	id = NKZAB_Macedon.504
+	title = NKZAB_Macedon.504.t
+	desc = NKZAB_Macedon.504.d
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = NKZAB_Macedon.504.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 1.25
+				NOT = {
+					army_size = FROM
+				}
+			}
+			modifier = {
+				factor = 1.25
+				NOT = {
+					mil_tech = FROM
+				}
+			}
+			modifier = {
+				factor = 1.5
+				has_spy_network_from = {
+					who = FROM
+					value = 50
+				}
+			}
+			modifier = {
+				factor = 0
+				total_development = FROM
+			}
+		}
+		FROM = {
+			country_event = {
+				id = NKZAB_Macedon.502
+			}
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.504.b
+		ai_chance = {
+			factor = 10
+		}
+		FROM = {
+			country_event = {
+				id = NKZAB_Macedon.503
+			}
+		}
+	}
+}
+
+country_event = { #征服尼西亚
+	id = NKZAB_Macedon.51
+	title = NKZAB_Macedon.51.t
+	desc = NKZAB_Macedon.51.d
+	picture = AB_COURT_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = MCD
+		NOT = { exists = NCI }
+		hudavendigar_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+		has_country_flag = NKZAB_Macedon_will_attack_nci
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = NKZAB_Macedon.51.a
+		custom_tooltip = BYZ_REMOVE_NIC
+		add_adm_power = 100
+		add_mil_power = 100
+		add_country_modifier = {
+			name = "NKZAB_Macedon_cut_down_nci"
+			duration = 10950
+		}
+		clr_country_flag = NKZAB_Macedon_will_attack_nci
+		hidden_effect = {
+			every_province = {
+				limit = { is_core = NCI }
+				remove_core = NCI
+			}
+		}
+	}
+}
+
+country_event = { #统一希腊
+	id = NKZAB_Macedon.52
+	title = NKZAB_Macedon.52.t
+	desc = NKZAB_Macedon.52.d
+	picture = AB_COURT_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = NKZAB_Macedon.52.a
+		NKZAB_Macedon_add_alexandar_trend = yes
+		add_country_modifier = {
+			name = NKZAB_Macedon_greek_homeland
+			duration = 18250
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.52.b
+		NKZAB_Macedon_add_roma_trend = yes
+		add_country_modifier = {
+			name = NKZAB_Macedon_greek_world
+			duration = 18250
+		}
+	}
+}
+
+country_event = { #文化政策
+	id = NKZAB_Macedon.53
+	title = NKZAB_Macedon.53.t
+	desc = NKZAB_Macedon.53.d
+	picture = AB_ADVISOR_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = NKZAB_Macedon.53.a
+		NKZAB_Macedon_add_alexandar_trend = yes
+		random_owned_province = {
+			limit = {
+				culture = turkish
+				has_owner_religion = yes
+				any_neighbor_province = {
+					culture = greek
+				}
+			}
+			change_culture = turkish_christian
+		}
+		custom_tooltip = NKZAB_Macedon_convert_turkish_greek_tt
+		hidden_effect = {
+			set_country_flag = NKZAB_Macedon_allow_tg_convert
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.53.b
+		NKZAB_Macedon_add_roma_trend = yes
+		add_accepted_culture = turkish
+		add_country_modifier = {
+			name = NKZAB_Macedon_accept_turkish
+			duration = -1
+		}
+	}
+}
+
+country_event = { #乘势而击
+	id = NKZAB_Macedon.6
+	title = NKZAB_Macedon.6.t
+	desc = NKZAB_Macedon.6.d
+	picture = AB_BATTLE_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = NKZAB_Macedon.6.a
+		country_event = { id = NKZAB_Macedon.61 }
+	}
+}
+
+country_event = { #身陷敌阵
+	id = NKZAB_Macedon.61
+	title = NKZAB_Macedon.61.t
+	desc = NKZAB_Macedon.61.d
+	picture = AB_BATTLE_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = NKZAB_Macedon.61.a
+		if = {
+			limit = { is_year = 1465 }
+			country_event = { id = NKZAB_Macedon.62 }
+		}
+		else = {
+			set_country_flag = NKZAB_Macedon_young_strong_manuel
+			country_event = { id = NKZAB_Macedon.66 }
+		}
+	}
+}
+
+country_event = { #终局之战
+	id = NKZAB_Macedon.62
+	title = NKZAB_Macedon.62.t
+	desc = NKZAB_Macedon.62.d
+	picture = AB_BATTLE_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			white_peace = SEL
+			add_treasury = 500
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+			SEL = {
+				add_treasury = -500
+				add_adm_power = -100
+				add_dip_power = -100
+				add_mil_power = -100
+			}
+			anatolia_region = {
+				limit = {
+					owned_by = SEL
+				}
+				cede_province = ROOT
+			}
+			hidden_effect = {
+				every_country = {
+					add_aggressive_expansion = {
+						who = ROOT
+						value = 15
+						apply_calc = no
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = NKZAB_Macedon.62.a
+		tooltip = {
+			white_peace = SEL
+			add_treasury = 500
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+			SEL = {
+				add_treasury = -500
+				add_adm_power = -100
+				add_dip_power = -100
+				add_mil_power = -100
+			}
+			anatolia_region = {
+				limit = {
+					owned_by = SEL
+				}
+				cede_province = ROOT
+			}
+		}
+		country_event = {
+			id = NKZAB_Macedon.63
+			days = 5
+			random = 5
+		}
+	}
+}
+
+country_event = { #伟大的命运
+	id = NKZAB_Macedon.63
+	title = NKZAB_Macedon.63.t
+	desc = NKZAB_Macedon.63.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			NKZAB_Macedon_regency = yes
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.63.a
+		tooltip = {
+			kill_ruler = yes
+			NKZAB_Macedon_regency = yes
+		}
+		add_country_modifier = {
+			name = NKZAB_Macedon_mourn_for_manuel
+			duration = 365
+		}
+		country_event = {
+			id = NKZAB_Macedon.64
+			days = 365
+		}
+	}
+}
+
+country_event = { #未来的方向
+	id = NKZAB_Macedon.64
+	title = NKZAB_Macedon.64.t
+	desc = NKZAB_Macedon.64.d
+	picture = AB_MORAVIA_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = NKZAB_Macedon.64.a
+		highlight = yes
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = NKZAB_Macedon_more_roma_tt
+				check_variable = {
+					which = NkzabMacedonHeartRoma
+					value = 3
+				}
+			}
+		}
+		add_country_modifier = {
+			name = NKZAB_Macedon_rise_of_byz
+			duration = -1
+		}
+		change_tag = BYZ
+		if = {
+			limit = {
+				NOT = { government_rank = 3 }
+			}
+			set_government_rank = 3
+		}
+		swap_free_idea_group = yes
+		swap_non_generic_missions = yes
+		change_government = monarchy
+		add_government_reform = imperial_autocracy
+		NKZAB_Macedon_lasikaris_son = yes
+		hidden_effect = {
+			set_country_flag = byz_finished_angelid_crisis
+			complete_mission = byzantium_roman
+			complete_mission = byzantium_reinforce
+			complete_mission = byzantium_latins
+			complete_mission = byzantium_court
+			complete_mission = byzantium_imperial_army
+			complete_mission = byzantium_economy
+			complete_mission = byzantium_traitors
+			complete_mission = byzantium_crisis
+			complete_mission = byzantium_macedonia
+			complete_mission = byzantium_bulgar
+			complete_mission = byzantium_aegean
+			complete_mission = byzantium_frontier
+			complete_mission = byzantium_coastline
+			complete_mission = byzantium_cyprus
+			every_owned_province = {
+				remove_province_modifier = NKZAB_Macedon_empire_city
+			}
+			east_adriatic_coast_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			venetia_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			if = {
+				limit = {
+					SEL = {
+						is_subject_of = ROOT
+					}
+				}
+				add_historical_friend = SEL
+				SEL = {
+					add_historical_friend = ROOT
+				}
+			}
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.64.b
+		highlight = yes
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = NKZAB_Macedon_more_alexandar_tt
+				check_variable = {
+					which = NkzabMacedonHeartAlexandar
+					value = 3
+				}
+			}
+		}
+		change_government = monarchy
+		NKZAB_Macedon_lasikaris_son = yes
+		if = {
+			limit = {
+				NOT = { government_rank = 2 }
+			}
+			set_government_rank = 2
+		}
+		hidden_effect = {
+			set_country_flag = restored_rome_flag
+			set_country_flag = NKZAB_Macedon_mission_stage3
+			every_owned_province = {
+				limit = {
+					NKZAB_Macedon_allow_hellenize_trigger = yes
+				}
+				NYAB_MAC_culture_integrate_start = yes
+			}
+		}
+		swap_non_generic_missions = yes
+		custom_tooltip = NKZAB_Macedon_into_hellenic_tt
+		set_country_flag = NKZAB_Macedon_start_cultural_conversion
+		set_country_flag = NKZAB_Macedon_cultural_conversion_nowon
+		set_country_flag = NYAB_Macedon_cp_lv1
+		hidden_effect = {
+			change_primary_culture = hellenic_hellas
+			set_ruler_culture = hellenic_hellas
+			remove_accepted_culture = greek
+			every_owned_province = {
+				limit = { culture = greek }
+				change_culture = hellenic_hellas
+				change_original_culture = hellenic_hellas
+			}
+			every_owned_province = {
+				limit = { culture = turkish_christian }
+				change_culture = hellenic_turkish
+				change_original_culture = hellenic_turkish
+			}
+			every_owned_province = {
+				limit = { culture = pontic_greek }
+				change_culture = hellenic_pontic
+				change_original_culture = hellenic_pontic
+			}
+			every_country = {
+				limit = {
+					OR = {
+						primary_culture = greek
+						primary_culture = pontic_greek
+						any_owned_province = { culture = greek }
+					}
+					OR = {
+						alliance_with = ROOT
+						is_subject_of = ROOT
+					}
+				}
+				if = {
+					limit = { primary_culture = greek }
+					change_primary_culture = hellenic_hellas
+					set_ruler_culture = hellenic_hellas
+					set_heir_culture = hellenic_hellas
+					set_consort_culture = hellenic_hellas
+				}
+				else_if = {
+					limit = { primary_culture = pontic_greek }
+					change_primary_culture = hellenic_pontic
+					set_ruler_culture = hellenic_pontic
+					set_heir_culture = hellenic_pontic
+					set_consort_culture = hellenic_pontic
+				}
+				else_if = {
+					limit = { accepted_culture = greek }
+					remove_accepted_culture = greek
+					add_accepted_culture = hellenic_hellas
+				}
+				every_owned_province = {
+					limit = { culture = greek }
+					change_culture = hellenic_hellas
+					change_original_culture = hellenic_hellas
+				}
+				every_owned_province = {
+					limit = { culture = pontic_greek }
+					change_culture = hellenic_pontic
+					change_original_culture = hellenic_pontic
+				}
+			}
+			if = {
+				limit = { mission_completed = NKZAB_MCD_together_with_war }
+				ALB = {
+					change_primary_culture = hellenic_albanian
+					set_ruler_culture = hellenic_albanian
+					set_heir_culture = hellenic_albanian
+					set_consort_culture = hellenic_albanian
+					every_owned_province = {
+						limit = { culture = albanian }
+						change_culture = hellenic_albanian
+						change_original_culture = hellenic_albanian
+					}
+				}
+			}
+			5152 = {
+				set_province_flag = NKZAB_Macedon_hellenic_monument	
+				destroy_great_project = {
+					type = apollo
+				}
+				add_great_project = {
+					type = NKZAB_apollo
+					instant = yes
+				}
+			}
+			146 = {
+				set_province_flag = NKZAB_Macedon_hellenic_monument
+				destroy_great_project = {
+					type = parthenon
+				}
+				add_great_project = {
+					type = NKZAB_parthenon
+					instant = yes
+				}
+			}
+			country_event = {
+				id = NKZAB_Macedon.65
+				days = 365
+				random = 730
+			}
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.64.c
+		highlight = yes
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = NKZAB_want_to_play_mcd_pre_tt
+				always = yes
+			}
+		}
+		custom_tooltip = NKZAB_form_old_mac_tt
+		hidden_effect = {
+			change_tag = MAC
+			country_event = { id = ideagroups.1 }
+			set_country_flag = NKZAB_Macedon_to_pre
+			swap_non_generic_missions = yes
+		}
+		if = {
+			limit = {
+				NOT = { government_rank = 2 }
+			}
+			set_government_rank = 2
+		}
+		change_government = monarchy
+		NKZAB_Macedon_lasikaris_son = yes
+		hidden_effect = {
+			clr_country_flag = formed_byzantium_flag
+			clr_country_flag = formed_greece_flag
+		}
+	}
+
+	after = {
+		hidden_effect = {
+			set_variable = {
+				which = NkzabRulerAttributePoints
+				value = 0
+			}
+		}
+	}
+}
+
+country_event = { #希腊爬杆————说真的为什么会有人想要这玩意儿
+	id = NKZAB_Macedon.65
+	title = NKZAB_Macedon.65.t
+	desc = NKZAB_Macedon.65.d
+	picture = "ATHENS_eventPicture"
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = NKZAB_Macedon_hellenic_tree
+			swap_non_generic_missions = yes
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.65.a
+		add_patriarch_authority = 0.1
+		hidden_effect = {
+			clr_country_flag = NKZAB_Macedon_hellenic_tree
+			swap_non_generic_missions = yes
+		}
+	}
+	
+	option = {
+		name = NKZAB_Macedon.65.b
+		add_stability = -3
+		change_religion = hellenic
+		NKZAB_Macedon_Eirenaios_advisor = yes
+		add_country_modifier = {
+			name = NKZAB_Macedon_old_new_fervor
+			duration = 14600
+		}
+		custom_tooltip = NKZAB_Macedon_change_subject_hellenic_tt
+		tooltip = {
+			random_country = {
+				limit = { is_subject_of = ROOT }
+				change_religion = hellenic
+				add_country_modifier = {
+					name = NKZAB_Macedon_old_new_fervor
+					duration = 3650
+				}
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = { is_subject_of = ROOT }
+				change_religion = hellenic
+				add_country_modifier = {
+					name = NKZAB_Macedon_old_new_fervor
+					duration = 3650
+				}
+			}
+		}
+		
+		custom_tooltip = NKZAB_Macedon_harder_game_tt
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					religion = orthodox
+				}
+				orthodox_rebels = 3
+			}
+			random_owned_province = {
+				limit = {
+					religion = orthodox
+				}
+				orthodox_rebels = 3
+			}
+			random_owned_province = {
+				limit = {
+					religion = orthodox
+				}
+				orthodox_rebels = 3
+			}
+			random_owned_province = {
+				limit = {
+					religion = orthodox
+				}
+				orthodox_rebels = 3
+			}
+			random_owned_province = {
+				limit = {
+					religion = orthodox
+				}
+				orthodox_rebels = 3
+			}
+			complete_mission = NKZAB_MCD_deal_with_cilicia
+			complete_mission = NKZAB_MCD_heart_of_armenia
+			complete_mission = NKZAB_MCD_among_mountains
+			complete_mission = NKZAB_MCD_their_nestorian
+		}
+	}
+}
+
+country_event = { #帅，曼努埃尔！
+	id = NKZAB_Macedon.66
+	title = NKZAB_Macedon.66.t
+	desc = NKZAB_Macedon.66.d
+	picture = "AB_BATTLE_eventPicture"
+
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			white_peace = SEL
+			add_treasury = 1000
+			SEL = {
+				every_owned_province = {
+					cede_province = event_target:nkzab_macedon_target
+					add_province_modifier = {
+						name = NKZAB_Macedon_inherit_seljuk
+						duration = 3650
+					}
+				}
+			}
+			set_country_flag = NYAB_MCD_escape_from_fate_flag
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.66.a
+		tooltip = {
+			white_peace = SEL
+			add_treasury = 1000
+			inherit = SEL
+		}
+		custom_tooltip = NKZAB_Macedon_shockon_seljuk_tt
+		tooltip = {
+			add_province_modifier = {
+				name = NKZAB_Macedon_inherit_seljuk
+				duration = 3650
+			}
+		}
+		change_adm = -2
+		change_dip = -2
+		change_mil = -2
+		country_event = { 
+			id = NKZAB_Macedon.67
+			days = 60
+			random = 120 
+		}
+		hidden_effect = {
+			every_country = {
+				add_aggressive_expansion = {
+					who = ROOT
+					value = 25
+					apply_calc = no
+				}
+			}
+		}
+	}
+}
+
+country_event = { #未来的方向，曼努埃尔特供
+	id = NKZAB_Macedon.67
+	title = NKZAB_Macedon.67.t
+	desc = NKZAB_Macedon.67.d
+	picture = "AB_MORAVIA_eventPicture"
+
+	is_triggered_only = yes
+
+	option = {
+		name = NKZAB_Macedon.67.a
+		highlight = yes
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = NKZAB_Macedon_more_roma_tt
+				check_variable = {
+					which = NkzabMacedonHeartRoma
+					value = 3
+				}
+			}
+		}
+		change_adm = 2
+		change_dip = 2
+		change_mil = 2
+		add_country_modifier = {
+			name = NKZAB_Macedon_rise_of_byz
+			duration = -1
+		}
+		change_tag = BYZ
+		if = {
+			limit = {
+				NOT = { government_rank = 3 }
+			}
+			set_government_rank = 3
+		}
+		swap_free_idea_group = yes
+		swap_non_generic_missions = yes
+		change_government = monarchy
+		NKZAB_Macedon_lasikaris_heir = yes
+		hidden_effect = {
+			set_country_flag = byz_finished_angelid_crisis
+			set_country_flag = ab_is_rome_heir
+			set_country_flag = ab_unlock_byzantine_rome
+			add_legitimacy = 100
+			complete_mission = byzantium_roman
+			complete_mission = byzantium_reinforce
+			complete_mission = byzantium_latins
+			complete_mission = byzantium_court
+			complete_mission = byzantium_imperial_army
+			complete_mission = byzantium_economy
+			complete_mission = byzantium_traitors
+			complete_mission = byzantium_crisis
+			complete_mission = byzantium_macedonia
+			complete_mission = byzantium_bulgar
+			complete_mission = byzantium_aegean
+			complete_mission = byzantium_frontier
+			complete_mission = byzantium_coastline
+			complete_mission = byzantium_cyprus
+			every_owned_province = {
+				remove_province_modifier = NKZAB_Macedon_empire_city
+			}
+			east_adriatic_coast_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			venetia_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			if = {
+				limit = {
+					SEL = {
+						is_subject_of = ROOT
+					}
+				}
+				add_historical_friend = SEL
+				SEL = {
+					add_historical_friend = ROOT
+				}
+			}
+		}
+		add_government_reform = imperial_autocracy
+	}
+
+	option = {
+		name = NKZAB_Macedon.67.b
+		highlight = yes
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = NKZAB_Macedon_more_alexandar_tt
+				check_variable = {
+					which = NkzabMacedonHeartAlexandar
+					value = 3
+				}
+			}
+		}
+		change_adm = 2
+		change_dip = 2
+		change_mil = 2
+		change_government = monarchy
+		if = {
+			limit = {
+				NOT = { government_rank = 2 }
+			}
+			set_government_rank = 2
+		}
+		hidden_effect = {
+			set_country_flag = restored_rome_flag
+			set_country_flag = NKZAB_Macedon_mission_stage3
+		}
+		NKZAB_Macedon_lasikaris_heir = yes
+		swap_non_generic_missions = yes
+		custom_tooltip = NKZAB_Macedon_into_hellenic_tt
+		set_country_flag = NKZAB_Macedon_start_cultural_conversion
+		set_country_flag = NKZAB_Macedon_cultural_conversion_nowon
+		set_country_flag = NYAB_Macedon_cp_lv1
+		add_government_reform = NKZAB_macedonia_great_ruler
+		set_country_flag = NKZAB_Macedon_unlock_leader_charisma
+		add_country_modifier = {
+			name = NKZAB_Macedon_reforming_pain
+			duration = 730
+		}
+		complete_mission = NKZAB_MCD_stable_government
+		hidden_effect = {
+			remove_country_modifier = NKZAB_Macedon_manuel_great_ruler
+			add_legitimacy = 100
+			change_primary_culture = hellenic_hellas
+			set_ruler_culture = hellenic_hellas
+			remove_accepted_culture = greek
+			every_owned_province = {
+				limit = { culture = greek }
+				change_culture = hellenic_hellas
+			}
+			every_owned_province = {
+				limit = { culture = turkish_christian }
+				change_culture = hellenic_turkish
+			}
+			every_owned_province = {
+				limit = { culture = pontic_greek }
+				change_culture = hellenic_pontic
+			}
+			every_country = {
+				limit = {
+					OR = {
+						primary_culture = greek
+						primary_culture = pontic_greek
+						any_owned_province = { culture = greek }
+					}
+					OR = {
+						alliance_with = ROOT
+						is_subject_of = ROOT
+					}
+				}
+				if = {
+					limit = { primary_culture = greek }
+					change_primary_culture = hellenic_hellas
+					set_ruler_culture = hellenic_hellas
+					set_heir_culture = hellenic_hellas
+					set_consort_culture = hellenic_hellas
+				}
+				else_if = {
+					limit = { primary_culture = pontic_greek }
+					change_primary_culture = hellenic_pontic
+					set_ruler_culture = hellenic_pontic
+					set_heir_culture = hellenic_pontic
+					set_consort_culture = hellenic_pontic
+				}
+				else_if = {
+					limit = { accepted_culture = greek }
+					remove_accepted_culture = greek
+					add_accepted_culture = hellenic_hellas
+				}
+				every_owned_province = {
+					limit = { culture = greek }
+					change_culture = hellenic_hellas
+				}
+				every_owned_province = {
+					limit = { culture = pontic_greek }
+					change_culture = hellenic_pontic
+				}
+			}
+			if = {
+				limit = { mission_completed = NKZAB_MCD_together_with_war }
+				ALB = {
+					change_primary_culture = hellenic_albanian
+					set_ruler_culture = hellenic_albanian
+					set_heir_culture = hellenic_albanian
+					set_consort_culture = hellenic_albanian
+					every_owned_province = {
+						limit = { culture = albanian }
+						change_culture = hellenic_albanian
+					}
+				}
+			}
+			5152 = {
+				set_province_flag = NKZAB_Macedon_hellenic_monument	
+				destroy_great_project = {
+					type = apollo
+				}
+				add_great_project = {
+					type = NKZAB_apollo
+					instant = yes
+				}
+			}
+			146 = {
+				set_province_flag = NKZAB_Macedon_hellenic_monument
+				destroy_great_project = {
+					type = parthenon
+				}
+				add_great_project = {
+					type = NKZAB_parthenon
+					instant = yes
+				}
+			}
+			freeze_government_power = {
+				mechanic_type = NKZAB_MCD_conquest_fevor_mechanic
+				power_type = NKZAB_MCD_conquest_fevor
+			}
+			country_event = {
+				id = NKZAB_Macedon.65
+				days = 365
+				random = 730
+			}
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.67.c
+		highlight = yes
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = NKZAB_want_to_play_mcd_pre_tt
+				always = yes
+			}
+		}
+		change_adm = 2
+		change_dip = 2
+		change_mil = 2
+		custom_tooltip = AB_EMPTY
+		add_ruler_personality = legendary_conqueror_personality
+		custom_tooltip = NCI_ALWAYS_CONQUEROR
+		custom_tooltip = AB_EMPTY
+		change_government = monarchy
+		NKZAB_Macedon_lasikaris_heir = yes
+		# country_event = {
+		# 	id = ab_nicaea.6
+		# }
+		# custom_tooltip = AB_EMPTY
+		change_tag = HLE
+		# custom_tooltip = NICENE_IDEAS
+		swap_non_generic_missions = yes
+		custom_tooltip = AB_EMPTY
+		add_government_reform = nicene_hellenic_empire
+		hidden_effect = {
+			set_government_rank = 3
+			save_global_event_target_as = hellenicEmpire
+			country_event = {
+				id = ideagroups.1
+			}
+			add_faction_influence = {
+				faction = faction_nciantigonos
+				influence = 100
+			}
+			add_faction_influence = {
+				faction = faction_nciantigonos
+				influence = -66
+			}
+			every_owned_province = {
+				random_list = {
+					33 = {
+						add_permanent_province_modifier = {
+							name = nci_antigonos_province
+							duration = -1
+						}
+					}
+					33 = {
+						add_permanent_province_modifier = {
+							name = nci_seleukos_province
+							duration = -1
+						}
+					}
+					33 = {
+						add_permanent_province_modifier = {
+							name = nci_ptolemaios_province
+							duration = -1
+						}
+					}
+				}
+			}
+			add_government_power = { 
+				mechanic_type = nicene_militarization_mechanic
+				power_type = nicene_militarized_society
+				value = 100
+			}
+			complete_mission = nicene_fleet
+			complete_mission = nicene_legions
+			complete_mission = nicene_smyrna
+			complete_mission = nicene_refugees
+			complete_mission = nicene_byzantium
+			complete_mission = nicene_aegean
+			complete_mission = nicene_secure
+			complete_mission = nicene_latins
+			complete_mission = nicene_hellenic
+			complete_mission = nicene_menace
+			complete_mission = nicene_manzikert
+			complete_mission = nicene_bulgaria
+			complete_mission = nicene_greek_fire
+			clr_country_flag = formed_byzantium_flag
+			clr_country_flag = formed_greece_flag
+			add_legitimacy = 100
+		}
+	}
+}
+
+country_event = { #伟大的命运，2
+	id = NKZAB_Macedon.68
+	title = NKZAB_Macedon.68.t
+	desc = NKZAB_Macedon.68.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_country_flag = NKZAB_Macedon_young_strong_manuel
+		has_country_flag = NKZAB_Macedon_mission_stage3
+	}
+
+	option = {
+		name = NKZAB_Macedon.68.a
+		add_stability = 1
+		add_country_modifier = {
+			name = NKZAB_Macedon_glory_to_manuel
+			duration = -1
+		}
+		clr_country_flag = NKZAB_Macedon_young_strong_manuel
+	}
+}
+
+country_event = { #自然死亡的倒霉蛋
+	id = NKZAB_Macedon.69
+	title = NKZAB_Macedon.69.t
+	desc = NKZAB_Macedon.69.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_ruler_flag = NKZAB_Macedon_Manuel_Ruler
+		NOT = { mission_completed = NKZAB_MCD_sacred_battlefield }
+	}
+
+	immediate = {
+		hidden_effect = {
+			complete_mission = NKZAB_MCD_sacred_battlefield
+			change_government = monarchy
+			kill_ruler = yes
+			# add_stability = -2
+			# change_tag = GRE
+			# swap_free_idea_group = yes
+			# swap_non_generic_missions = yes
+			# change_adm = -6
+			# change_dip = -6
+			# change_mil = -6
+			# change_adm = 3
+			# change_dip = 3
+			# change_mil = 3
+			# add_legitimacy = -100
+			# add_legitimacy = 50
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.69.a
+		tooltip = {
+			custom_tooltip = NKZAB_Macedon_kill_manuel_tt
+			
+			# add_stability = -2
+		}
+		change_tag = GRE
+		swap_free_idea_group = yes
+		swap_non_generic_missions = yes
+		change_government = republic
+		add_government_reform = civic_republicanism_government
+	}
+	after = {
+		country_event = {
+			id = NYAB_GRE.1
+			days = 365
+			random = 365
+		}
+	}
+}
+
+country_event = { #瓦拉几亚之行
+	id = NKZAB_Macedon.7
+	title = NKZAB_Macedon.7.t
+	picture = COURT_eventPicture
+
+	desc = {
+		trigger = {
+			NOT = { has_ruler_flag = NKZAB_Macedon_Manuel_Ruler }
+		}
+		desc = "NKZAB_Macedon.7.da"
+	}
+	
+	desc = {
+		trigger = {
+			has_ruler_flag = NKZAB_Macedon_Manuel_Ruler
+		}
+		desc = "NKZAB_Macedon.7.db"
+	}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = NKZAB_Macedon.7.a
+		trigger = {
+			NOT = { has_ruler_flag = NKZAB_Macedon_Manuel_Ruler }
+		}
+		if = {
+			limit = { exists = MOL }
+			add_casus_belli = {
+				type = cb_vassalize_mission
+				months = 600
+				target = MOL
+			}
+		}
+		moldavia_area = {
+			limit = {
+				NOT = { is_permanent_claim = ROOT }
+				NOT = { is_core = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+		bessarabia_area = {
+			limit = {
+				NOT = { is_permanent_claim = ROOT }
+				NOT = { is_core = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+		custom_tooltip = NKZAB_Macedon_balkan_less_core_tt
+		tooltip = {
+			add_province_modifier = {
+				name = NKZAB_Macedon_mikhail_wisdom
+				duration = 10950
+			}
+		}
+		set_country_flag = NKZAB_Macedon_conquest_balkan
+	}
+
+	option = {
+		name = NKZAB_Macedon.7.b
+		trigger = {
+			has_ruler_flag = NKZAB_Macedon_Manuel_Ruler
+		}
+		if = {
+			limit = { exists = MOL }
+			add_casus_belli = {
+				type = cb_vassalize_mission
+				months = -1
+				target = MOL
+			}
+		}
+		moldavia_area = {
+			limit = {
+				NOT = { is_permanent_claim = ROOT }
+				NOT = { is_core = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+		bessarabia_area = {
+			limit = {
+				NOT = { is_permanent_claim = ROOT }
+				NOT = { is_core = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+		custom_tooltip = NKZAB_Macedon_balkan_less_core_tt
+		tooltip = {
+			add_province_modifier = {
+				name = NKZAB_Macedon_mikhail_praise
+				duration = 10950
+			}
+		}
+		set_country_flag = NKZAB_Macedon_conquest_balkan_best
+	}
+}
+
+country_event = { #镇北公爵
+	id = NKZAB_Macedon.71
+	title = NKZAB_Macedon.71.t
+	desc = NKZAB_Macedon.71.d
+	picture = AB_OVEREXTENSION_eventPicture
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = NKZAB_Macedon.71.a
+		add_treasury = -500
+		add_adm_power = -100
+		add_dip_power = -100
+		WAL = {
+			inherit = MOL
+			change_tag = RMN
+			swap_free_idea_group = yes
+			hidden_effect = {
+				change_primary_culture = romanian
+				remove_accepted_culture = Wallachian
+				remove_accepted_culture = Moldavian
+				remove_accepted_culture = transylvanian
+			}
+		}
+		create_march = RMN
+		transylvania_area = {
+			cede_province = RMN
+			add_core = RMN
+		}
+		southern_transylvania_area = {
+			cede_province = RMN
+			add_core = RMN
+		}
+		RMN = {
+			custom_tooltip = NKZAB_Macedon_update_wal_tt
+			add_country_modifier = {
+				name = NKZAB_Macedon_loyal_subject_3
+				duration = -1
+			}
+			hidden_effect = {
+				RMN = { remove_country_modifier = NKZAB_Macedon_loyal_subject_2 }
+			}
+		}
+		add_country_modifier = {
+			name = NKZAB_Macedon_rmn_guardian
+			duration = -1
+			desc = NKZAB_Macedon_remove_rmn_modifier_tt
+		}
+		hidden_effect = {
+			every_province = {
+				limit = {
+					OR = {
+						culture = Wallachian
+						culture = Moldavian
+						culture = transylvanian
+						area = transylvania_area
+						area = southern_transylvania_area
+					}
+				}
+				change_culture = romanian
+			}
+		}
+	}
+	
+	option = {
+		name = NKZAB_Macedon.71.b
+		add_treasury = -250
+		add_adm_power = -25
+		tooltip = { inherit = WAL }
+		add_country_modifier = {
+			name = NKZAB_Macedon_wheat_supply
+			duration = 10950
+		}
+		hidden_effect = {
+			WAL = {
+				every_owned_province = {
+					limit = { is_core = WAL }
+					add_territorial_core = ROOT
+				}
+			}
+			inherit = WAL
+		}
+	}
+}
+
+country_event = { #改良乌尔班
+	id = NKZAB_Macedon.8
+	title = NKZAB_Macedon.8.t
+	desc = NKZAB_Macedon.8.d
+	picture = MILITARISTICALLY_TALENTED_RULER_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = MCD
+		151 = { 
+			owned_by = ROOT
+			is_core = ROOT
+		}
+		mil_tech = 7
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	option = {
+		name = NKZAB_Macedon.8.a
+		add_years_of_income = -0.5
+		add_mil_power = 50
+		add_country_modifier = {
+			name = "NKZAB_Macedon_defend_urban"
+			duration = 18250
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	
+	option = {
+		name = NKZAB_Macedon.8.b
+		add_years_of_income = -0.5
+		add_mil_power = 50
+		add_country_modifier = {
+			name = "NKZAB_Macedon_siege_urban"
+			duration = 18250
+		}
+		hidden_effect = {
+			set_country_flag = NKZAB_Macedon_siege_urban_flag
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = { #更大的改良乌尔班
+	id = NKZAB_Macedon.81
+	title = NKZAB_Macedon.81.t
+	desc = NKZAB_Macedon.81.d
+	picture = MILITARISTICALLY_TALENTED_RULER_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		OR = {
+			tag = MCD
+			tag = ALX
+		}
+		has_country_flag = NKZAB_Macedon_siege_urban_flag
+		mil_tech = 10
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = NKZAB_Macedon.81.a
+		add_years_of_income = -1
+		add_mil_power = 100
+		custom_tooltip = NKZAB_Macedon_unlock_improved_urban_tt
+		hidden_effect = {
+			clr_country_flag = NKZAB_Macedon_siege_urban_flag
+			set_country_flag = NKZAB_Macedon_improved_urban_unlocked
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = { #征服狂热
+	id = NKZAB_Macedon.9
+	title = NKZAB_Macedon.9.t
+	desc = NKZAB_Macedon.9.d
+	picture = BATTLE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = NKZAB_Macedon.9.a
+		country_event = { id = NKZAB_Macedon.91 }
+	}
+}
+
+country_event = { #征服狂热×2
+	id = NKZAB_Macedon.91
+	title = NKZAB_Macedon.91.t
+	desc = NKZAB_Macedon.91.d
+	picture = BATTLE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = NKZAB_Macedon.91.a
+		
+		custom_tooltip = NKZAB_Macedon_begin_great_conquest_tt
+		hidden_effect = {
+			set_country_flag = NKZAB_Macedon_begin_conquest
+			# set_variable = {
+    		# 	which = NkzabMacedonConquestFervorYears
+    		# 	value = 30
+			# }
+			# set_variable = {
+    		# 	which = NkzabMacedonConquestFervorMonths
+    		# 	value = 0
+			# }
+		}
+		add_ruler_personality = NKZAB_MCD_war_artist
+		hidden_effect = {
+			set_country_flag = NKZAB_Macedon_allow_alx_cb_level1
+		}
+		add_power_projection = {
+			type = NKZAB_MCD_power_projection
+			amount = 25
+		}
+		custom_tooltip = NKZAB_Macedon_get_alx_conquest_tt
+		add_country_modifier = {
+			name = NKZAB_Macedon_pledge_to_common_will
+			duration = 7300
+		}
+		custom_tooltip = NKZAB_Macedon_freeze_fevor_tt
+		# tooltip = {
+		# 	add_country_modifier = {
+		# 		desc = NKZAB_Macedon_great_counquest_modifier_tt_NYAB
+		# 		name = NKZAB_Macedon_conquest_neverend
+		# 		duration = -1
+		# 	}
+		# }
+		#regenerate_government_mechanics = yes
+		hidden_effect = {
+			unfreeze_government_power = {
+				mechanic_type = NKZAB_MCD_conquest_fevor_mechanic
+				power_type = NKZAB_MCD_conquest_fevor
+			}
+			set_government_power = {
+				mechanic_type = NKZAB_MCD_conquest_fevor_mechanic
+				power_type = NKZAB_MCD_conquest_fevor
+				value = 100
+			}
+			freeze_government_power = {
+				mechanic_type = NKZAB_MCD_conquest_fevor_mechanic
+				power_type = NKZAB_MCD_conquest_fevor
+			}
+			country_event = {
+				id = NKZAB_Macedon.9002
+				days = 7300
+			}
+		}
+		
+	}
+}
+
+country_event = { #征服意大利
+	id = NKZAB_Macedon.10
+	title = NKZAB_Macedon.10.t
+	desc = NKZAB_Macedon.10.d
+	picture = ABAD5_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = NKZAB_Macedon.10.a
+		add_treasury = -250
+		sicily_area = { add_permanent_claim = ROOT }
+		western_sicily_area = { add_permanent_claim = ROOT }
+		naples_area = { add_permanent_claim = ROOT }
+		calabria_area = { add_permanent_claim = ROOT }
+		apulia_area = { add_permanent_claim = ROOT }
+		event_target:nkzab_macedon_italy_fort_target = {
+			add_building = fort_15th
+			add_province_triggered_modifier = NKZAB_Macedon_italy_fort
+		}
+		custom_tooltip = NKZAB_Macedon_fort_on_tt
+		tooltip = {
+			italy_region = {
+				add_province_modifier = {
+					name = NKZAB_Macedon_italy_fort_land
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+country_event = { #西西里的陨落
+	id = NKZAB_Macedon.11
+	title = NKZAB_Macedon.11.t
+	picture = BATTLE_eventPicture
+
+	desc = {
+		trigger = {
+			NOT = { religion = hellenic }
+			NOT = { religion = reformed_hellenic }
+		}
+		desc = NKZAB_Macedon.11.da
+	}
+
+	desc = {
+		trigger = {
+			OR = {
+				religion = hellenic
+				religion = reformed_hellenic
+			}
+		}
+		desc = NKZAB_Macedon.11.db
+	}
+	
+	major = yes
+	
+	is_triggered_only = yes
+
+	option = {
+		name = NKZAB_Macedon.11.a
+		highlight = yes
+		custom_tooltip = NKZAB_Macedon_italy_christian_release_tt
+		hidden_effect = {
+			italy_region = {
+				limit = {
+					owned_by = ROOT
+					religion_group = christian
+				}
+				add_nationalism = -10
+			}
+		}
+		add_country_modifier = {
+			name = NKZAB_Macedon_fall_of_sic
+			duration = 10950
+		}
+		add_dip_power = -100
+		custom_tooltip = NKZAB_Macedon_italy_hellenic_culture_allow_tt
+		hidden_effect = {
+			122 = {
+				change_culture = hellenic_italiotian
+				change_religion = ROOT
+			}
+			1934 = {
+				change_culture = hellenic_italiotian
+				change_religion = ROOT
+			}
+			2984 = {
+				change_culture = hellenic_italiotian
+				change_religion = ROOT
+			}
+			123 = {
+				change_culture = hellenic_siceliote
+				change_religion = ROOT
+			}
+			set_country_flag = NKZAB_Macedon_hellenize_ita_flag
+		}
+		NKZAB_Macedon_update_conversion_effiency = yes
+		#NKZAB_Macedon_add_conquest_fevor_effect = { extention = 10 }
+		add_government_power = {
+			mechanic_type = NKZAB_MCD_conquest_fevor_mechanic
+			power_type = NKZAB_MCD_conquest_fevor
+			value = 25
+		}
+	}
+}
+
+country_event = { #光荣与伟大
+	id = NKZAB_Macedon.12
+	title = NKZAB_Macedon.12.t
+	picture = ST_PETERS_CHURCH_eventPicture
+
+	desc = {
+		trigger = {
+			118 = {
+				religion_group = muslim
+			}
+		}
+		desc = "NKZAB_Macedon.12.da"
+	}
+	
+	desc = {
+		trigger = {
+			118 = {
+				religion_group = christian
+			}
+		}
+		desc = "NKZAB_Macedon.12.db"
+	}		
+	
+	major = yes
+	
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					118 = {
+						NOT = { owned_by = ROOT }
+					}
+				}
+				118 = { cede_province = ROOT }
+			}
+		}
+	}
+	
+	option = {
+		name = NKZAB_Macedon.12.a
+		if = {
+			limit = {
+				religion = orthodox
+				is_year = 1490
+				NOT = { is_year = 1503 }
+			}
+			country_event = {
+				id = NKZAB_Macedon.121
+				days = 30
+				random = 30
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					religion = hellenic
+					religion = reformed_hellenic
+					has_country_flag = NKZAB_Macedon_hellenic_tree
+				}
+			}
+			add_ruler_modifier = {
+				name = NKZAB_Macedon_roma_conqurer_pagan
+				duration = -1
+			}
+		}
+		else = {
+			add_ruler_modifier = {
+				name = NKZAB_Macedon_roma_conqurer
+				duration = -1
+			}
+		}
+		
+		custom_tooltip = NKZAB_Macedon_italian_core_modifier_tt
+		add_prestige_or_monarch_power = {
+			amount = 50
+		}
+		custom_tooltip = NKZAB_Macedon_roma_prestige_tt
+		hidden_effect = {
+			every_province = {
+				limit = {
+					region = italy_region
+					NOT = { is_core = ROOT }
+					controlled_by = ROOT
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				remove_claim = ROOT
+				add_territorial_core = ROOT
+			}
+			every_country = {
+				limit = {
+					religion = catholic
+				}
+				add_prestige = -50
+			}
+		}
+		add_available_ruler_points = { value = 3 }
+		118 = {
+			add_core = ROOT
+			change_religion = ROOT
+			if = {
+				limit = {
+					OR = {
+						ROOT = { religion = hellenic }
+						ROOT = { religion = reformed_hellenic }
+						ROOT = { has_country_flag = NKZAB_Macedon_hellenic_tree }
+					}
+				}
+				add_province_modifier = {
+					name = NKZAB_Macedon_hellenic_return
+					duration = -1
+				}
+			}
+			else = {
+				add_province_modifier = {
+					name = NKZAB_Macedon_roma_patriarch
+					duration = -1
+				}
+			}
+			add_province_modifier = {
+				name = NKZAB_Macedon_empire_city
+				duration = -1
+			}
+		}
+		#NKZAB_Macedon_add_conquest_fevor_effect = { extention = 10 }
+		add_government_power = {
+			mechanic_type = NKZAB_MCD_conquest_fevor_mechanic
+			power_type = NKZAB_MCD_conquest_fevor
+			value = 25
+		}
+	}
+}
+
+country_event = { #吃地，然后捡到波吉亚
+	id = NKZAB_Macedon.121
+	title = NKZAB_Macedon.121.t
+	desc = NKZAB_Macedon.121.d
+	picture = "POPE_PREACHING_eventPicture"
+
+	is_triggered_only = yes
+
+	option = {
+		name = NKZAB_Macedon.121.a
+		custom_tooltip = NKZAB_Macedon_rome_borjia_center_tt
+		118 = {
+			add_province_modifier = {
+				name = NKZAB_Macedon_borjia_in_rome
+				duration =7300
+			}
+		}
+		hidden_effect = {
+			118 = {
+				add_reform_center = orthodox
+			}
+			country_event = {
+				id = NKZAB_Macedon.122
+				days = 7300
+			}
+		}
+		
+	}
+
+	option = {
+		name = NKZAB_Macedon.121.b
+		add_splendor = 200
+		add_ruler_modifier = {
+			name = NKZAB_Macedon_borjia_in_court
+			duration = 7300
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.121.c
+		add_stability = 1
+		118 = {
+			add_province_modifier = {
+				name = NKZAB_Macedon_execute_borjia
+				duration = 7300
+			}
+		}
+		
+	}
+}
+
+country_event = {
+	id = NKZAB_Macedon.122
+	title = NKZAB_Macedon.122.t
+	desc = NKZAB_Macedon.122.d
+	picture = ""
+
+	is_triggered_only = yes
+	hidden_effect = yes
+	fire_only_once = yes
+
+	immediate = {
+		118 = {
+			remove_reform_center = orthodox
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.122.a
+	}
+}
+
+country_event = { #叙利亚之行
+	id = NKZAB_Macedon.13
+	title = NKZAB_Macedon.13.t
+	desc = NKZAB_Macedon.13.d
+	picture = GENERALS_DISCUSSING_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = NKZAB_Macedon.13.a
+		if = {
+			limit = {
+				exists = NAZ
+			}
+			add_spy_network_from = {
+				who = NAZ
+				value = -60
+			}
+		}
+		else_if = {
+			limit = {
+				exists = EGY
+				EGY = { was_tag = NAZ }
+			}
+			add_spy_network_from = {
+				who = EGY
+				value = -60
+			}
+		}
+		else_if = {
+			limit = {
+				exists = ABS
+				ABS = { was_tag = NAZ }
+			}
+			add_spy_network_from = {
+				who = ABS
+				value = -60
+			}
+		}
+		syria_area = {
+			add_permanent_province_modifier = {
+				name = NKZAB_Macedon_stable_province
+				duration = 7300
+			}
+		}
+		aleppo_area = {
+			add_permanent_province_modifier = {
+				name = NKZAB_Macedon_stable_province
+				duration = 7300
+			}
+		}
+		syrian_desert_area = {
+			add_permanent_province_modifier = {
+				name = NKZAB_Macedon_stable_province
+				duration = 7300
+			}
+		}
+	}
+}
+
+country_event = { #殴打尼扎尔
+	id = NKZAB_Macedon.140
+	title = NKZAB_Macedon.140.t
+	desc = NKZAB_Macedon.140.d
+	picture = DIPLOMACY_eventPicture
+	major = yes
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+
+	option = {
+		name = NKZAB_Macedon.140.a
+		custom_tooltip = NKZAB_Macedon_you_wannit_tt
+		hidden_effect = {
+			event_target:nkzab_macedon_target = {
+				country_event = {
+					id = NKZAB_Macedon.141
+					days = 5
+					random = 5
+				}
+			}
+		}
+	}
+}
+
+country_event = { #殴打尼扎尔×2
+	id = NKZAB_Macedon.141
+	title = NKZAB_Macedon.141.t
+	desc = NKZAB_Macedon.141.d
+	picture = DIPLOMACY_eventPicture
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+
+	option = {
+		name = NKZAB_Macedon.141.a
+		add_years_of_income = -1
+		if = {
+			limit = { NOT = { is_monarch_leader = yes } }
+			define_ruler_to_general = {
+    				fire = 3
+    				shock = 5
+    				manuever = 6
+    				siege = 3
+			}
+		}
+		add_ruler_modifier = {
+			name = NKZAB_Macedon_fast_horse
+			duration = 365
+		}
+		custom_tooltip = NKZAB_Macedon_raid_egypt_tt
+		event_target:nkzab_macedon_naz_tag = {
+			add_manpower = 10
+			add_army_tradition = 40
+			add_legitimacy = 100
+			add_country_modifier = {
+				name = NKZAB_Macedon_naz_revenge
+				duration = -1
+			}
+		}
+		declare_war_with_cb = {
+			who = event_target:nkzab_macedon_naz_tag
+			casus_belli = cb_alx_conquest_level1
+		}
+	}
+}
+
+country_event = { #成功殴打尼扎尔
+	id = NKZAB_Macedon.142
+	title = NKZAB_Macedon.142.t
+	desc = NKZAB_Macedon.142.d
+	picture = COUNTRY_COLLAPSE_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_country_flag = NKAZB_Macedon_start_get_naz
+		has_ruler_modifier = NKZAB_Macedon_fast_horse
+		FROM = {
+			is_capital_of = event_target:nkzab_macedon_naz_tag
+			controlled_by = event_target:nkzab_macedon_target
+			has_ruler_leader_from = event_target:nkzab_macedon_target
+		}
+	}
+	
+	option = {
+		name = NKZAB_Macedon.142.a
+		add_treasury = 1000
+		add_mil_power = 100
+		add_stability_or_adm_power = yes
+		add_available_ruler_points = { value = 1 }
+		add_country_modifier = {
+			name = NKZAB_Macedon_excited_victory
+			duration = 7300
+		}
+		event_target:nkzab_macedon_naz_tag = {
+			add_treasury = -1000
+			add_mil_power = -100
+			add_stability = -2
+			kill_ruler = yes
+			remove_country_modifier = NKZAB_Macedon_naz_revenge
+		}
+		
+			white_peace = event_target:nkzab_macedon_naz_tag
+			cyrenaica_area = {
+				limit = { owned_by = event_target:nkzab_macedon_naz_tag }
+				cede_province = ROOT
+			}
+			delta_area = {
+				limit = { owned_by = event_target:nkzab_macedon_naz_tag }
+				cede_province = ROOT
+			}
+			bahari_area = {
+				limit = { owned_by = event_target:nkzab_macedon_naz_tag }
+				cede_province = ROOT
+			}
+		
+		custom_tooltip = NKZAB_Macedon_remove_lucky_naz_tt
+		hidden_effect = {
+			event_target:nkzab_macedon_naz_tag = { 
+				add_country_modifier = {
+					name = NKZAB_Macedon_shutdown_luck
+					duration = -1
+				} 
+			}
+		}
+		clr_country_flag = NKAZB_Macedon_start_get_naz
+		#NKZAB_Macedon_add_conquest_fevor_effect = { extention = 10 }
+		add_government_power = {
+			mechanic_type = NKZAB_MCD_conquest_fevor_mechanic
+			power_type = NKZAB_MCD_conquest_fevor
+			value = 25
+		}
+	}
+}
+
+country_event = { #失败殴打尼扎尔
+	id = NKZAB_Macedon.143
+	title = NKZAB_Macedon.143.t
+	desc = NKZAB_Macedon.143.d
+	picture = COUNTRY_COLLAPSE_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_country_flag = NKAZB_Macedon_start_get_naz
+		NOT = { has_ruler_modifier = NKZAB_Macedon_fast_horse }
+		FROM = {
+			is_capital_of = event_target:nkzab_macedon_naz_tag
+			controlled_by = event_target:nkzab_macedon_target
+		}
+	}
+	
+	option = {
+		name = NKZAB_Macedon.143.a
+		hidden_effect = {
+			event_target:nkzab_macedon_naz_tag = {
+				every_owned_province = {
+					limit = {
+						region = egypt_region
+					}
+					change_controller = event_target:nkzab_macedon_target
+				}
+			}
+		}
+		add_prestige = -25
+		add_treasury = 500
+		add_mil_power = 100
+		NAZ = {
+			add_treasury = -500
+			add_mil_power = -100
+			add_stability = -1
+			remove_country_modifier = NKZAB_Macedon_naz_revenge
+		}
+		clr_country_flag = NKAZB_Macedon_start_get_naz
+	}
+}
+
+country_event = { #叙利亚人倒戈卸甲以礼来降
+	id = NKZAB_Macedon.144
+	title = NKZAB_Macedon.144.t
+	desc = NKZAB_Macedon.144.d
+	picture = PAINTER_ARTIST_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = NKZAB_Macedon.144.a
+		377 = { change_culture = hellenic_antigonian }
+		custom_tooltip = NKZAB_Macedon_syria_hellenic_culture_allow_tt
+		set_country_flag = NKZAB_Macedon_hellenize_syr_flag
+		NKZAB_Macedon_update_conversion_effiency = yes
+		custom_tooltip = NKZAB_Macedon_unlock_petra_monument_tt
+		hidden_effect = {
+			set_country_flag = NKZAB_Macedon_allow_petra
+		}
+	}
+}
+
+country_event = { #光复亚历山大
+	id = NKZAB_Macedon.15
+	title = NKZAB_Macedon.15.t
+	desc = NKZAB_Macedon.15.d
+	picture = ORTHODOX_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = NKZAB_Macedon.15.a
+		if = {
+			limit = {
+				NOT = { government_rank = 3 }
+			}
+			set_government_rank = 3
+		}
+		add_country_modifier = {
+			name = NKZAB_Macedon_egypt_governor
+			duration = -1
+		}
+		358 = {
+			add_base_tax = 2
+			add_base_production = 2
+			add_base_manpower = 2
+		}
+		358 = {
+			change_culture = hellenic_ptolemian
+			add_province_modifier = {
+				name = NKZAB_Macedon_empire_city
+				duration = -1
+			}
+		}
+		custom_tooltip = NKZAB_Macedon_egypt_hellenic_culture_allow_tt
+		set_country_flag = NKZAB_Macedon_hellenize_cyr_flag
+		if = {
+			limit = {
+				OR = {
+					religion = hellenic
+					religion = reformed_hellenic
+					has_country_flag = NKZAB_Macedon_hellenic_tree
+				}
+			}
+			custom_tooltip = NKZAB_Macedon_unlock_stronger_hellenic_tt
+			set_country_flag = NKZAB_Macedon_stronger_hellenic
+		}
+		NKZAB_Macedon_update_conversion_effiency = yes
+	}
+}
+
+country_event = { #景教兄弟情（大嘘）
+	id = NKZAB_Macedon.16
+	title = NKZAB_Macedon.16.t
+	desc = NKZAB_Macedon.16.d
+	picture = MERCHANTS_TALKING_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = NKZAB_Macedon.16.a
+		custom_tooltip = NKZAB_Macedon_tolerance_extend_tt
+		hidden_effect = {
+			remove_country_modifier = NKZAB_Macedon_christian_tolerance
+			add_country_modifier = {
+				name = NKZAB_Macedon_christian_tolerance
+				duration = 7300
+			}
+			5191 = { change_religion = nestorian }
+			5194 = { change_religion = nestorian }
+			5192 = { change_religion = nestorian }
+			4293 = { change_religion = nestorian }
+			5193 = { change_religion = nestorian }
+			every_owned_province = {
+				limit = { religion = nestorian }
+				add_province_modifier = {
+					name = NKZAB_Macedon_estate_nkzab_church_armenian_law_mod
+					duration = -1
+				}
+			}
+			set_country_flag = NKZAB_Macedon_tolerant_nestorian
+		}
+		add_accepted_culture = assyrian
+		custom_tooltip = NKZAB_Macedon_nestorian_consequence_tt
+	}
+	
+	option = {
+		name = NKZAB_Macedon.16.b
+		add_country_modifier = {
+			name = NKZAB_Macedon_attack_heresy
+			duration = 7300
+		}
+		every_owned_province = {
+			limit = { religion = nestorian }
+			add_unrest = 10
+		}
+		hidden_effect = {
+			set_country_flag = NKZAB_Macedon_attack_nestorian
+		}
+		custom_tooltip = NKZAB_Macedon_nestorian_consequence_tt
+	}
+}
+
+country_event = { #焚烧金帐
+	id = NKZAB_Macedon.17
+	title = NKZAB_Macedon.17.t
+	desc = NKZAB_Macedon.17.d
+	picture = AB_BATTLE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = NKZAB_Macedon.17.a
+		add_treasury = 1000
+		capital_scope = {
+			add_base_tax = 4
+			add_base_production = 4
+			add_base_manpower = 4
+		}
+		466 = {
+			add_base_tax = -6
+			add_base_production = -6
+			add_base_manpower = -6
+			add_devastation = 100
+		}
+		if = {
+			limit = {
+				exists = GLH
+				466 = {
+					is_core = GLH
+				}
+			}
+			GLH = {
+				add_stability = -2
+				add_country_modifier = {
+					name = NKZAB_Macedon_burnt_horde
+					duration = 7300
+				}
+			}
+		}
+		add_country_modifier = {
+			name = NKZAB_Macedon_burn_the_horde
+			duration = 7300
+		}
+		#NKZAB_Macedon_add_conquest_fevor_effect = { extention = 10 }
+		add_government_power = {
+			mechanic_type = NKZAB_MCD_conquest_fevor_mechanic
+			power_type = NKZAB_MCD_conquest_fevor
+			value = 25
+		}
+	}
+}
+
+country_event = { #波斯之战
+	id = NKZAB_Macedon.18
+	title = NKZAB_Macedon.18.t
+	desc = NKZAB_Macedon.18.d
+	picture = AB_PERSIA_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { exists = PER }
+				PER = { save_global_event_target_as = nkzab_macedon_persian_war_target }
+			}
+			else_if = {
+				limit = { exists = PRZ }
+				PRZ = { save_global_event_target_as = nkzab_macedon_persian_war_target }
+			}
+			else_if = {
+				limit = { exists = PRC }
+				PRC = { save_global_event_target_as = nkzab_macedon_persian_war_target }
+			}
+			else_if = {
+				limit = { exists = PMN }
+				PMN = { save_global_event_target_as = nkzab_macedon_persian_war_target }
+			}
+			else = {
+				random_country = {
+					limit = {
+						capital_scope = { 
+							superregion = persia_superregion
+							NOT = { region = caucasia_region } 
+						} 
+						NOT = { is_subject = yes }
+					}
+					save_global_event_target_as = nkzab_macedon_persian_war_target
+				}
+			}
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.18.a
+		declare_war_with_cb = {
+			who = event_target:nkzab_macedon_persian_war_target
+			casus_belli = cb_alx_conquest_level1
+		}
+		add_country_modifier = {
+			name = NKZAB_Macedon_first_and_end
+			duration = -1
+			desc = NKZAB_Macedon_till_persia_end_tt
+		}
+		custom_tooltip = NKZAB_Macedon_persian_king_will_tt
+		tooltip = {
+			event_target:nkzab_macedon_persian_war_target = {
+				add_country_modifier = {
+					name = NKZAB_Macedon_end_against_first
+					duration = -1
+					desc = NKZAB_Macedon_till_persia_end_tt
+				}
+				add_treasury = 500
+				add_manpower = 20
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.75
+						cavalry = 0.3
+						artillery = 0.45
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					capital_scope = { 
+						OR = {
+							region = persia_region
+							region = khorasan_region
+						}
+					}
+					NOT = { is_subject_of = ROOT }
+				}
+				add_country_modifier = {
+					name = NKZAB_Macedon_end_against_first
+					duration = -1
+					desc = NKZAB_Macedon_till_persia_end_tt
+				}
+				add_treasury = 500
+				add_manpower = 20
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.75
+						cavalry = 0.3
+						artillery = 0.45
+					}
+				}
+			}
+		}
+		set_country_flag = NKZAB_Macedon_mission_stage4
+		set_country_flag = NKZAB_Macedon_in_persia_war
+		swap_non_generic_missions = yes
+	}
+}
+
+country_event = { #马其顿说的道理
+	id = NKZAB_Macedon.181
+	title = NKZAB_Macedon.181.t
+	desc = NKZAB_Macedon.181.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = NKZAB_Macedon.181.a
+		every_province = {
+			limit = {
+				owner = {
+					war_with = ROOT
+					OR = {
+						capital_scope = {
+							NOT = { region = persia_region }
+							NOT = { region = khorasan_region }
+						}
+						AND = {
+							is_subject = yes
+							overlord = {
+								capital_scope = {
+									NOT = { region = persia_region }
+									NOT = { region = khorasan_region }
+								}
+							}
+						}
+					}
+				}
+				OR = {
+					region = persia_region
+					region = khorasan_region
+				}
+			}
+			cede_province = ROOT
+		}
+		white_peace = event_target:nkzab_macedon_persian_war_target
+		every_country = {
+			limit = {
+				capital_scope = { 
+					OR = {
+						region = persia_region
+						region = khorasan_region
+					}
+				}
+				NOT = { is_subject_of = ROOT }
+			}
+			country_event = {
+				id = NKZAB_Macedon.182
+				days = 30
+				random = 30
+			}
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.181.b
+		every_province = {
+			limit = {
+				owner = {
+					war_with = ROOT
+					OR = {
+						capital_scope = {
+							NOT = { region = persia_region }
+							NOT = { region = khorasan_region }
+						}
+						AND = {
+							is_subject = yes
+							overlord = {
+								capital_scope = {
+									NOT = { region = persia_region }
+									NOT = { region = khorasan_region }
+								}
+							}
+						}
+					}
+				}
+				OR = {
+					region = persia_region
+					region = khorasan_region
+				}
+			}
+			cede_province = ROOT
+		}
+		add_country_modifier = {
+			name = NKZAB_Macedon_supreme_victory
+			duration = 30
+		}
+	}
+}
+
+country_event = { #通牒！
+	id = NKZAB_Macedon.182
+	title = NKZAB_Macedon.182.t
+	desc = NKZAB_Macedon.182.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+	major_trigger = {
+		OR = {
+			tag = MCD
+			tag = ALX
+			AND = {
+				capital_scope = { 
+					OR = {
+						region = persia_region
+						region = khorasan_region
+					}
+				}
+				NOT = { is_subject_of = event_target:nkzab_macedon_target }
+			}
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.182.a
+		tooltip = {
+			event_target:nkzab_macedon_target = {
+				inherit = ROOT
+			}
+		}
+		hidden_effect = {
+			every_owned_province = {
+				add_territorial_core = event_target:nkzab_macedon_target
+			}
+			event_target:nkzab_macedon_target = {
+				inherit = ROOT
+			}
+		}
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 0
+				OR = {
+					tag = PER
+					tag = PRZ
+					tag = PRC
+					tag = PMN
+				}
+			}
+			modifier = {
+				factor = 0.5
+				development = 150
+			}
+			modifier = {
+				factor = 0.75
+				OR = {
+					tag = INJ
+					tag = MRH
+					tag = SHP
+					tag = SSN
+				}
+			}
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.182.b
+		event_target:nkzab_macedon_target = {
+			create_subject = {
+				subject_type = vassal
+				subject = ROOT
+			}
+		}
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 0
+				OR = {
+					tag = PER
+					tag = PRZ
+					tag = PRC
+					tag = PMN
+				}
+			}
+			modifier = {
+				factor = 0.5
+				development = 250
+			}
+			modifier = {
+				factor = 0.75
+				OR = {
+					tag = INJ
+					tag = MRH
+					tag = SHP
+					tag = SSN
+				}
+			}
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.182.c
+		add_stability = 1
+		
+			every_owned_province = {
+				limit = {
+					OR = {
+						region = persia_region
+						region = khorasan_region
+					}
+				}
+				add_permanent_province_modifier = {
+					name = NKZAB_Macedon_will_be_conquest
+					duration = 18250
+				}
+			}
+		
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 5
+				development = 350
+			}
+			modifier = {
+				factor = 50
+				OR = {
+					tag = PER
+					tag = PRZ
+					tag = PRC
+					tag = PMN
+				}
+			}
+		}
+	}
+}
+
+country_event = { #处理波斯
+	id = NKZAB_Macedon.183
+	title = NKZAB_Macedon.183.t
+	desc = NKZAB_Macedon.183.d
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {
+		name = NKZAB_Macedon.183.a
+		highlight = yes
+		custom_tooltip = NKZAB_Macedon_persia_heathen_convert_tt
+		tooltip = {
+			add_province_modifier = {
+				name = NKZAB_Macedon_force_convert
+				duration = 7300
+			}
+		}
+		hidden_effect = {
+			persia_region = {
+				limit = { NOT = { religion_group = ROOT } }
+				add_province_modifier = {
+					name = NKZAB_Macedon_force_convert
+					duration = 7300
+				}
+			}
+			persia_region = {
+				limit = { has_province_modifier = religious_zeal_at_conv }
+				remove_province_modifier = religious_zeal_at_conv
+				add_unrest = 10
+			}
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.183.b
+		highlight = yes
+		custom_tooltip = NKZAB_Macedon_persia_heathen_tolerant_tt
+		tooltip = {
+			add_province_modifier = {
+				name = NKZAB_Macedon_persia_tolerance
+				duration = 7300
+			}
+		}
+		hidden_effect = {
+			persia_region = {
+				add_nationalism = -5
+			}
+			persia_region = {
+				limit = { NOT = { religion_group = ROOT } }
+				add_province_modifier = {
+					name = NKZAB_Macedon_persia_tolerance
+					duration = 7300
+				}
+			}
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.183.c
+		add_dip_power = 100
+	}
+}
+
+country_event = { #处理呼罗珊
+	id = NKZAB_Macedon.184
+	title = NKZAB_Macedon.184.t
+	desc = NKZAB_Macedon.184.d
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {
+		name = NKZAB_Macedon.184.a
+		highlight = yes
+		custom_tooltip = NKZAB_Macedon_khorasan_heathen_convert_tt
+		tooltip = {
+			add_province_modifier = {
+				name = NKZAB_Macedon_force_convert
+				duration = 7300
+			}
+		}
+		hidden_effect = {
+			khorasan_region = {
+				limit = { NOT = { religion_group = ROOT } }
+				add_province_modifier = {
+					name = NKZAB_Macedon_force_convert
+					duration = 7300
+				}
+			}
+			khorasan_region = {
+				limit = { has_province_modifier = religious_zeal_at_conv }
+				remove_province_modifier = religious_zeal_at_conv
+				add_unrest = 10
+			}
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.184.b
+		highlight = yes
+		custom_tooltip = NKZAB_Macedon_khorasan_heathen_tolerant_tt
+		tooltip = {
+			add_province_modifier = {
+				name = NKZAB_Macedon_persia_tolerance
+				duration = 7300
+			}
+		}
+		hidden_effect = {
+			khorasan_region = {
+				add_nationalism = -5
+			}
+			khorasan_region = {
+				limit = { NOT = { religion_group = ROOT } }
+				add_province_modifier = {
+					name = NKZAB_Macedon_persia_tolerance
+					duration = 7300
+				}
+			}
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.184.c
+		add_dip_power = 100
+	}
+}
+
+country_event = { #你好帖木儿
+	id = NKZAB_Macedon.19
+	title = NKZAB_Macedon.19.t
+	desc = NKZAB_Macedon.19.d
+	picture = AB_NOVGOROD_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = NKZAB_Macedon.19.a
+		highlight = yes
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = NKZAB_Macedon_support_nestorian_tt
+				has_country_flag = NKZAB_Macedon_tolerant_nestorian
+			}
+		}
+		if = {
+			limit = {
+				454 = { NOT = { religion = nestorian } }
+			}
+			454 = { change_religion = nestorian }
+		}
+		add_treasury = -1000
+		custom_tooltip = NKZAB_Macedon_thankyou_timurid_tt
+		hidden_effect = {
+			set_country_flag = NKZAB_Macedon_can_use_timurid_tomb
+		}
+		454 = {
+			add_great_project_tier = { 
+				type = tomb_timur
+				tier = 1 
+			}
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.19.b
+		highlight = yes
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = NKZAB_Macedon_against_nestorian_tt
+				has_country_flag = NKZAB_Macedon_attack_nestorian
+			}
+		}
+		if = {
+			limit = {
+				454 = { religion = nestorian }
+			}
+			454 = {
+				change_religion = ROOT
+				add_unrest = 10
+			}
+		}
+		add_country_modifier = {
+			name = NKZAB_Macedon_fire_in_tomb
+			duration = 10950
+		}
+		add_treasury = 1000
+		custom_tooltip = NKZAB_Macedon_burn_timurid_tt
+		hidden_effect = {
+			454 = {
+				destroy_great_project = {
+					type = tomb_timur
+				}
+			}
+			every_country = {
+				limit = { religion = nestorian }
+				add_opinion = {
+					who = ROOT
+					modifier = NKZAB_burn_saint_timurid
+				}
+			}
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.19.c
+		add_prestige = 1
+	}
+}
+
+country_event = { #冲向印度
+	id = NKZAB_Macedon.20
+	title = NKZAB_Macedon.20.t
+	desc = NKZAB_Macedon.20.d
+	picture = "ABAD6_eventPicture"
+
+	is_triggered_only = yes
+
+	option = {
+		name = NKZAB_Macedon.20.a
+		india_superregion = {
+			add_permanent_claim = ROOT
+		}
+		add_country_modifier = {
+			name = NKZAB_Macedon_runinto_hindu_lvl3
+			duration = -1
+		}
+		custom_tooltip = NKZAB_Macedon_introduction_of_runinto_hindu_tt
+		hidden_effect = {
+			set_country_flag = NKZAB_Macedon_launch_hindu_fervor
+			set_variable = {
+    			which = NkzabMacedonHinduFervorMonths
+    			value = 60
+			}
+		}
+	}
+}
+
+country_event = { #亚历山大帝国
+	id = NKZAB_Macedon.21
+	title = NKZAB_Macedon.21.t
+	desc = NKZAB_Macedon.21.d
+	picture = AB_RISING_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = NKZAB_Macedon.21.a
+		change_tag = ALX
+		hidden_effect = {
+			save_global_event_target_as = nkzab_macedon_target
+		}
+		NYAB_ALX_agead_dynasty = yes
+		swap_free_idea_group = yes
+		change_government = monarchy
+		if = {
+			limit = { is_emperor_of_china = yes }
+			add_government_reform = NKZAB_alexander_celestial_empire_monarchy
+		}
+		else = {
+			add_government_reform = NKZAB_alexander_empire_monarchy
+		}
+		hidden_effect = {
+			clr_country_flag = NKZAB_Macedon_allow_alx_cb_level2
+			set_country_flag = NKZAB_Macedon_allow_alx_cb_level3
+			every_owned_province = {
+				add_local_autonomy = -10
+			}
+		}
+		set_country_flag = NKZAB_Macedon_mission_stage5
+		swap_non_generic_missions = yes
+		hidden_effect = {
+			remove_country_modifier = NKZAB_Macedon_conquest_neverend
+			set_government_power = {
+				mechanic_type = NKZAB_ALX_conquest_fevor_mechanic
+				power_type = NKZAB_ALX_conquest_fevor
+				value = 100
+			}
+			freeze_government_power = {
+				mechanic_type = NKZAB_ALX_conquest_fevor_mechanic
+				power_type = NKZAB_ALX_conquest_fevor
+			}
+		}
+	}
+}
+
+country_event = { #解散神罗
+	id = NKZAB_Macedon.22
+	title = NKZAB_Macedon.22.t
+	desc = NKZAB_Macedon.22.d
+	picture = "AB_CHARLEMAGNE_eventPicture"
+
+	is_triggered_only = yes
+
+	option = {
+		name = NKZAB_Macedon.22.a
+		trigger = {
+			religion_group = christian
+			hre_size = 1
+		}
+		set_emperor = yes
+		set_allow_female_emperor = yes
+		hre_inheritable = yes
+		add_imperial_influence = 100
+		add_country_modifier = {
+			name = NKZAB_Macedon_victory_over_hre
+			duration = -1
+		}
+		custom_tooltip = NKZAB_Macedon_extra_hre_reform_tt
+	}
+	#这段别注释了我buff都对半砍了.jpg
+
+	option = {
+		name = NKZAB_Macedon.22.b
+		dismantle_hre = yes
+		add_available_ruler_points = { value = 3 }
+		add_country_modifier = {
+			name = NKZAB_Macedon_dismantle_hre
+			duration = -1
+		}
+	}
+}
+
+country_event = { #统一神罗
+	id = NKZAB_Macedon.9075
+	title = NKZAB_Macedon.9075.t
+	desc = NKZAB_Macedon.9075.d
+	picture = "HRE_eventPicture"
+
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		name = "NKZAB_Macedon.9075.a"
+		trigger = {
+			OR = {
+			tag = MCD
+			tag = ALX
+		}
+		}
+		restore_country_name_effect = yes
+		remove_country_modifier = NKZAB_Macedon_victory_over_hre
+		add_country_modifier = {
+			name = "NKZAB_Macedon_victory_over_roma"
+			duration = -1
+		}
+		custom_tooltip = NKZAB_Macedon_forever_25_charisma_tt
+		hidden_effect = {
+			every_province = {
+				limit = {
+					is_part_of_hre = yes
+					OR = {
+						owned_by = ROOT
+						owner = { is_neighbor_of = ROOT }
+					}
+					NOT = { is_core = ROOT }
+				}
+				add_core = emperor
+			}
+			every_country = {
+				limit = {
+					is_part_of_hre = yes
+					is_emperor = no
+					num_of_cities = 1
+				}
+				country_event = { id = NKZAB_Macedon.9076 }
+			}
+		}
+		dismantle_hre = yes
+		set_government_rank = 3
+		add_adm_power = 250
+	}
+}
+
+country_event = { #整合神罗
+	id = NKZAB_Macedon.9076
+	title = NKZAB_Macedon.9076
+	desc = NKZAB_Macedon.9076
+	picture = HRE_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = NKZAB_Macedon.9076
+		event_target:nkzab_macedon_target = {
+			inherit = ROOT
+		}
+	}
+}
+
+country_event = { #恢复大秦（？
+	id = NKZAB_Macedon.23
+	title = NKZAB_Macedon.23.t
+	desc = NKZAB_Macedon.23.d
+	picture = "AB_DRAGON_eventPicture"
+
+	is_triggered_only = yes
+
+	option = {
+		name = NKZAB_Macedon.23.a
+		trigger = {
+			NOT = { exists = QIN }
+		}
+		hidden_effect = {
+			china_superregion = {
+				add_territorial_core = QIN
+			}
+		}
+		NYAB_release_a_country_as_subject_effect = { tag = QIN }
+		tooltip = {
+			china_superregion = {
+				add_territorial_core = QIN
+			}
+		}
+		create_subject = {
+			subject = QIN
+			subject_type = march
+		}
+		QIN = {
+			add_country_modifier = {
+				name = NKZAB_Macedon_civilized_country
+				duration = -1
+			}
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.23.b
+		add_treasury = -50
+	}
+}
+
+country_event = { #尾声
+	id = NKZAB_Macedon.24
+	title = NKZAB_Macedon.24.t
+	desc = NKZAB_Macedon.24.d
+	picture = "AB_JUSTINIAN_eventPicture"
+
+	is_triggered_only = yes
+
+	option = {
+		name = NKZAB_Macedon.24.a
+		add_country_modifier = {
+			name = NKZAB_Macedon_forever_world
+			duration = -1
+		}
+		clr_country_flag = NKZAB_Macedon_allow_alx_cb_level3
+		set_country_flag = NKZAB_Macedon_allow_alx_cb_level4
+		custom_tooltip = NKZAB_Macedon_thankyou_for_playing_tt
+	}
+}
+
+country_event = { #巴格达之星
+	id = NKZAB_Macedon.25
+	title = NKZAB_Macedon.25.t
+	desc = NKZAB_Macedon.25.d
+	picture = "BIG_BOOK_eventPicture"
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	trigger = {
+		OR = {
+			tag = MCD
+			tag = ALX
+		}
+		owns_core_province = 410
+	}
+
+	option = {
+		name = NKZAB_Macedon.25.a
+		add_country_modifier = {
+			name = NKZAB_Macedon_baghdad_wisdom
+			duration = 7300
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.25.b
+		custom_tooltip = NKZAB_Macedon_parliament_baghdad_tt
+		set_country_flag = NKZAB_Macedon_can_baghdad_issue
+		tooltip = {
+			add_country_modifier = {
+				name = NKZAB_Macedon_baghdad_wisdom_parliament
+				duration = 3650
+			}
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.25.c
+	}
+}
+
+country_event = { #光芒消逝
+	id = NKZAB_Macedon.323
+	title = NKZAB_Macedon.323.t
+	desc = NKZAB_Macedon.323.d
+	picture = "ABAD2_eventPicture"
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			add_yearly_manpower = -5
+			add_stability = -5
+			add_legitimacy = -50
+			add_war_exhaustion = 10
+			remove_advisor_by_category = ADM
+			remove_advisor_by_category = DIP
+			remove_advisor_by_category = MIL
+			set_country_flag = NKZAB_Macedon_dec_can_over_extention
+			swap_non_generic_missions = yes
+			
+		}
+	}
+
+	option = {
+		name = NKZAB_Macedon.323.a
+		tooltip = {
+			add_yearly_manpower = -5
+			add_stability = -5
+			add_legitimacy = -50
+			add_war_exhaustion = 10
+			remove_advisor_by_category = ADM
+			remove_advisor_by_category = DIP
+			remove_advisor_by_category = MIL
+			set_country_flag = NKZAB_Macedon_dec_can_over_extention
+		}		
+		custom_tooltip = NKZAB_Macedon_dec_overextention_tt
+		tooltip = {
+			swap_non_generic_missions = yes
+		}
+	}
+}
+
+country_event = { #过扩事件×1
+	id = NKZAB_Macedon.331
+	title = "EVTNAME748"
+	desc = "EVTDESC748"
+	picture = MILITARY_CAMP_eventPicture
+	
+	trigger = {
+		is_at_war = yes
+		has_country_flag = NKZAB_Macedon_conquest_end
+		has_country_flag = NKZAB_Macedon_dec_can_over_extention
+	}
+
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = "EVTOPTA748"
+		add_war_exhaustion = 1
+		add_yearly_manpower = -0.5
+	}
+}
+
+# Widespread Opposition
+country_event = { #过扩事件×2
+	id = NKZAB_Macedon.332
+	title = "EVTNAME749"
+	desc = "EVTDESC749"
+	picture = DEBATE_REPUBLICAN_eventPicture
+	
+	trigger = {
+		stability = -2
+		has_country_flag = NKZAB_Macedon_conquest_end
+		has_country_flag = NKZAB_Macedon_dec_can_over_extention
+	}
+
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = "EVTOPTA749"
+		add_stability = -1
+	}
+}
+
+# Bad Reputation!
+country_event = { #过扩事件×3
+	id = NKZAB_Macedon.333
+	title = "EVTNAME750"
+	desc = "EVTDESC750"
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		prestige = 0
+		has_country_flag = NKZAB_Macedon_conquest_end
+		has_country_flag = NKZAB_Macedon_dec_can_over_extention
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = "EVTOPTA750"
+		add_prestige = -25
+	}
+}
+
+# Inflation
+country_event = { #过扩事件×4
+	id = NKZAB_Macedon.334
+	title = "EVTNAME751"
+	desc = "EVTDESC751"
+	picture = OVEREXTENSION_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { inflation = 50 }
+		has_country_flag = NKZAB_Macedon_conquest_end
+		has_country_flag = NKZAB_Macedon_dec_can_over_extention
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = "EVTOPTA751"
+		add_inflation = 1
+	}
+}
+
+# Officers Deserting
+country_event = { #过扩事件×5
+	id = NKZAB_Macedon.335
+	title = "EVTNAME752"
+	desc = "EVTDESC752"
+	picture = LAND_MILITARY_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		army_tradition = 10
+		has_country_flag = NKZAB_Macedon_conquest_end
+		has_country_flag = NKZAB_Macedon_dec_can_over_extention
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = "EVTOPTA752"
+		add_army_tradition = -10
+	}
+}
+
+# Merchants Resented
+country_event = { #过扩事件×6
+	id = NKZAB_Macedon.336
+	title = "EVTNAME753"
+	desc = "EVTDESC753"
+	picture = MERCHANTS_TALKING_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		num_of_merchants = 1
+		any_active_trade_node = {
+			has_merchant = PREV
+			NOT = { 
+				has_trade_modifier = {
+					who = ROOT
+					name = merchant_recalled
+				}
+			}	
+		}
+		has_country_flag = NKZAB_Macedon_conquest_end
+		has_country_flag = NKZAB_Macedon_dec_can_over_extention
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = "EVTOPTA753"
+		random_active_trade_node = {
+			limit = {
+				NOT = { 
+					has_trade_modifier = {
+						who = ROOT
+						name = merchant_recalled
+					}
+				}				
+				has_merchant = PREV
+			}
+			if = {
+				limit = {
+					trade_share = {
+						country = ROOT
+						share = 5
+					}
+				}
+				add_trade_node_income = -10
+			}
+			add_trade_modifier = {
+				who = root
+				duration = 3650
+				power = -10
+				key = merchant_recalled
+			}
+		}
+	}
+}
+
+# Merchants Assassinated!
+country_event = { #过扩事件×7
+	id = NKZAB_Macedon.337
+	title = "EVTNAME773"
+	desc = "EVTDESC773"
+	picture = ASSASSINATION_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		num_of_merchants = 1
+		any_active_trade_node = {
+			has_merchant = PREV
+			NOT = { 
+				has_trade_modifier = {
+					who = ROOT
+					name = merchant_recalled
+				}
+			}
+		}	
+		has_country_flag = NKZAB_Macedon_conquest_end
+		has_country_flag = NKZAB_Macedon_dec_can_over_extention
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = "EVTOPTA773"
+		random_active_trade_node = {
+			limit = {
+				has_merchant = PREV
+				NOT = { 
+					has_trade_modifier = {
+						who = ROOT
+						name = merchant_recalled
+					}
+				}				
+			}
+			add_trade_modifier = {
+				who = root
+				duration = 3650
+				power = -10
+				key = merchant_recalled
+			}	
+		}		
+	}
+}
+
+# Legitimacy Questioned
+country_event = { #过扩事件×8
+	id = NKZAB_Macedon.338
+	title = "EVTNAME754"
+	desc = "EVTDESC754"
+	picture = {
+		picture = ROYAL_STRESS_eventPicture
+		trigger = {
+			has_dlc = "Lions of the North"
+			technology_group = western
+		}
+	}
+	picture = {
+		picture = COURT_eventPicture
+		trigger = {
+			OR = {
+				NOT = { has_dlc = "Lions of the North" }
+				NOT = { technology_group = western }
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		legitimacy_or_horde_unity = 15
+		NOT = { has_reform = celestial_empire }
+		government = monarchy
+		is_lesser_in_union = no
+		has_country_flag = NKZAB_Macedon_conquest_end
+		has_country_flag = NKZAB_Macedon_dec_can_over_extention
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "EVTOPTA754"
+		if = {
+			limit = { NOT = { has_reform = steppe_horde } }
+			add_legitimacy = -15
+		}
+		if = {
+			limit = { has_reform = steppe_horde }
+			add_horde_unity = -15
+		}
+	}
+}
+
+# Magistrates Resigns
+country_event = { #过扩事件×9
+	id = NKZAB_Macedon.339
+	title = "EVTNAME755"
+	desc = "EVTDESC755"
+	picture = DEBATE_REPUBLICAN_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		dip_power = 10
+		has_country_flag = NKZAB_Macedon_conquest_end
+		has_country_flag = NKZAB_Macedon_dec_can_over_extention
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = "EVTOPTA755"
+		add_dip_power = -50
+	}
+}
+
+# Advisor Resigns
+country_event = { #过扩事件×10
+	id = NKZAB_Macedon.340
+	title = "EVTNAME756"
+	desc = "EVTDESC756"
+	picture = OVEREXTENSION_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			advisor = philosopher
+			advisor = natural_scientist
+			advisor = artist
+			advisor = statesman
+		}
+		has_country_flag = NKZAB_Macedon_conquest_end
+		has_country_flag = NKZAB_Macedon_dec_can_over_extention
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = "EVTOPTA756"
+		reduce_meritocracy_effect = yes
+		if = {
+			limit = {
+				advisor = philosopher
+			}
+			remove_advisor = philosopher
+		}
+		if = {
+			limit = {
+				advisor = natural_scientist
+			}
+			remove_advisor = natural_scientist
+		}
+		if = {
+			limit = {
+				advisor = artist
+			}
+			remove_advisor = artist
+		}
+		if = {
+			limit = {
+				advisor = statesman
+			}
+			remove_advisor = statesman
+		}
+	}
+}
+
+country_event = { #重焕新生
+	id = NKZAB_Macedon.356
+	title = NKZAB_Macedon.356.t
+	desc = NKZAB_Macedon.356.d
+	picture = "AB_ECLIPSE_eventPicture"
+
+	is_triggered_only = yes
+
+	option = {
+		name = NKZAB_Macedon.356.a
+		add_adm_power = 200
+		add_dip_power = 200
+		add_mil_power = 200
+		add_army_tradition = 50
+		add_yearly_manpower = 5
+		#custom_tooltip = NKZAB_Macedon_dec_continue_our_conquest_tt
+		hidden_effect = {
+			# add_country_modifier = {
+			# 	name = NKZAB_Macedon_conquest_neverend
+			# 	duration = -1
+			# }
+			# set_variable = {
+    		# 	which = NkzabMacedonConquestFervorYears
+    		# 	value = 30
+			# }
+			# set_variable = {
+    		# 	which = NkzabMacedonConquestFervorMonths
+    		# 	value = 0
+			# }
+			clr_country_flag = NKZAB_Macedon_conquest_end
+			set_country_flag = NKZAB_Macedon_conquest_has_ended
+		}
+		unfreeze_government_power = {
+			mechanic_type = NKZAB_MCD_conquest_fevor_mechanic
+			power_type = NKZAB_MCD_conquest_fevor
+		}
+		set_government_power = {
+			mechanic_type = NKZAB_MCD_conquest_fevor_mechanic
+			power_type = NKZAB_MCD_conquest_fevor
+			value = 100
+		}
+		swap_non_generic_missions = yes
+		add_country_modifier = {
+			name = NKZAB_Macedon_dec_speedup_for_wasted
+			duration = 3650
+		}
+		custom_tooltip = NKZAB_Macedon_dec_nomore_goback_time_tt
+	}
+}
+
+country_event = { #何去何从
+	id = NKZAB_Macedon.640
+	title = NKZAB_Macedon.640.t
+	desc = NKZAB_Macedon.640.d
+	picture = "COUNTRY_COLLAPSE_eventPicture"
+
+	is_triggered_only = yes
+
+	option = {
+		name = NKZAB_Macedon.640.a
+		kill_ruler = yes
+		add_stability = -6
+		add_legitimacy = -100
+		add_prestige = -200
+		change_tag = GRE
+		hidden_effect = {
+			change_primary_culture = greek
+		}
+		swap_free_idea_group = yes
+		swap_non_generic_missions = yes
+		tooltip = {
+			change_primary_culture = greek
+		}
+		#set_ruler_culture = greek
+		set_heir_culture = greek
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					culture = hellenic_hellas
+				}
+				change_culture = greek
+			}
+			every_owned_province = {
+				limit = {
+					culture = hellenic_pontic
+				}
+				change_culture = pontic_greek
+			}
+			remove_country_modifier = NKZAB_Macedon_charisma_1
+			remove_country_modifier = NKZAB_Macedon_charisma_2
+			remove_country_modifier = NKZAB_Macedon_charisma_3
+			remove_country_modifier = NKZAB_Macedon_charisma_4
+			remove_country_modifier = NKZAB_Macedon_charisma_5
+		}
+	}
+}
+
+country_event = { #巴格达大学的好顾问
+	id = NKZAB_Macedon.1000
+	title = NKZAB_Macedon.1000.t
+	desc = NKZAB_Macedon.1000.d
+	picture = "AB_COURT_eventPicture"
+	
+	is_triggered_only = yes
+	
+	option = { #行政顾问
+		name = NKZAB_Macedon.1000.adm
+		hidden_effect = {
+			country_event = { id = NKZAB_Macedon.1001 }
+		}
+	}
+	option = { #外交顾问
+		name = NKZAB_Macedon.1000.dip
+		hidden_effect = {
+			country_event = { id = NKZAB_Macedon.1002 }
+		}
+	}
+	option = { #军事顾问
+		name = NKZAB_Macedon.1000.mil
+		hidden_effect = {
+			country_event = { id = NKZAB_Macedon.1003 }
+		}
+	}
+	option = { #摸了！
+		name = NKZAB_Macedon.1000.back
+		clr_country_flag = NKZAB_Macedon_now_university
+	}
+}
+
+country_event = { #行政好顾问
+	id = NKZAB_Macedon.1001
+	title = NKZAB_Macedon.1001.t
+	desc = NKZAB_Macedon.1001.d
+	picture = "AB_COURT_eventPicture"
+	
+	is_triggered_only = yes
+	
+	option = { #philosopher
+		name = NKZAB_Macedon.1001.adma
+		define_advisor = {
+			type = philosopher
+			skill = 3
+			cost_multiplier = 0.5
+		}
+	}
+
+	option = { #natural_scientist
+		name = NKZAB_Macedon.1001.admb
+		define_advisor = {
+			type = natural_scientist
+			skill = 3
+			cost_multiplier = 0.5
+		}
+	}
+
+	option = { #artist
+		name = NKZAB_Macedon.1001.admc
+		define_advisor = {
+			type = artist
+			skill = 3
+			cost_multiplier = 0.5
+		}
+	}
+
+	option = { #treasurer
+		name = NKZAB_Macedon.1001.admd
+		define_advisor = {
+			type = treasurer
+			skill = 3
+			cost_multiplier = 0.5
+		}
+	}
+
+	option = { #theologian
+		name = NKZAB_Macedon.1001.adme
+		define_advisor = {
+			type = theologian
+			skill = 3
+			cost_multiplier = 0.5
+		}
+	}
+
+	option = { #master_of_mint
+		name = NKZAB_Macedon.1001.admf
+		define_advisor = {
+			type = master_of_mint
+			skill = 3
+			cost_multiplier = 0.5
+		}
+	}
+
+	option = { #inquisitor
+		name = NKZAB_Macedon.1001.admg
+		define_advisor = {
+			type = inquisitor
+			skill = 3
+			cost_multiplier = 0.5
+		}
+	}
+	option = { #magistrate �ΰ���
+		name = NKZAB_Macedon.1001.admh
+		define_advisor = {
+			type = magistrate
+			skill = 3
+			cost_multiplier = 0.5
+		}
+	}
+	
+	option = { #innovative �ĸ���
+		name = NKZAB_Macedon.1001.admi
+		define_advisor = {
+			type = in_advisor
+			skill = 3
+			cost_multiplier = 0.5
+		}
+	}
+	
+	option = { #architect ����ʦ
+		name = NKZAB_Macedon.1001.admj
+		define_advisor = {
+			type = architect
+			skill = 3
+			cost_multiplier = 0.5
+		}
+	}
+	
+	option = { #visionary Զ����
+		name = NKZAB_Macedon.1001.admk
+		define_advisor = {
+			type = visionary
+			skill = 3
+			cost_multiplier = 0.5
+		}
+	}
+	
+	option = { #planner �滮��
+		name = NKZAB_Macedon.1001.adml
+		define_advisor = {
+			type = planner
+			skill = 3
+			cost_multiplier = 0.5
+		}
+	}
+	
+	option = { #scholar ѧ��
+		name = NKZAB_Macedon.1001.admm
+		define_advisor = {
+			type = scholar
+			skill = 3
+			cost_multiplier = 0.5
+		}
+	}
+	
+	option = { #missionary ����ʿ
+		name = NKZAB_Macedon.1001.admn
+		define_advisor = {
+			type = missionary
+			skill = 3
+			cost_multiplier = 0.5
+		}
+	}
+	
+	option = { #back
+		name = NKZAB_Macedon.1000.backbefore
+		custom_tooltip = NKZAB_Macedon_back_to_former_tt
+		hidden_effect = {
+			set_country_flag = NKZAB_Macedon_still_university
+			country_event = { id = NKZAB_Macedon.1000 }
+		}
+	}
+
+	after = {
+		hidden_effect = {
+			if = {
+				limit = { NOT = { has_country_flag = NKZAB_Macedon_still_university } }
+				add_country_modifier = {
+					name = NKZAB_Macedon_advisor_timer
+					duration = 3650
+					hidden = yes
+				}
+				clr_country_flag = NKZAB_Macedon_now_university
+			}
+			clr_country_flag = NKZAB_Macedon_still_university
+		}
+	}
+}
+
+country_event = { #DIP advisor
+	id = NKZAB_Macedon.1002
+	title = NKZAB_Macedon.1002.t
+	desc = NKZAB_Macedon.1002.d
+	picture = "AB_COURT_eventPicture"
+	
+	is_triggered_only = yes
+	
+	option = { #statesman
+		name = NKZAB_Macedon.1002.dipa
+		define_advisor = {
+			type = statesman
+			skill = 3
+			cost_multiplier = 0.5
+		}
+	}
+
+	option = { #naval_reformer
+		name = NKZAB_Macedon.1002.dipb
+		define_advisor = {
+			type = naval_reformer
+			skill = 3
+			cost_multiplier = 0.5
+		}
+	}
+
+	option = { #trader
+		name = NKZAB_Macedon.1002.dipc
+		define_advisor = {
+			type = trader
+			skill = 3
+			cost_multiplier = 0.5
+		}
+	}
+
+	option = { #navigator
+		name = NKZAB_Macedon.1002.dipd
+		define_advisor = {
+			type = navigator
+			skill = 3
+			cost_multiplier = 0.5
+		}
+	}
+
+	option = { #spymaster
+		name = NKZAB_Macedon.1002.dipe
+		define_advisor = {
+			type = spymaster
+			skill = 3
+			cost_multiplier = 0.5
+		}
+	}
+
+	option = { #diplomat
+		name = NKZAB_Macedon.1002.dipf
+		define_advisor = {
+			type = diplomat
+			skill = 3
+			cost_multiplier = 0.5
+		}
+	}
+
+	option = { #colonial_governor
+		name = NKZAB_Macedon.1002.dipg
+		define_advisor = {
+			type = colonial_governor
+			skill = 3
+			cost_multiplier = 0.5
+		}
+	}
+	
+	option = { #ae_advisor ��������
+		name = NKZAB_Macedon.1002.diph
+		define_advisor = {
+			type = ae_advisor
+			skill = 3
+			cost_multiplier = 0.5
+		}
+	}
+	
+	option = { #councilor �۹�����
+		name = NKZAB_Macedon.1002.dipi
+		trigger = { is_emperor = yes }
+		define_advisor = {
+			type = councilor
+			skill = 3
+			cost_multiplier = 0.5
+		}
+	}
+	
+	option = { #mandate_advisor �ڸ��ѧʿ
+		name = NKZAB_Macedon.1002.dipj
+		trigger = { is_emperor_of_china = yes }
+		define_advisor = {
+			type = mandate_advisor
+			skill = 3
+			cost_multiplier = 0.5
+		}
+	}
+	
+	option = { #colonist ֳ����
+		name = NKZAB_Macedon.1002.dipk
+		trigger = { num_of_colonists = 1 }
+		define_advisor = {
+			type = colonist
+			skill = 3
+			cost_multiplier = 0.5
+		}
+	}
+	
+	option = { #dockmaster ��ͷ����Ա
+		name = NKZAB_Macedon.1002.dipl
+		define_advisor = {
+			type = dockmaster
+			skill = 3
+			cost_multiplier = 0.5
+		}
+	}
+	
+	option = { #back
+		name = NKZAB_Macedon.1000.backbefore
+		custom_tooltip = NKZAB_Macedon_back_to_former_tt
+		hidden_effect = {
+			set_country_flag = NKZAB_Macedon_still_university
+			country_event = { id = NKZAB_Macedon.1000 }
+		}
+	}
+	
+	after = {
+		hidden_effect = {
+			if = {
+				limit = { NOT = { has_country_flag = NKZAB_Macedon_still_university } }
+				add_country_modifier = {
+					name = NKZAB_Macedon_advisor_timer
+					duration = 3650
+					hidden = yes
+				}
+				clr_country_flag = NKZAB_Macedon_now_university
+			}
+			clr_country_flag = NKZAB_Macedon_still_university
+		}
+	}
+}
+
+country_event = { #军事好顾问
+	id = NKZAB_Macedon.1003
+	title = NKZAB_Macedon.1003.t
+	desc = NKZAB_Macedon.1003.d
+	picture = "AB_COURT_eventPicture"
+	
+	is_triggered_only = yes
+	
+	option = { #army_reformer
+		name = NKZAB_Macedon.1003.mila
+		define_advisor = {
+			type = army_reformer
+			skill = 3
+			cost_multiplier = 0.5
+		}
+	}
+
+	option = { #army_organiser
+		name = NKZAB_Macedon.1003.milb
+		define_advisor = {
+			type = army_organiser
+			skill = 3
+			cost_multiplier = 0.5
+		}
+	}
+
+	option = { #commandant
+		name = NKZAB_Macedon.1003.milc
+		define_advisor = {
+			type = commandant
+			skill = 3
+			cost_multiplier = 0.5
+		}
+	}
+
+	option = { #quartermaster
+		name = NKZAB_Macedon.1003.mild
+		define_advisor = {
+			type = quartermaster
+			skill = 3
+			cost_multiplier = 0.5
+		}
+	}
+
+	option = { #recruitmaster
+		name = NKZAB_Macedon.1003.mile
+		define_advisor = {
+			type = recruitmaster
+			skill = 3
+			cost_multiplier = 0.5
+		}
+	}
+
+	option = { #fortification_expert
+		name = NKZAB_Macedon.1003.milf
+		define_advisor = {
+			type = fortification_expert
+			skill = 3
+			cost_multiplier = 0.5
+		}
+	}
+
+	option = { #grand_captain
+		name = NKZAB_Macedon.1003.milg
+		define_advisor = {
+			type = grand_captain
+			skill = 3
+			cost_multiplier = 0.5
+		}
+	}
+	
+	option = { #mr_advisor #������
+		name = NKZAB_Macedon.1003.milh
+		define_advisor = {
+			type = mr_advisor
+			skill = 3
+			cost_multiplier = 0.5
+		}
+	}
+	
+	option = { #dragoon �����
+		name = NKZAB_Macedon.1003.mili
+		define_advisor = {
+			type = dragoon
+			skill = 3
+			cost_multiplier = 0.5
+		}
+	}
+	
+	option = { #siegeengineer ����ר��
+		name = NKZAB_Macedon.1003.milj
+		define_advisor = {
+			type = siegeengineer
+			skill = 3
+			cost_multiplier = 0.5
+		}
+	}
+	
+	option = { #drillmaster �̹�
+		name = NKZAB_Macedon.1003.milk
+		define_advisor = {
+			type = drillmaster
+			skill = 3
+			cost_multiplier = 0.5
+		}
+	}
+	
+	option = { #back
+		name = NKZAB_Macedon.1000.backbefore
+		custom_tooltip = NKZAB_Macedon_back_to_former_tt
+		hidden_effect = {
+			set_country_flag = NKZAB_Macedon_still_university
+			country_event = { id = NKZAB_Macedon.1000 }
+		}
+	}
+
+	after = {
+		hidden_effect = {
+			if = {
+				limit = { NOT = { has_country_flag = NKZAB_Macedon_still_university } }
+				add_country_modifier = {
+					name = NKZAB_Macedon_advisor_timer
+					duration = 3650
+					hidden = yes
+				}
+				clr_country_flag = NKZAB_Macedon_now_university
+			}
+			clr_country_flag = NKZAB_Macedon_still_university
+		}
+	}
+}
+
+country_event = {
+	id = NKZAB_Macedon.2000
+	title = NKZAB_Macedon.2000.t
+	desc = NKZAB_Macedon.2000.d
+	picture = CHINESE_GENERAL_eventPicture
+	is_triggered_only = yes
+	
+	option = {
+		name = NKZAB_Macedon.2000.a
+		country_event = {
+			id = NKZAB_Macedon.2001
+			days = 30
+		}
+	}
+}
+
+country_event = {
+	id = NKZAB_Macedon.2001
+	title = NKZAB_Macedon.2001.t
+	desc = NKZAB_Macedon.2001.d
+	picture = GIFTS_TO_EMPEROR_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = NKZAB_Macedon.2001.a
+		if = {
+			limit = {
+				tag = MCD
+			}
+			add_government_reform = NKZAB_macedonia_celestial_great_ruler
+			add_government_power = {
+				mechanic_type = NKZAB_MCD_conquest_fevor_mechanic
+				power_type = NKZAB_MCD_conquest_fevor
+				value = 100
+			}
+		}
+		else_if = {
+			limit = {
+				tag = ALX
+			}
+			add_government_reform = NKZAB_alexander_celestial_empire_monarchy
+			
+			remove_country_modifier = NKZAB_Macedon_conquest_neverend
+			set_government_power = {
+				mechanic_type = NKZAB_ALX_conquest_fevor_mechanic
+				power_type = NKZAB_ALX_conquest_fevor
+				value = 100
+			}
+			freeze_government_power = {
+				mechanic_type = NKZAB_ALX_conquest_fevor_mechanic
+				power_type = NKZAB_ALX_conquest_fevor
+			}
+		}
+		add_meritocracy = 100
+		add_country_modifier = {
+			name = NKZAB_Macedon_fake_celestial
+			duration = -1
+		}
+		custom_tooltip = NKZAB_Macedon_mandate_reform_extra_cost_tt
+	}
+}

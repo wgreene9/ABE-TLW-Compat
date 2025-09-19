@@ -98,14 +98,15 @@ ab_russia_first = {
 			tag = TVE
 			tag = RSO
 			tag = NZH
-			tag = MOS
+			# tag = MOS
 			tag = YAR
 			tag = WRT
-			tag = KIE
+			# tag = KIE
 			tag = OKA
 			tag = RYA
 			tag = VLD
 			tag = VLG
+			tag = PRM
 			tag = BLO
 			tag = PSK
 			tag = PLT
@@ -623,14 +624,15 @@ ab_russia_second = {
 			tag = TVE
 			tag = RSO
 			tag = NZH
-			tag = MOS
+			# tag = MOS
 			tag = YAR
 			tag = WRT
-			tag = KIE
+			# tag = KIE
 			tag = OKA
 			tag = RYA
 			tag = VLD
 			tag = VLG
+			tag = PRM
 			tag = BLO
 			tag = PSK
 			tag = PLT
@@ -1317,14 +1319,15 @@ ab_russia_third = {
 			tag = TVE
 			tag = RSO
 			tag = NZH
-			tag = MOS
+			# tag = MOS
 			tag = YAR
 			tag = WRT
-			tag = KIE
+			# tag = KIE
 			tag = OKA
 			tag = RYA
 			tag = VLD
 			tag = VLG
+			tag = PRM
 			tag = BLO
 			tag = PSK
 			tag = PLT
@@ -1414,6 +1417,9 @@ ab_russia_third = {
 			country_event = {
 				id = ab_rus.7
 			}
+			custom_tooltip = AB_EMPTY
+			custom_tooltip = abf_ukr_cossack_culture_spread_tt
+			set_country_flag = abf_ukr_cossack_culture_spread
 			custom_tooltip = AB_EMPTY
 			tambov_area = {
 				limit = {
@@ -2007,14 +2013,15 @@ ab_russia_fourth = {
 			tag = TVE
 			tag = RSO
 			tag = NZH
-			tag = MOS
+			# tag = MOS
 			tag = YAR
 			tag = WRT
-			tag = KIE
+			# tag = KIE
 			tag = OKA
 			tag = RYA
 			tag = VLD
 			tag = VLG
+			tag = PRM
 			tag = BLO
 			tag = PSK
 			tag = PLT
@@ -2278,17 +2285,6 @@ ab_russia_fourth_formable = {
 				add_province_modifier = {
 					name = rus_baltic_convert
 					duration = 9125
-				}
-			}
-			# TODO: Remove this since we moving the whole group instantly
-			set_country_flag = rus_litvin_spread
-			custom_tooltip = RUS_BALTIC_SPREAD
-			hidden_effect = {
-				baltic_region = {
-					limit = {
-						owned_by = ROOT
-					}
-					TLW_culture_conversion_calc_effect = yes
 				}
 			}
 			custom_tooltip = POL_LITVIN
@@ -2930,14 +2926,15 @@ ab_russia_fifth = {
 			tag = TVE
 			tag = RSO
 			tag = NZH
-			tag = MOS
+			# tag = MOS
 			tag = YAR
 			tag = WRT
-			tag = KIE
+			# tag = KIE
 			tag = OKA
 			tag = RYA
 			tag = VLD
 			tag = VLG
+			tag = PRM
 			tag = BLO
 			tag = PSK
 			tag = PLT
@@ -3318,6 +3315,9 @@ ab_russia_fifth_formable = {
 		}
 		
 		effect = {
+			custom_tooltip = aba_nagaybak_culture_spread_tt
+			set_country_flag = abf_nagaybak_culture_spread
+			custom_tooltip = AB_EMPTY
 			custom_tooltip = RUS_CENTRAL_ASIA
 			central_asia_region = {
 				limit = {
@@ -3375,6 +3375,9 @@ ab_russia_fifth_formable = {
 		}
 		
 		effect = {
+			custom_tooltip = aba_kharbinskiye_cossack_culture_tt
+			set_country_flag = aba_kharbinskiye_cossack_culture_spread
+			custom_tooltip = AB_EMPTY
 			2106 = {
 				rename_capital = "Vladivostok"
 				change_religion = ROOT
@@ -4136,7 +4139,7 @@ ab_russia_second_rome = {
 							NOT = { culture_group = roman_g }
 						}
 						province_event = {
-							id = ab_byzantium.71
+							id = tlw_rome.0
 						}
 					}
 				}
@@ -5307,7 +5310,7 @@ ab_russia_fourth_rome = {
 							NOT = { culture_group = roman_g }
 						}
 						province_event = {
-							id = ab_byzantium.71
+							id = tlw_rome.0
 						}
 					}
 				}
@@ -6068,7 +6071,7 @@ ab_russia_fourth_persian_unlocked = {
 							NOT = { culture_group = roman_g }
 						}
 						province_event = {
-							id = ab_byzantium.71
+							id = tlw_rome.0
 						}
 					}
 				}
@@ -6944,7 +6947,7 @@ ab_russia_second_group_chinese_unlocked = {
 							NOT = { culture_group = roman_g }
 						}
 						province_event = {
-							id = ab_byzantium.71
+							id = tlw_rome.0
 						}
 					}
 				}

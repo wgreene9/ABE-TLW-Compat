@@ -1825,6 +1825,8 @@ glh_eu_fourth_group = {
 		}
 		
 		effect = {
+			country_event = { id = aba_glh_events.1 }
+			custom_tooltip = AB_EMPTY
 			set_government_rank = 3
 			add_country_modifier = {
 				name = gh_hegemon_NYAB # gh_hegemon

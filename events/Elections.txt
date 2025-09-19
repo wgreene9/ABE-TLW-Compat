@@ -389,6 +389,9 @@ country_event = {
 	
 	trigger = {
 		NYAB_not_eclection_trigger = yes
+		# ABMP [[[
+		NOT = { has_government_attribute = romanian_elective_monarchy }
+		# ]]]
 		NOT = { has_states_general_mechanic = yes }
 		NOT = { has_government_attribute = lottery_election }
 		NOT = { has_government_attribute = is_pirate_republic_reform }

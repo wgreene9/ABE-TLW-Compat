@@ -3,7 +3,11 @@ monarchy = {
 	reform_levels = {
 		feudalism_vs_autocracy = {
 			reforms = {
-
+				# [[[ ABA governments
+				aba_shahi_diwan
+				aba_GLH_golden_tsardom
+				ABA_danubian_federation
+				# ]]]
 				#NYAB
 				NYAB_MOS_tartar_reform
 				NYAB_VLD_rus_reform
@@ -293,7 +297,20 @@ monarchy = {
 				nicene_hellenic_empire
 				nicene_absolute_hellenic_empire
 				nicene_diadochi
+				foederati_reform
 				cca_muskogean_kingdom_reform
+				# ]]]
+				# ABMP [[[
+				wallachian_voivodate
+				wallachian_autocracy
+				appointive_voivodate
+				dacian_kingdom
+				dacian_autocracy
+				wallachian_elective_monarchy
+				dacian_elective_monarchy
+				roman_elective_monarchy
+				dacian_roman_empire
+				dacian_roman_autocracy
 				# ]]]
 			}
 		}
@@ -469,6 +486,12 @@ monarchy = {
 				aldiraq_barbiri_pride_upgrade_reform
 				cca_punic_patronage_reform
 				# ]]]
+				# ABMP [[[
+				empower_the_diet_of_the_ten
+				dominance_of_the_ruling_house
+				supremacy_of_the_armasie
+				abolition_of_the_boiermiea
+				# ]]]
 			}
 		}
 		bureaucracy = {
@@ -585,7 +608,7 @@ monarchy = {
 				feourban
 				cmnslavic
 				alnroman
-
+				alnchristianize
 				tataria_aristocracy
 				iranzamin_rebuild
 				iranzamin_satraps
@@ -632,6 +655,10 @@ monarchy = {
 				visigothic_bureaucracy
 				nicene_islamization
 				cca_temple_archivist_reform
+				# ]]]
+				# ABMP [[[
+				wallachia_codification_of_the_pravila_reform
+				ghica_bureaucracy
 				# ]]]
 			}
 		}
@@ -841,6 +868,11 @@ monarchy = {
 				aldiraq_relentless_ambush_upgrade_reform
 				cca_siouan_compact_reform
 				# ]]]
+				# ABMP [[[
+				wallachia_carpathian_ambush_doctrine_reform 
+				wallachia_establish_the_pandurs_reform
+				recognize_dniester_host
+				# ]]]
 			}
 		}
 		state_and_religion = {
@@ -920,6 +952,9 @@ monarchy = {
 				visigothic_religion
 				aldiraq_syncretic_worship_reform
 				cca_cult_yahweh_reform
+				# ]]]
+				# ABMP [[[
+				bulwark_of_the_faith
 				# ]]]
 			}
 		}
@@ -1012,6 +1047,9 @@ monarchy = {
 				byzengineering
 				cca_scribes_torah_reform
 				# ]]]
+				# ABMP [[[
+				phanariot_cadre
+				# ]]]
 			}
 		}
 		deliberative_assembly = {
@@ -1090,6 +1128,10 @@ monarchy = {
 				byzprofessionalism
 				cca_royal_assembly_reform
 				# ]]]
+				# ABMP [[[
+				expand_executive_powers
+				great_concordat
+				# ]]]
 			}
 		}
 		economical_matters = {
@@ -1139,6 +1181,9 @@ monarchy = {
 				# ]]]
 				# TLW [[[
 				cca_forested_prosperity_reform
+				# ]]]
+				# ABMP [[[
+				state_appropriation_of_the_robie
 				# ]]]
 			}
 		}
@@ -1266,6 +1311,9 @@ monarchy = {
 				# ]]]
 				# TLW [[[
 				cca_judicial_independence_reform
+				# ]]]
+				# ABMP [[[
+				absolute_control_reform
 				# ]]]
 			}
 		}
@@ -2268,6 +2316,7 @@ tribal = {
 	reform_levels = {
 		tribal_administration = {
 			reforms = {
+				aba_shahi_diwan_tribal
 				#NYAB
 				NYAB_KSA_hanguo_reform_horde
 				NYAB_BLH_ulus_reform
