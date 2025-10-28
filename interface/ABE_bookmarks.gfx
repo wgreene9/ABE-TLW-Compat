@@ -1,0 +1,47 @@
+spriteTypes = {
+	# ABE Custom Bookmarks
+    spriteType = {
+		name = "GFX_bookmark_ABE_eng"
+		texturefile = "gfx/interface/bookmarks/bookmark_ABE_eng.dds"
+	}
+    spriteType = {
+		name = "GFX_bookmark_ABE_fra"
+		texturefile = "gfx/interface/bookmarks/bookmark_ABE_fra.dds"
+	}
+    spriteType = {
+		name = "GFX_bookmark_ABE_glh"
+		texturefile = "gfx/interface/bookmarks/bookmark_ABE_glh.dds"
+	}
+    spriteType = {
+		name = "GFX_bookmark_ABE_got"
+		texturefile = "gfx/interface/bookmarks/bookmark_ABE_got.dds"
+	}
+    spriteType = {
+		name = "GFX_bookmark_ABE_hab"
+		texturefile = "gfx/interface/bookmarks/bookmark_ABE_hab.dds"
+	}
+    spriteType = {
+		name = "GFX_bookmark_ABE_mac"
+		texturefile = "gfx/interface/bookmarks/bookmark_ABE_mac.dds"
+	}
+    spriteType = {
+		name = "GFX_bookmark_ABE_mng"
+		texturefile = "gfx/interface/bookmarks/bookmark_ABE_mng.dds"
+	}
+    spriteType = {
+		name = "GFX_bookmark_ABE_ned"
+		texturefile = "gfx/interface/bookmarks/bookmark_ABE_ned.dds"
+	}
+    spriteType = {
+		name = "GFX_bookmark_ABE_pap"
+		texturefile = "gfx/interface/bookmarks/bookmark_ABE_pap.dds"
+	}
+	spriteType = {
+		name = "GFX_bookmark_ABE_sng"
+		texturefile = "gfx/interface/bookmarks/bookmark_ABE_sng.dds"
+	}
+    spriteType = {
+		name = "GFX_bookmark_ABE_tur"
+		texturefile = "gfx/interface/bookmarks/bookmark_ABE_tur.dds"
+	}
+}

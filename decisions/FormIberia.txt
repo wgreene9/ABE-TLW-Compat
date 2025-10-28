@@ -36,15 +36,11 @@ country_decisions = {
 			owns_core_province = 231
 			owns_core_province = 227
 			is_at_war = no
-			if = {
-				limit = {
-					NOT = {
-						overlord = {
-							has_country_flag = NYAB_allow_IBE_form_flag
-						}
-					}
+			AND = {
+				is_subject = yes
+				overlord = {
+					has_country_flag = NYAB_allow_IBE_form_flag
 				}
-				is_subject = no
 			}
 		}
 		effect = {

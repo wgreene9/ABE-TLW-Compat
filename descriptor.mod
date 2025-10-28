@@ -6,6 +6,7 @@ name="Ante Bellum Expanded - The Lost World Compatch"
 dependencies={
 	"Ante Bellum"
 	"NYAB Expanded"
+	"Ante Bellum Expanded (English Translation)"
 	"Ante Bellum - The Lost World"
 	"战争前夜汉化"
 	"Ante Bellum - Map Borders Overhaul"
