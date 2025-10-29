@@ -5928,7 +5928,7 @@ byz_slot1_tall = {
 							NOT = { culture_group = roman_g }
 						}
 						province_event = {
-							id = ab_byzantium.71
+							id = tlw_rome.0
 						}
 					}
 				}
