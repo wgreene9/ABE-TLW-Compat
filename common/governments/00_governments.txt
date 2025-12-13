@@ -1620,6 +1620,7 @@ republic = {
 				ab_tuscan_military_reform
 				ab_tuscan_peasants_reform
 				rhl_confederation_reform
+				ab_roman_republic
 				# ]]]
 				# TLW [[[
 				rom_diocese
@@ -2062,6 +2063,7 @@ republic = {
 				ottoman_eyalets
 				ruskontsy
 				htm_kurin
+			    ab_roman_provinces
 				# ]]]
 				# TLW [[[
 				byzengineering
@@ -2104,6 +2106,9 @@ republic = {
 				chinampa_farms_reform
 				# Blood and Iron
 				ab_customs_union
+				# ]]]
+				# Baltic
+                blt_amber_trade_charter
 				# ]]]
 				# TLW [[[
 				ctg_merchant_syndicate_reform
@@ -3104,6 +3109,9 @@ theocracy = {
 				merchant_representation_reform
 				modern_economics_reform
 				chinampa_farms_reform
+				# Baltic
+                blt_amber_trade_charter
+				# ]]]
 				# TLW [[[
 				ozo_sanctified_trade_reform
 				# ]]]

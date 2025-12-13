@@ -4399,6 +4399,14 @@ reformed_pagan = {
 			aspect_athena_MCD
 			aspect_hades_MCD
 			aspect_artemis_MCD
+            aspect_jupiter
+            aspect_neptune
+            aspect_ceres
+            aspect_mars
+            aspect_juno
+            aspect_minerva
+            aspect_pluto
+            aspect_diana
 			# TLW [[[
 			aspect_kratos
 			blessing_odin
