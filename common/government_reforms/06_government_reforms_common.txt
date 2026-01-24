@@ -476,6 +476,7 @@ vodka_of_the_crown_reform = {
 			hidden_trigger = { always = yes }
 		}
 		if = {
+			limit = { was_tag = LUD }
 			custom_trigger_tooltip = {
 				tooltip = AB_invented_vodka_tt
 				was_tag = LUD
@@ -1998,6 +1999,12 @@ cavalry_warfare_reform = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_unlocked_government_reform = { government_reform = legacy_of_the_seljuk_reform } }
+        NOT = {
+            OR = {
+                culture_group = turko_semitic
+                primary_culture = bedouin_arabic
+            }
+        }
 	}
 	trigger = {
 		if = {
