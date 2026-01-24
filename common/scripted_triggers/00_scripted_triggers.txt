@@ -1279,6 +1279,12 @@ has_orthodox_religious_icon_trigger = {
 			current_icon = icon_anthony
 			current_icon = icon_timur
 			# ]]]
+			current_icon = icon_Athanasius_of_Alexandria #MOD added
+			current_icon = icon_Juvenal_of_Jerusalem #MOD added
+			current_icon = icon_Photios_of_Constantinople #MOD added
+			current_icon = icon_Pope_Gregory #MOD added
+			current_icon = icon_Ephraim_of_Syrian #MOD added
+			current_icon = icon_Ephraim_of_Antioch #MOD added
 		}
 	}
 }

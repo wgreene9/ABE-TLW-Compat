@@ -12,6 +12,8 @@ dependencies={
 	"Ante Bellum - Map Borders Overhaul"
 	"Ante Bellum Flavor"
 	"PotionSeller's Ante Bellum Mission Pack"
+	"东正教强化 战争前夜兼容版 Orthodox enhancement Ante Bellum Compatible Version"
+	"Alexiad: Komnenos' Glorious Finale (English Translation)"
 }
 supported_version="v1.37.5.0"
 remote_file_id="3517638410"

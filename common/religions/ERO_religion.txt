@@ -1,0 +1,646 @@
+# If you add religions, and use those tags, do not change them without changing everywhere they are used.
+
+# Uses all 'modifiers' possible thats exported as a Modifier.
+
+christian = {
+	orthodox = {
+		color = { 178 127 0 }
+		icon = 4
+		country = {
+			stability_cost_modifier = -0.1
+			tolerance_own = 1
+		}
+		# AB [[[
+		allowed_center_conversion = {
+			catholic
+			protestant
+			hussite
+			anglican
+			reformed
+			nestorian
+			sunni
+			shiite
+			ibadi
+			coptic
+		}
+		# ]]]
+		country_as_secondary = {
+			global_colonial_growth = 10
+			tolerance_own = 1
+		}
+		province = {
+			local_missionary_strength = -0.01
+		}
+		
+		
+		heretic = { OLD_BELIEVER MOLOKAN DUKHOBOR KHLYST SKOPTSY ICONOCLAST }
+		
+		has_patriarchs = yes		# Uses patriarch authority
+		misguided_heretic = yes		# Other christians hate them less
+		
+		orthodox_icons = {
+			# If no icon has ai_will_do above 1 - <current patriarch authority> , the AI will not enact it. (60% PA = 0.6 -> ai_will_do has to be at least 0.4)
+
+			icon_michael = {
+				discipline = 0.05
+				manpower_recovery_speed = 0.1
+				
+				# AB [[[
+				allow = {
+					religion = orthodox
+				}
+				visible = {
+					religion = orthodox
+				}
+				# ]]]
+
+				ai_will_do = {
+					factor = 0.05
+					modifier = {
+						factor = 0
+						is_at_war = no
+					}
+					modifier = {
+						factor = 3
+						is_in_important_war = yes
+					}
+				}
+			}
+
+			icon_eleusa = {
+				global_unrest = -3
+				harsh_treatment_cost = -0.25
+
+				# AB [[[
+				allow = {
+					religion = orthodox
+				}
+				visible = {
+					religion = orthodox
+				}
+				# ]]]		
+
+				ai_will_do = {
+					factor = 0.02
+					modifier = {
+						factor = 0
+						NOT = {
+							calc_true_if = {
+								all_owned_province = {
+									unrest = 1
+								}
+								amount = 2
+							}
+						}
+					}
+					modifier = {
+						factor = 3
+						calc_true_if = {
+							all_owned_province = {
+								unrest = 1
+							}
+							amount = 5
+						}
+					}
+				}
+			}
+
+			icon_pancreator = {
+				development_cost = -0.10
+				build_cost = -0.1
+				
+				# AB [[[
+				allow = {
+					religion = orthodox
+				}
+				visible = {
+					religion = orthodox
+				}
+				# ]]]
+				
+				ai_will_do = {
+					factor = 0
+				}
+			}
+	
+			icon_nicholas = {
+				improve_relation_modifier = 0.25
+				ae_impact = -0.1
+				
+				# AB [[[
+				allow = {
+					religion = orthodox
+				}
+				visible = {
+					religion = orthodox
+				}
+				# ]]]
+				ai_will_do = {
+					factor = 0.01
+				}
+			}
+
+			icon_climacus = {
+				global_institution_spread = 0.25
+				embracement_cost = -0.2
+
+				# AB [[[
+				allow = {
+					religion = orthodox
+				}
+				visible = {
+					religion = orthodox
+				}
+				# ]]]
+				ai_will_do = {
+					factor = 0.02
+					modifier = {
+						factor = 0
+						NOT = {
+							calc_true_if = {
+								all_owned_province = {
+									current_institution = 1
+									NOT = { current_institution = 95 }
+								}
+								amount = 1
+							}
+						}
+					}
+					modifier = {
+						factor = 3
+						calc_true_if = {
+							all_owned_province = {
+								current_institution = 1
+								NOT = { current_institution = 95 }
+							}
+							amount = 5
+						}
+					}
+				}
+			}
+			# AB [[[
+			icon_rostislav = {
+				global_missionary_strength = 0.02
+				missionaries = 1
+				
+				allow = {
+					religion = orthodox
+					if = {
+						limit = {
+							has_mission = pol_orthodox_unite_with_moravia
+						}
+						mission_completed = pol_orthodox_unite_with_moravia
+					}
+					else_if = {
+						limit = {
+							has_mission = mva_canonize
+						}
+						mission_completed = mva_canonize
+					}
+					else_if = {
+						limit = {
+							has_mission = bulgaria_revive_moravia
+						}
+						mission_completed = bulgaria_revive_moravia
+					}
+					else_if = {
+						limit = {
+							has_country_flag = has_unlocked_rostislav_icon
+						}
+						has_country_flag = has_unlocked_rostislav_icon
+					}
+					else = {
+						custom_trigger_tooltip = {
+							tooltip = only_mva_bul_and_led_can_unlock
+							always = no
+						}
+					}
+				}
+				visible = {
+					religion = orthodox
+				}
+				ai_will_do = {
+					factor = 0
+				}
+			}
+
+			icon_paul = {
+				core_creation = -0.05
+				missionaries = 1
+				
+				allow = {
+					religion = orthodox
+					custom_trigger_tooltip = {
+						tooltip = st_pauls_has_been_constructed_tooltip
+						118 = {
+							has_great_project = {
+								type = st_pauls_basilica
+								tier = 1
+							}
+						}
+					}
+					custom_trigger_tooltip = {
+						tooltip = rome_is_orthodox_toolip
+						118 = {
+							religion = orthodox
+						}
+					}
+					custom_trigger_tooltip = {
+						tooltip = rome_owner_is_orthodox_toolip
+						118 = {
+							owner = {
+								religion = orthodox
+							}
+						}
+					}
+				}
+				visible = {
+					religion = orthodox
+				}
+				ai_will_do = {
+					factor = 100
+				}
+			}
+
+			#NSABE
+			icon_Temujin = { #圣铁木真�?
+				movement_speed = 0.2
+				years_of_nationalism = -5
+	
+				allow = {
+					religion = orthodox
+					custom_trigger_tooltip = {
+						tooltip = icon_Temujin_trigger_tooltip
+						has_country_flag = NSABE_Romakhanate_events_35_a_flag
+					}
+				}
+	
+				visible = {
+					religion = orthodox
+					tag = RKH
+				}
+				ai_will_do = {
+					factor = 0
+				}
+			}
+
+			#NYAB
+			#?????
+			icon_rus_fulajimier = { 
+				tolerance_own = 3
+				manpower_in_true_faith_provinces = 0.1
+	
+				allow = {
+					religion = orthodox
+					custom_trigger_tooltip = {
+						tooltip = icon_rus_fulajimier_ttt
+						OR = {
+							has_country_flag = NYAB_allow_icon_rus_fulajimier_flag
+							AND = {
+								culture_group = east_slavic
+								has_global_flag = NYAB_allow_icon_rus_fulajimier_flag
+							}
+						}
+					}
+				}
+	
+				visible = {
+					religion = orthodox
+					culture_group = east_slavic
+				}
+				ai_will_do = {
+					factor = 0
+				}
+			}
+			#????
+			icon_rus_alex = { 
+				land_morale = 0.15
+				war_exhaustion = -0.02
+	
+				allow = {
+					religion = orthodox
+					custom_trigger_tooltip = {
+						tooltip = icon_rus_alex_ttt
+						OR = {
+							has_country_flag = NYAB_allow_icon_rus_alex_flag
+							AND = {
+								culture_group = east_slavic
+								has_global_flag = NYAB_allow_icon_rus_alex_flag
+							}
+						}
+					}
+				}
+	
+				visible = {
+					religion = orthodox
+					culture_group = east_slavic
+				}
+				ai_will_do = {
+					factor = 0
+				}
+			}
+
+			icon_nestorius = {
+				diplomatic_reputation = 1
+				ae_impact = -0.1
+				
+				allow = {
+					OR = {
+						religion = nestorian
+						AND = {
+							religion = orthodox
+							has_country_flag = NKZAB_Macedon_nestorian_unite_reward
+						}
+					}
+				}
+				visible = {
+					OR = {
+						religion = nestorian
+						AND = {
+							religion = orthodox
+							has_country_flag = NKZAB_Macedon_nestorian_unite_reward
+						}
+					}
+				}
+				ai_will_do = {
+					factor = 1
+					modifier = {
+						factor = 0
+						is_at_war = no
+					}
+					modifier = {
+						factor = 3
+						is_in_important_war = yes
+					}
+				}
+			}
+
+			icon_shemon = {
+				global_unrest = -2
+				reform_progress_growth = 0.2
+				
+				allow = {
+					OR = {
+						religion = nestorian
+						AND = {
+							religion = orthodox
+							has_country_flag = NKZAB_Macedon_nestorian_unite_reward
+						}
+					}
+				}
+				visible = {
+					OR = {
+						religion = nestorian
+						AND = {
+							religion = orthodox
+							has_country_flag = NKZAB_Macedon_nestorian_unite_reward
+						}
+					}
+				}
+				ai_will_do = {
+					factor = 1
+					modifier = {
+						factor = 2
+						unrest = 4
+					}
+				}
+			}
+
+			icon_jude_apostle = {
+				global_missionary_strength = 0.02
+				missionary_maintenance_cost = -0.25
+				
+				allow = {
+					OR = {
+						religion = nestorian
+						AND = {
+							religion = orthodox
+							has_country_flag = NKZAB_Macedon_nestorian_unite_reward
+						}
+					}
+				}
+				visible = {
+					OR = {
+						religion = nestorian
+						AND = {
+							religion = orthodox
+							has_country_flag = NKZAB_Macedon_nestorian_unite_reward
+						}
+					}
+				}
+				ai_will_do = {
+					factor = 0
+				}
+			}
+	
+			icon_thomas = {
+				stability_cost_modifier = -0.25
+				global_autonomy = -0.05
+				allow = {
+					OR = {
+						religion = nestorian
+						AND = {
+							religion = orthodox
+							has_country_flag = NKZAB_Macedon_nestorian_unite_reward
+						}
+					}
+				}
+				visible = {
+					OR = {
+						religion = nestorian
+						AND = {
+							religion = orthodox
+							has_country_flag = NKZAB_Macedon_nestorian_unite_reward
+						}
+					}
+				}
+				ai_will_do = {
+					factor = 0.5
+				}
+			}
+
+			icon_anthony = {
+				land_morale = 0.1
+				warscore_cost_vs_other_religion = -0.1
+				allow = {
+					OR = {
+						religion = nestorian
+						AND = {
+							religion = orthodox
+							has_country_flag = NKZAB_Macedon_nestorian_unite_reward
+						}
+					}
+				}
+				visible = {
+					OR = {
+						religion = nestorian
+						AND = {
+							religion = orthodox
+							has_country_flag = NKZAB_Macedon_nestorian_unite_reward
+						}
+					}
+				}
+				ai_will_do = {
+					factor = 1
+					modifier = {
+						factor = 0
+						is_at_war = no
+					}
+					modifier = {
+						factor = 3
+						is_in_important_war = yes
+					}
+				}
+			}
+			
+			icon_timur = {
+				manpower_in_true_faith_provinces = 0.1
+				culture_conversion_cost = -0.2
+				allow = {
+					OR = {
+						religion = nestorian
+						AND = {
+							religion = orthodox
+							has_country_flag = NKZAB_Macedon_can_use_timurid_tomb
+							OR = {
+								has_country_flag = NKZAB_Macedon_nestorian_unite_reward
+								has_country_flag = NKZAB_Macedon_armenian_law
+							}
+						}
+					}
+					any_owned_province = {
+						has_great_project = {
+							type = tomb_timur
+							tier = 1
+						}	
+					}
+				}
+				visible = {
+					OR = {
+						religion = nestorian
+						AND = {
+							religion = orthodox
+							has_country_flag = NKZAB_Macedon_can_use_timurid_tomb
+							OR = {
+								has_country_flag = NKZAB_Macedon_nestorian_unite_reward
+								has_country_flag = NKZAB_Macedon_armenian_law
+							}
+						}
+					}
+				}
+				ai_will_do = {
+					factor = 0
+				}
+			}
+			# }}}
+			icon_Athanasius_of_Alexandria = { #MOD新增
+				morale_damage_received = -0.15
+				global_prosperity_growth = 0.15
+				
+				allow = {
+					is_mod_active = "东正教强化 战争前夜兼容版 Orthodox enhancement Ante Bellum Compatible Version"
+					religion = orthodox
+				}
+
+				visible = {
+					has_country_modifier = Pentarchy_Alexandria_Episcopal_see
+				}
+
+				ai_will_do = {
+					factor = 0.05
+				}
+			}
+
+			icon_Juvenal_of_Jerusalem = { #MOD新增
+				tolerance_heretic = 2
+				tolerance_heathen = 2
+				allow = {
+					is_mod_active = "东正教强化 战争前夜兼容版 Orthodox enhancement Ante Bellum Compatible Version"
+					religion = orthodox
+				}
+
+				visible = {
+					has_country_modifier = Pentarchy_Jerusalem_Episcopal_see
+				}
+
+				ai_will_do = {
+					factor = 0.05
+				}
+			}
+
+			icon_Photios_of_Constantinople = { #MOD新增
+				reduced_liberty_desire_on_same_continent = 10
+				stability_cost_modifier = -0.15
+
+				allow = {
+					is_mod_active = "东正教强化 战争前夜兼容版 Orthodox enhancement Ante Bellum Compatible Version"
+					religion = orthodox
+				}
+
+				visible = {
+					has_country_modifier = Pentarchy_Constantinople_Episcopal_see
+				}
+
+				ai_will_do = {
+					factor = 0.05
+				}
+			}
+
+			icon_Pope_Gregory = { #MOD新增
+				trade_efficiency = 0.2
+				diplomatic_reputation = 1
+
+				allow = {
+					is_mod_active = "东正教强化 战争前夜兼容版 Orthodox enhancement Ante Bellum Compatible Version"
+					religion = orthodox
+				}
+
+				visible = {
+					has_country_modifier = Pentarchy_Roma_Episcopal_see
+				}
+
+				ai_will_do = {
+					factor = 0.05
+				}
+			}
+
+			icon_Ephraim_of_Syrian = { #MOD新增
+				reform_progress_growth = 0.1
+				idea_cost = -0.1
+
+				allow = {
+					is_mod_active = "东正教强化 战争前夜兼容版 Orthodox enhancement Ante Bellum Compatible Version"
+					religion = orthodox
+				}
+
+				visible = {
+					has_country_modifier = Pentarchy_Antioch_Episcopal_see
+				}
+
+				ai_will_do = {
+					factor = 0.05
+				}
+			}
+
+			icon_Ephraim_of_Antioch = { #MOD新增
+				build_time = -0.15
+				reverse_relation_with_same_religion = 15
+
+				allow = {
+					is_mod_active = "东正教强化 战争前夜兼容版 Orthodox enhancement Ante Bellum Compatible Version"
+					religion = orthodox
+				}
+
+				visible = {
+					has_country_modifier = Pentarchy_Antioch_Episcopal_see
+				}
+
+				ai_will_do = {
+					factor = 0.05
+				}
+			}
+
+		}
+	}
+}
+
