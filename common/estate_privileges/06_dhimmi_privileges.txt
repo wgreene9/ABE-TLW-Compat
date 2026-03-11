@@ -1000,6 +1000,15 @@ estate_dhimmi_grant_trading_privileges = {
 			estate_action = RECRUIT_MINISTER_DHIMMI
 		}
 	}
+	conditional_modifier = {
+		trigger = {
+			has_country_flag = hsn_dhimmi_trading_flag
+		}
+		modifier = {
+			max_absolutism = 5
+			trade_efficiency = 0.15
+		}
+	}
 	# conditional_modifier = {
 	# 	trigger = { has_government_mechanic = russian_modernization_mechanic }
 	# 	modifier = { monthly_russian_modernization = -0.03 }
@@ -1088,6 +1097,15 @@ estate_dhimmi_dhimmi_education = {
 		}
 		modifier = {
 			reform_progress_growth = 0.25
+		}
+	}
+	conditional_modifier = {
+		trigger = {
+			has_country_flag = hsn_dhimmi_education_flag
+		}
+		modifier = {
+			max_absolutism = 5
+			prestige_decay = -0.015
 		}
 	}
 	# conditional_modifier = {

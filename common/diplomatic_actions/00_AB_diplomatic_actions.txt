@@ -640,25 +640,25 @@ excommunicate_action = {
 }
 
 annexationaction = {
-	# condition = {
-	# 	tooltip = ANNEX_TOO_LOW
-	# 	potential = {
-	# 		FROM = {
-	# 			OR = {
-	# 				vassal_of = ROOT
-	# 				is_subject_of_type = appanage
-	# 			}
-	# 		}
-	# 	}
-	# 	allow = {
-	# 		FROM = {
-	# 			has_opinion = {
-	# 				who = ROOT
-	# 				value = 190
-	# 			}
-	# 		}
-	# 	}
-	# }
+	condition = {
+		tooltip = ANNEX_TOO_LOW
+		potential = {
+			FROM = {
+				OR = {
+					vassal_of = ROOT
+					is_subject_of_type = appanage
+				}
+			}
+		}
+		allow = {
+			FROM = {
+				has_opinion = {
+					who = ROOT
+					value = 190
+				}
+			}
+		}
+	}
 	# TLW [[[
 	condition = {
 		tooltip = CANNOT_ANNEX_CORE_DIADOCHI

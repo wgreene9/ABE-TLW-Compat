@@ -15,7 +15,7 @@ ned_first = {
 			tag = GHT
 		}
 		NOT = {
-			has_country_flag = NYAB_NED_mission_flag
+			has_country_flag = NYAB_mission_flag
 		}
 		NOT = { map_setup = map_setup_random }
 	}
@@ -283,7 +283,7 @@ ned_first_branching_locked = {
 			tag = GHT
 		}
 		NOT = {
-			has_country_flag = NYAB_NED_mission_flag
+			has_country_flag = NYAB_mission_flag
 		}
 		NOT = {
 			OR = {
@@ -1128,7 +1128,7 @@ ned_first_2 = {
 			tag = GHT
 		}
 		NOT = {
-			has_country_flag = NYAB_NED_mission_flag
+			has_country_flag = NYAB_mission_flag
 		}
 		NOT = { map_setup = map_setup_random }
 	}
@@ -1487,7 +1487,7 @@ ned_second = {
 			tag = GHT
 		}
 		NOT = {
-			has_country_flag = NYAB_NED_mission_flag
+			has_country_flag = NYAB_mission_flag
 		}
 		NOT = { map_setup = map_setup_random }
 	}
@@ -1655,7 +1655,7 @@ ned_second_branching_locked = {
 			tag = GHT
 		}
 		NOT = {
-			has_country_flag = NYAB_NED_mission_flag
+			has_country_flag = NYAB_mission_flag
 		}
 		NOT = {
 			OR = {
@@ -3341,7 +3341,7 @@ ned_second_2 = {
 			tag = GHT
 		}
 		NOT = {
-			has_country_flag = NYAB_NED_mission_flag
+			has_country_flag = NYAB_mission_flag
 		}
 		NOT = { map_setup = map_setup_random }
 	}
@@ -3752,7 +3752,7 @@ ned_third = {
 			tag = GHT
 		}
 		NOT = {
-			has_country_flag = NYAB_NED_mission_flag
+			has_country_flag = NYAB_mission_flag
 		}
 		NOT = { map_setup = map_setup_random }
 	}
@@ -4613,7 +4613,7 @@ ned_fourth = {
 			tag = GHT
 		}
 		NOT = {
-			has_country_flag = NYAB_NED_mission_flag
+			has_country_flag = NYAB_mission_flag
 		}
 		NOT = { map_setup = map_setup_random }
 	}
@@ -5288,7 +5288,7 @@ ned_fifth = {
 			tag = GHT
 		}
 		NOT = {
-			has_country_flag = NYAB_NED_mission_flag
+			has_country_flag = NYAB_mission_flag
 		}
 		NOT = { map_setup = map_setup_random }
 	}

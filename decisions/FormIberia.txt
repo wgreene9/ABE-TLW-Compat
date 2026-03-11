@@ -76,13 +76,13 @@ country_decisions = {
 					add_permanent_claim = IBE
 				}
 			}
-			if = {
-				limit = {
-					government = monarchy
-					is_revolutionary = no
-				}
-				add_government_reform = iberian_crown
-			}
+			# if = {
+			# 	limit = {
+			# 		government = monarchy
+			# 		is_revolutionary = no
+			# 	}
+			# 	add_government_reform = iberian_crown
+			# }
 			add_country_modifier = {
 				name = "centralization_modifier"
 				duration = 7300
