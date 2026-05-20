@@ -7574,6 +7574,10 @@ pyramid_of_cheops = {
 				province_is_or_accepts_culture = yes
 			}
 			AND = {
+				culture = egyptian_greek
+				province_is_or_accepts_culture = yes
+			}
+			AND = {
 				culture = roman
 				province_is_or_accepts_culture = yes
 			}
@@ -7621,6 +7625,10 @@ pyramid_of_cheops = {
 				province_is_or_accepts_culture = yes
 			}
 			AND = {
+				culture = egyptian_greek
+				province_is_or_accepts_culture = yes
+			}
+			AND = {
 				culture = roman
 				province_is_or_accepts_culture = yes
 			}
@@ -7655,6 +7663,10 @@ pyramid_of_cheops = {
 			}
 			AND = {
 				culture_group = turko_semitic
+				province_is_or_accepts_culture = yes
+			}
+			AND = {
+				culture = egyptian_greek
 				province_is_or_accepts_culture = yes
 			}
 			AND = {

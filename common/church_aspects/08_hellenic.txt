@@ -1,5 +1,6 @@
 aspect_zeus = {
 	trigger = {
+		NOT = { has_country_flag = NKZAB_Macedon_has_stronger_hellenic }
 		NOT = {
 			OR = {
 				tag = RMR
@@ -10,7 +11,13 @@ aspect_zeus = {
 	}
 	cost = 100
 	potential = {
-		NOT = { has_country_flag = NKZAB_Macedon_has_stronger_hellenic }
+		NOT = {
+			OR = {
+				tag = RMR
+				was_tag = RMR
+				tag = ROM
+			}
+		}
 	}
 	modifier = {
 		shock_damage = 0.05
@@ -20,6 +27,7 @@ aspect_zeus = {
 
 aspect_poseidon = {
 	trigger = {
+		NOT = { has_country_flag = NKZAB_Macedon_has_stronger_hellenic }
 		NOT = {
 			OR = {
 				tag = RMR
@@ -30,7 +38,13 @@ aspect_poseidon = {
 	}
 	cost = 100
 	potential = {
-		NOT = { has_country_flag = NKZAB_Macedon_has_stronger_hellenic }
+		NOT = {
+			OR = {
+				tag = RMR
+				was_tag = RMR
+				tag = ROM
+			}
+		}
 	}
 	modifier = {
 		galley_power = 0.1
@@ -40,6 +54,7 @@ aspect_poseidon = {
 
 aspect_demeter = {
 	trigger = {
+		NOT = { has_country_flag = NKZAB_Macedon_has_stronger_hellenic }
 		NOT = {
 			OR = {
 				tag = RMR
@@ -50,7 +65,13 @@ aspect_demeter = {
 	}
 	cost = 100
 	potential = {
-		NOT = { has_country_flag = NKZAB_Macedon_has_stronger_hellenic }
+		NOT = {
+			OR = {
+				tag = RMR
+				was_tag = RMR
+				tag = ROM
+			}
+		}
 	}
 	modifier = {	
 		development_cost = -0.05
@@ -60,6 +81,7 @@ aspect_demeter = {
 
 aspect_ares = {
 	trigger = {
+		NOT = { has_country_flag = NKZAB_Macedon_has_stronger_hellenic }
 		NOT = {
 			OR = {
 				tag = RMR
@@ -70,7 +92,13 @@ aspect_ares = {
 	}
 	cost = 100
 	potential = {
-		NOT = { has_country_flag = NKZAB_Macedon_has_stronger_hellenic }
+		NOT = {
+			OR = {
+				tag = RMR
+				was_tag = RMR
+				tag = ROM
+			}
+		}
 	}
 	modifier = {
 		land_morale = 0.05
@@ -80,6 +108,7 @@ aspect_ares = {
 
 aspect_hera = {
 	trigger = {
+		NOT = { has_country_flag = NKZAB_Macedon_has_stronger_hellenic }
 		NOT = {
 			OR = {
 				tag = RMR
@@ -90,7 +119,13 @@ aspect_hera = {
 	}
 	cost = 100
 	potential = {
-		NOT = { has_country_flag = NKZAB_Macedon_has_stronger_hellenic }
+		NOT = {
+			OR = {
+				tag = RMR
+				was_tag = RMR
+				tag = ROM
+			}
+		}
 	}
 	modifier = {
 		diplomatic_reputation = 1
@@ -100,9 +135,6 @@ aspect_hera = {
 
 aspect_apollo = {
 	cost = 100
-	potential = {
-		NOT = { has_country_flag = NKZAB_Macedon_has_stronger_hellenic }
-	}
 	modifier = {
 		global_institution_spread = 0.2
 		reform_progress_growth = 0.1
@@ -111,6 +143,7 @@ aspect_apollo = {
 
 aspect_athena = {
 	trigger = {
+		NOT = { has_country_flag = NKZAB_Macedon_has_stronger_hellenic }
 		NOT = {
 			OR = {
 				tag = RMR
@@ -121,7 +154,13 @@ aspect_athena = {
 	}
 	cost = 100
 	potential = {
-		NOT = { has_country_flag = NKZAB_Macedon_has_stronger_hellenic }
+		NOT = {
+			OR = {
+				tag = RMR
+				was_tag = RMR
+				tag = ROM
+			}
+		}
 	}
 	modifier = {
 		discipline = 0.025
@@ -131,6 +170,7 @@ aspect_athena = {
 
 aspect_hades = {
 	trigger = {
+		NOT = { has_country_flag = NKZAB_Macedon_has_stronger_hellenic }
 		NOT = {
 			OR = {
 				tag = RMR
@@ -141,7 +181,13 @@ aspect_hades = {
 	}
 	cost = 100
 	potential = {
-		NOT = { has_country_flag = NKZAB_Macedon_has_stronger_hellenic }
+		NOT = {
+			OR = {
+				tag = RMR
+				was_tag = RMR
+				tag = ROM
+			}
+		}
 	}
 	modifier = {
 		prestige_decay = -0.01
@@ -151,6 +197,7 @@ aspect_hades = {
 
 aspect_artemis = {
 	trigger = {
+		NOT = { has_country_flag = NKZAB_Macedon_has_stronger_hellenic }
 		NOT = {
 			OR = {
 				tag = RMR
@@ -161,11 +208,107 @@ aspect_artemis = {
 	}
 	cost = 100
 	potential = {
-		NOT = { has_country_flag = NKZAB_Macedon_has_stronger_hellenic }
+		NOT = {
+			OR = {
+				tag = RMR
+				was_tag = RMR
+				tag = ROM
+			}
+		}
 	}
 	modifier = {
 		global_trade_goods_size_modifier = 0.05
 		global_prosperity_growth = 0.25
+	}
+}
+
+aspect_hephaestus = {
+	trigger = {
+		NOT = {
+			OR = {
+				tag = RMR
+				was_tag = RMR
+				tag = ROM
+			}
+		}
+		OR = {
+			mission_completed = nicene_the_hellenic_reformation
+			mission_completed = nicene_reform_hellenic
+		}
+	}
+	cost = 100
+	potential = {
+		NOT = {
+			OR = {
+				tag = RMR
+				was_tag = RMR
+				tag = ROM
+			}
+		}
+	}
+	modifier = {
+		fire_damage = 0.05
+		mil_tech_cost_modifier = -0.1
+	}
+}
+
+aspect_hermes = {
+	trigger = {
+		NOT = {
+			OR = {
+				tag = RMR
+				was_tag = RMR
+				tag = ROM
+			}
+		}
+		OR = {
+			mission_completed = nicene_the_hellenic_reformation
+			mission_completed = nicene_reform_hellenic
+		}
+	}
+	cost = 100
+	potential = {
+		NOT = {
+			OR = {
+				tag = RMR
+				was_tag = RMR
+				tag = ROM
+			}
+		}
+	}
+	modifier = {
+		diplomatic_annexation_cost = -0.2
+		global_prov_trade_power_modifier = 0.1
+	}
+}
+
+aspect_mithra = {
+	trigger = {
+		NOT = {
+			OR = {
+				tag = RMR
+				was_tag = RMR
+				tag = ROM
+			}
+		}
+		OR = {
+			mission_completed = nicene_heart_of_persia
+			mission_completed = nicene_persepolis
+		}
+	}
+	cost = 100
+	potential = {
+		NOT = {
+			OR = {
+				tag = RMR
+				was_tag = RMR
+				tag = ROM
+			}
+		}
+	}
+	modifier = {
+		stability_cost_modifier = -0.2
+		harsh_treatment_cost = -0.2
 	}
 }
 

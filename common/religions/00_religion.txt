@@ -4390,6 +4390,9 @@ reformed_pagan = {
 			aspect_athena
 			aspect_hades
 			aspect_artemis
+			aspect_hephaestus
+			aspect_hermes
+			aspect_mithra
 			aspect_zeus_MCD
 			aspect_poseidon_MCD
 			aspect_demeter_MCD

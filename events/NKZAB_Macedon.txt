@@ -3270,7 +3270,7 @@ country_event = { #未来的方向，曼努埃尔特供
 
 	option = {
 		name = NKZAB_Macedon.67.c
-		highlight = yes
+		# highlight = yes
 		trigger = {
 			custom_trigger_tooltip = {
 				tooltip = NKZAB_want_to_play_mcd_pre_tt
@@ -3336,7 +3336,8 @@ country_event = { #未来的方向，曼努埃尔特供
 				power_type = nicene_militarized_society
 				value = 100
 			}
-			complete_mission = nicene_fleet
+			## TLW [[
+			complete_mission = nicene_battle_for_the_bosphorus
 			complete_mission = nicene_legions
 			complete_mission = nicene_smyrna
 			complete_mission = nicene_refugees
@@ -3349,9 +3350,25 @@ country_event = { #未来的方向，曼努埃尔特供
 			complete_mission = nicene_manzikert
 			complete_mission = nicene_bulgaria
 			complete_mission = nicene_greek_fire
+			# ]]
+			#AB [[
+			complete_mission = nicene_court
+			complete_mission = nicene_challenge_the_pretenders
+			complete_mission = nicene_phoenix
+			complete_mission = nicene_empire_of_the_hellenes
+			complete_mission = nicene_nicene_legions
+			complete_mission = nicene_the_last_bastion
+			complete_mission = nicene_liberate_greece
+			complete_mission = nicene_bulwark_of_christianity
+			complete_mission = nicene_push_the_frontier
+			complete_mission = nicene_avenge_manzikert
+			# ]]
 			clr_country_flag = formed_byzantium_flag
 			clr_country_flag = formed_greece_flag
 			add_legitimacy = 100
+			country_event = {
+				id = ab_nicaea.122
+			}
 		}
 	}
 }

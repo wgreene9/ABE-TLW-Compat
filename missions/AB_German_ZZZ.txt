@@ -1475,6 +1475,7 @@ ger_third_group = {
                     culture_group = united_germanic
                 }
                 custom_tooltip = GER_CONVERT_CZECHS_NEW
+				custom_tooltip = AB_EMPTY
 				custom_tooltip = aba_GER_hungarian_cultures
 			    set_country_flag = donauschwaben_culture_spread
 			    set_country_flag = mantaken_culture_spread
@@ -1489,6 +1490,7 @@ ger_third_group = {
             }
             else = {
                 custom_tooltip = GER_CONVERT_CZECHS
+				custom_tooltip = AB_EMPTY
 				custom_tooltip = aba_GER_hungarian_cultures
 			    set_country_flag = donauschwaben_culture_spread
 			    set_country_flag = mantaken_culture_spread
