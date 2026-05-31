@@ -49,6 +49,7 @@ estate_cossacks = {
 		OR = {
 			has_government_attribute = enables_estate_cossacks
 			has_enabled_estate = { estate = estate_cossacks }
+			has_country_flag = aba_pol_westernization_cossacks
 			AND = {
 				OR = {
 					has_unlocked_estate = { estate = estate_cossacks }
@@ -85,6 +86,7 @@ estate_cossacks = {
 		cavalry_cost = -0.2
 		cavalry_power = 0.2
 		cav_to_inf_ratio = 0.10
+		monthly_commonwealth_popular_sovereignity = 0.03
 	}
 	country_modifier_neutral = {
 		cavalry_power = 0.2
@@ -93,6 +95,7 @@ estate_cossacks = {
 		cavalry_cost = 0.2
 		cavalry_power = -0.1
 		global_unrest = 2
+		monthly_commonwealth_popular_sovereignity = -0.03
 	}
 	land_ownership_modifier = {
 		cossacks_loyalty_modifier = 0.2
@@ -171,6 +174,9 @@ estate_cossacks = {
 		estate_cossacks_military_service
 		estate_cossacks_expand_cossacks_raiders
 		estate_cossacks_monopoly_on_steppe_herds
+		# ABA [[[
+		ABA_estate_cossacks_pln_cossack_szlachta
+		# ]]]
 	}
 
 	agendas = {

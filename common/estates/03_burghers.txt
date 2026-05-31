@@ -34,6 +34,7 @@ estate_burghers = {
 		# TLW [[[
 		faction_byzgreek_influence = 0.2
 		# ]]]
+		monthly_commonwealth_popular_sovereignity = 0.03
 	}
 	country_modifier_neutral = {
 		trade_efficiency = 0.2
@@ -48,6 +49,7 @@ estate_burghers = {
 		# TLW [[[
 		faction_byzgreek_influence = -0.1
 		# ]]]
+		monthly_commonwealth_popular_sovereignity = -0.03
 	}
 	land_ownership_modifier = {
 		burghers_loyalty_modifier = 0.2
@@ -423,6 +425,9 @@ estate_burghers = {
 		# ]]]
 		# ABMP [[[
 		estate_burghers_wal_mountain_expansion
+		# ]]]
+		# ABA [[[
+		ABA_estate_burghers_PLN_FREEDDOM_OF_RELIGION
 		# ]]]
 	}
 

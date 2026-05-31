@@ -49,6 +49,7 @@ estate_church = {
 		# TLW [[[
 		faction_byzpersian_influence = 0.2
 		# ]]]
+		monthly_commonwealth_popular_sovereignity = 0.03
 	}
 	country_modifier_neutral = {
 		global_tax_modifier = 0.2
@@ -67,6 +68,7 @@ estate_church = {
 		# TLW [[[
 		faction_byzpersian_influence = -0.1
 		# ]]]
+		monthly_commonwealth_popular_sovereignity = -0.03
 	}
 
 	land_ownership_modifier = {

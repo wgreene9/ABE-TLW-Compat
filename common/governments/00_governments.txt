@@ -3,15 +3,6 @@ monarchy = {
 	reform_levels = {
 		feudalism_vs_autocracy = {
 			reforms = {
-				# [[[ ABA governments
-				aba_shahi_diwan
-				aba_GLH_golden_tsardom
-				ABA_danubian_federation
-				ABA_kushan_confederacy
-				ABA_tcr_persianempire
-				ABA_tcr_yuezhi_warlord
-				ABA_tcr_celestial_empire
-				# ]]]
 				#NYAB
 				NYAB_MOS_tartar_reform
 				NYAB_VLD_rus_reform
@@ -317,6 +308,17 @@ monarchy = {
 				dacian_roman_empire
 				dacian_roman_autocracy
 				# ]]]
+				# [[[ ABA governments
+				aba_shahi_diwan
+				aba_GLH_golden_tsardom
+				ABA_danubian_federation
+				ABA_kushan_confederacy
+				ABA_tcr_persianempire
+				ABA_tcr_yuezhi_warlord
+				ABA_tcr_celestial_empire
+				aba_pol_catholic_commonwealth_of_crowns
+				aba_crownpoland
+				# ]]]
 			}
 		}
 		hereditary_vs_nobility = {
@@ -519,6 +521,10 @@ monarchy = {
 				#NKZAB
 				NKZAB_hellenic_advisor
 				NKZAB_byzantium_bureaucrat
+
+				### ABA ### [[
+				aba_pol_catholic_henrician_articles
+				#]]
 
 				centralize_reform
 				centralize_empire_reform
@@ -876,6 +882,9 @@ monarchy = {
 				wallachia_carpathian_ambush_doctrine_reform 
 				wallachia_establish_the_pandurs_reform
 				recognize_dniester_host
+				# ]]]
+				# ABA [[[
+				aba_pol_catholic_husaria_buffed
 				# ]]]
 			}
 		}
@@ -1318,6 +1327,9 @@ monarchy = {
 				# ]]]
 				# ABMP [[[
 				absolute_control_reform
+				# ]]]
+				# ABA [[[
+				aba_pol_catholic_republic_of_three_nations_reform
 				# ]]]
 			}
 		}
