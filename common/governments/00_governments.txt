@@ -1638,6 +1638,9 @@ republic = {
 				fragrandrepublic
 				fradictatorialconsulship
 				# ]]]
+				# ABA ]]]
+				aba_hetmanate_buffed
+				# ]]]
 				# TLW [[[
 				rom_diocese
 				rom_former_diocese
@@ -1711,6 +1714,9 @@ republic = {
 				# ]]]
 				# Blood and Iron
 				bav_council_of_eight
+				# ]]]
+				# ABA ]]]
+				aba_htm_refuge_buffed
 				# ]]]
 				# TLW [[[
 				byztheme
@@ -1941,6 +1947,9 @@ republic = {
 				ab_condottiero_reform
 				rhl_imperial_guards
 				# ]]]
+				# ABA ]]]
+				aba_htm_cossacks_registry_reform
+				# ]]]
 				# TLW [[[
 				byzlegio
 				rom_legio
@@ -2048,6 +2057,9 @@ republic = {
 				enforced_autocracy_reform
 				#1.37
 				seven_provinces_reform
+				## ABA ]]]]
+				aba_htm_regimental_rule
+				### ]]]]
 				# TLW [[[
 				byzsenate
 				byzprofessionalism
@@ -2080,6 +2092,9 @@ republic = {
 				ruskontsy
 				htm_kurin
 			    ab_roman_provinces
+				# ]]]
+				# ABA ]]]
+				aba_htm_kurin_buffed
 				# ]]]
 				# TLW [[[
 				byzengineering
@@ -2126,6 +2141,11 @@ republic = {
 				# Baltic
                 blt_amber_trade_charter
 				# ]]]
+				# ABA ]]]
+				aba_htm_urbanization
+				aba_htm_agrarianism
+				aba_htm_mixed_economy
+				#]]]
 				# TLW [[[
 				ctg_merchant_syndicate_reform
 				ctg_slave_economy_reform
@@ -2207,6 +2227,9 @@ republic = {
 				hansacolonial
 				htm_council
 				# ]]]
+				# ABA [[[
+				aba_htm_council_buffed
+				# [[[
 				# TLW [[[
 				ctg_restricted_voting_reform
 				hyl_people_voice_reform
@@ -2222,6 +2245,10 @@ republic = {
 				# AB [[[
 				ottoman_lodge
 				# ]]]
+				# ABA [[[
+				aba_htm_cossack_meritocracy 
+				aba_htm_starshyna_oligarchy
+				# ]]] 
 				# TLW [[[
 				byzabsolutism
 				ctg_election_by_council_reform
