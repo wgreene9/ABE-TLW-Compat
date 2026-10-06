@@ -538,7 +538,6 @@ christian = {
 				global_prosperity_growth = 0.15
 				
 				allow = {
-					is_mod_active = "东正教强化 战争前夜兼容版 Orthodox enhancement Ante Bellum Compatible Version"
 					religion = orthodox
 				}
 
@@ -555,7 +554,6 @@ christian = {
 				tolerance_heretic = 2
 				tolerance_heathen = 2
 				allow = {
-					is_mod_active = "东正教强化 战争前夜兼容版 Orthodox enhancement Ante Bellum Compatible Version"
 					religion = orthodox
 				}
 
@@ -573,7 +571,6 @@ christian = {
 				stability_cost_modifier = -0.15
 
 				allow = {
-					is_mod_active = "东正教强化 战争前夜兼容版 Orthodox enhancement Ante Bellum Compatible Version"
 					religion = orthodox
 				}
 
@@ -591,7 +588,6 @@ christian = {
 				diplomatic_reputation = 1
 
 				allow = {
-					is_mod_active = "东正教强化 战争前夜兼容版 Orthodox enhancement Ante Bellum Compatible Version"
 					religion = orthodox
 				}
 
@@ -609,7 +605,6 @@ christian = {
 				idea_cost = -0.1
 
 				allow = {
-					is_mod_active = "东正教强化 战争前夜兼容版 Orthodox enhancement Ante Bellum Compatible Version"
 					religion = orthodox
 				}
 
@@ -627,7 +622,6 @@ christian = {
 				reverse_relation_with_same_religion = 15
 
 				allow = {
-					is_mod_active = "东正教强化 战争前夜兼容版 Orthodox enhancement Ante Bellum Compatible Version"
 					religion = orthodox
 				}
 
